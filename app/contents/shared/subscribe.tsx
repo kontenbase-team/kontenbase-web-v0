@@ -18,9 +18,7 @@ const SubscribeBox = styled('div', {
   gap: '1rem',
   maxWidth: '500px',
   width: '100%',
-  '*': {
-    margin: 0,
-  },
+  '*': { margin: 0 },
 })
 
 export const SubscribeSection = () => {
@@ -44,7 +42,7 @@ const SubscribeForm = styled(Form, {
 
 export const SubscribeBoxForm = () => {
   return (
-    <SubscribeForm method="post" action="/projects/new">
+    <SubscribeForm method="post" action="/?index">
       <Input
         name="email"
         type="email"
