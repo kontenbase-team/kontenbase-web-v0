@@ -1,15 +1,7 @@
-import type { MetaFunction, LoaderFunction } from 'remix'
-import { useLoaderData, json } from 'remix'
+import type { MetaFunction, LoaderFunction, ActionFunction } from 'remix'
+import { useLoaderData, json, redirect } from 'remix'
 
 import { HomeHero, SubscribeSection } from '~/contents'
-
-type IndexData = {}
-
-export let loader: LoaderFunction = () => {
-  let data: IndexData = {}
-
-  return json(data)
-}
 
 export let meta: MetaFunction = () => {
   return {
@@ -17,6 +9,26 @@ export let meta: MetaFunction = () => {
     description:
       'Kontenbase allows you to easily create backend API, auth, and storage in less than 1 minute without coding.',
   }
+}
+
+type IndexData = {}
+
+export let loader: LoaderFunction = () => {
+  let data: IndexData = {}
+  return json(data)
+}
+
+const subscribeEmail = (formData: any) => {
+  console.log({ formData })
+}
+
+export const action: ActionFunction = async ({ request }) => {
+  const formData = await request.formData()
+  const subscriber = await subscribeEmail(formData)
+  return json({
+    message: 'Successfully subscribed!',
+    subscriber,
+  })
 }
 
 export default function Index() {
