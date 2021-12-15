@@ -186,10 +186,10 @@ function Document({
         {title ? <title>{title}</title> : null}
         <Meta />
         <Links />
-        <style
+        {/* <style
           id="stitches"
           dangerouslySetInnerHTML={{ __html: getCssText() }}
-        />
+        /> */}
       </head>
 
       <body
