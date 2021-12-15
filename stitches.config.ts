@@ -42,6 +42,9 @@ export const {
       accent2: '$tomato10',
       accent3: '$tomato9',
 
+      background1: '$gray1',
+      background2: '$gray3',
+
       info1: '$cyan9',
       info2: '$cyan10',
 
@@ -63,6 +66,9 @@ export const {
       text4: '$gray12',
       text5: '$gray11',
       text6: '$gray10',
+    },
+    fontSizes: {
+      input: '1.2rem',
     },
   },
   media: {
@@ -88,6 +94,9 @@ export const darkTheme = createTheme('dark-theme', {
     accent1: '$tomato11',
     accent2: '$tomato10',
     accent3: '$tomato9',
+
+    background1: '$gray1',
+    background2: '$gray2',
 
     info1: '$cyan9',
     info2: '$cyan10',
