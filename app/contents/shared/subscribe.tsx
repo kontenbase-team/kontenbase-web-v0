@@ -4,7 +4,7 @@ import { styled } from '~/stitches'
 import { Content, Heading, Paragraph, Input } from '~/components'
 
 const SubscribeSectionContainer = styled('section', {
-  padding: '4rem 0',
+  padding: '5rem 0',
   background: '$background2',
   display: 'flex',
   justifyContent: 'center',
@@ -47,7 +47,7 @@ export const SubscribeBoxForm = () => {
     <SubscribeForm>
       <Input
         type="email"
-        placeholder="yourname@email.com"
+        placeholder="you@email.com"
         variant="text"
         size="wide"
         border="radius-left"

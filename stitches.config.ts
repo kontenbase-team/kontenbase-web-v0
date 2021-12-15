@@ -15,7 +15,7 @@ import {
 
 import { createStitches } from '@stitches/react'
 
-const allTokens = {
+const colorTokens = {
   black: 'black',
   white: 'white',
   background1: '$gray1',
@@ -53,6 +53,12 @@ const allTokens = {
   pending2: '$yellow10',
 }
 
+const fontSizeTokens = {
+  input1: '1rem',
+  input2: '1.1rem',
+  input3: '1.2rem',
+}
+
 export const {
   config,
   createTheme,
@@ -71,10 +77,10 @@ export const {
       ...green,
       ...red,
       ...yellow,
-      ...allTokens,
+      ...colorTokens,
     },
     fontSizes: {
-      input: '1.2rem',
+      ...fontSizeTokens,
     },
   },
   media: {
@@ -95,6 +101,6 @@ export const darkTheme = createTheme('dark-theme', {
     ...greenDark,
     ...redDark,
     ...yellowDark,
-    ...allTokens,
+    ...colorTokens,
   },
 })

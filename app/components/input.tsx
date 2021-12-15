@@ -1,17 +1,27 @@
 import { styled } from '~/stitches'
 
 const InputStyled = styled('input', {
-  padding: '1rem',
-  fontSize: '$input',
   border: 'none',
-  fontWeight: '600',
+  padding: '0.75rem',
+  fontSize: '$input1',
+  '@tablet': {
+    padding: '0.9rem',
+    fontSize: '$input2',
+  },
+  '@desktop': {
+    padding: '1rem',
+    fontSize: '$input3',
+  },
   variants: {
     size: {
       wide: {
         width: '100%',
       },
       fixed: {
-        minWidth: '150px',
+        minWidth: '120px',
+        '@tablet': {
+          minWidth: '150px',
+        },
       },
     },
     border: {

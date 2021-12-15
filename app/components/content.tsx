@@ -16,6 +16,7 @@ const ContentContainer = styled('div', {
       center: {
         display: 'flex',
         justifyContent: 'center',
+        textAlign: 'center',
       },
     },
   },
