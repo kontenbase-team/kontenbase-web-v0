@@ -56,9 +56,11 @@ const InputStyled = styled('input', {
 })
 
 interface InputProps {
+  name?: string | undefined
   placeholder?: string
   type: string
   value?: string
+
   size?: 'wide' | 'fixed' | undefined
   variant?: 'primary' | 'text' | undefined
   border?: 'radius-left' | 'radius-right' | undefined
