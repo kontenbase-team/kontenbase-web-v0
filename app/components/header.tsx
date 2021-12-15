@@ -1,6 +1,6 @@
 import { Link } from 'remix'
 
-import { Anchor, Logo } from '~/components'
+import { Content, Anchor, Logo } from '~/components'
 
 /**
  * Header
@@ -8,10 +8,11 @@ import { Anchor, Logo } from '~/components'
 export const Header = () => {
   return (
     <header>
-      <div>
+      <Content>
         <Link to="/" title="Remix">
           <Logo />
         </Link>
+
         <nav aria-label="Main navigation">
           <ul>
             <li>
@@ -22,7 +23,7 @@ export const Header = () => {
             </li>
           </ul>
         </nav>
-      </div>
+      </Content>
     </header>
   )
 }

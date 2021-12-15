@@ -1,10 +1,9 @@
-export * from './layout'
-export * from './header'
-export * from './footer'
-
 export * from './anchor'
+export * from './content'
+export * from './footer'
+export * from './header'
 export * from './heading'
-export * from './paragraph'
-
-export * from './logo'
 export * from './hero'
+export * from './layout'
+export * from './logo'
+export * from './paragraph'
