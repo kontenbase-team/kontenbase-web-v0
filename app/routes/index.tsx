@@ -49,6 +49,10 @@ export default function Index() {
           <br />
           Fast and Easy!
         </h2>
+        <p>
+          Kontenbase allows you to easily create backend API, auth, and storage
+          in less than 1 minute without coding.
+        </p>
       </main>
       <aside>
         <h2>Demos In This App</h2>
