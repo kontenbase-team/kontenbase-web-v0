@@ -2,10 +2,10 @@ import { styled } from '~/stitches'
 
 interface HeadingProps {
   as?: string
-  children: string
+  children: React.ReactNode
 }
 
-const H1 = styled('h1', { color: '$text1', fontSize: '2.5rem' })
+const H1 = styled('h1', { color: '$text1', fontSize: '3rem' })
 const H2 = styled('h2', { color: '$text2', fontSize: '2rem' })
 const H3 = styled('h3', { color: '$text3', fontSize: '1.75rem' })
 const H4 = styled('h4', { color: '$text4', fontSize: '1.5rem' })
