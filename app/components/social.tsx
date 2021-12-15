@@ -1,5 +1,5 @@
 import { styled } from '~/stitches'
-import { Anchor } from '~/components'
+import { AnchorIcon, Icon } from '~/components'
 
 const socialMediaLinks = [
   { name: 'Twitter', url: 'https://a.kontenbase.com/twitter' },
@@ -12,7 +12,8 @@ const socialMediaLinks = [
 
 const SocialContainer = styled('div', {
   display: 'flex',
-  gap: '0.5rem',
+  gap: '1rem',
+  fontSize: '1.5rem',
 })
 
 export const SocialMediaLinks = () => {
@@ -20,9 +21,9 @@ export const SocialMediaLinks = () => {
     <SocialContainer>
       {socialMediaLinks.map((link, index) => {
         return (
-          <Anchor key={link.name} href={link.url}>
-            {link.name}
-          </Anchor>
+          <AnchorIcon key={link.name} href={link.url}>
+            <Icon name={link.name.toLowerCase()} />
+          </AnchorIcon>
         )
       })}
     </SocialContainer>

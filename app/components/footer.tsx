@@ -16,16 +16,19 @@ const CopyrightAndSocial = styled('div', {
  * Footer
  */
 export const Footer = () => {
+  let date = new Date()
+  let year = date.getFullYear()
+
   return (
     <FooterContainer>
       <Content>
         <CopyrightAndSocial>
           <div>
-            <p>&copy; 2021 Kontenbase</p>
+            <p>&copy; {year} Kontenbase</p>
           </div>
 
           <div>
-            <span>Follow us</span>
+            <span>Follow us on</span>
             <SocialMediaLinks />
           </div>
         </CopyrightAndSocial>
