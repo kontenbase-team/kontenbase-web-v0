@@ -1,7 +1,9 @@
 import type { MetaFunction, LoaderFunction, ActionFunction } from 'remix'
 import { useLoaderData, json } from 'remix'
+import axios from 'axios'
 
 import { HomeHero, SubscribeSection } from '~/contents'
+import { envServer } from '~/utils'
 
 export let meta: MetaFunction = () => {
   return {
@@ -21,16 +23,35 @@ export let loader: LoaderFunction = () => {
   return json(data)
 }
 
-const subscribeEmail = (formData: any) => {
-  const email = formData.get('email')
-  console.log({ email })
-
-  const subscriber = {}
-
-  return subscriber
-}
-
 export const action: ActionFunction = async ({ request }) => {
+  // Action external API request
+  const subscribeEmail = async (formData: any) => {
+    try {
+      const email = formData.get('email')
+      console.log({ email })
+
+      const response = await axios.post(
+        'https://api.buttondown.email/v1/subscribers',
+        { email: email, notes: 'early' },
+        { headers: { Authorization: `Token ${envServer.BUTTONDOWN_API_KEY}` } }
+      )
+      const subscriber = response.data
+      return subscriber
+    } catch (error: any) {
+      if (error.response) {
+        console.error(error.response.data)
+        console.error(error.response.status)
+        const errorMessage = error.response.data[0]
+        return errorMessage
+      } else if (error.request) {
+        console.error(error.request)
+      } else {
+        console.error('Error', error.message)
+      }
+    }
+  }
+
+  // Action internal handler
   const formData = await request.formData()
   const subscriber = await subscribeEmail(formData)
 
