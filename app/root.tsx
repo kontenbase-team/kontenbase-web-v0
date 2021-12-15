@@ -5,6 +5,9 @@ import {
   Meta,
   Outlet,
   Scripts,
+  json,
+  useLoaderData,
+  LoaderFunction,
   ScrollRestoration,
   useCatch,
 } from 'remix'
@@ -13,10 +16,38 @@ import type { LinksFunction } from 'remix'
 import globalStylesUrl from '~/styles/global.css'
 import darkStylesUrl from '~/styles/dark.css'
 
+import {
+  useTheme,
+  ThemeProvider,
+  Theme,
+  NonFlashOfWrongThemeEls,
+} from '~/utils/theme'
+import { getThemeSession } from '~/utils/theme.server'
+
 import { theme, darkTheme, getCssText } from '~/stitches'
 import { Anchor, Logo } from '~/components'
 
-// https://remix.run/api/app#links
+/**
+ * Loader
+ */
+export type LoaderData = {
+  theme: Theme | null
+}
+
+export const loader: LoaderFunction = async ({ request }) => {
+  const themeSession = await getThemeSession(request)
+
+  const data: LoaderData = {
+    theme: themeSession.getTheme(),
+  }
+
+  return json(data)
+}
+
+/**
+ * Links
+ * https://remix.run/api/app#links
+ */
 export let links: LinksFunction = () => {
   return [
     { rel: 'stylesheet', href: globalStylesUrl },
@@ -52,19 +83,31 @@ export let links: LinksFunction = () => {
   ]
 }
 
-// https://remix.run/api/conventions#default-export
-// https://remix.run/api/conventions#route-filenames
+/**
+ * App
+ *
+ * https://remix.run/api/conventions#default-export
+ * https://remix.run/api/conventions#route-filenames
+ */
 export default function App() {
+  const data = useLoaderData<LoaderData>()
+
   return (
-    <Document>
-      <Layout>
-        <Outlet />
-      </Layout>
-    </Document>
+    <ThemeProvider specifiedTheme={data.theme}>
+      <Document>
+        <Layout>
+          <Outlet />
+        </Layout>
+      </Document>
+    </ThemeProvider>
   )
 }
 
-// https://remix.run/docs/en/v1/api/conventions#errorboundary
+/**
+ * Error Boundary
+ *
+ * https://remix.run/docs/en/v1/api/conventions#errorboundary
+ */
 export function ErrorBoundary({ error }: { error: Error }) {
   console.error(error)
 
@@ -85,7 +128,11 @@ export function ErrorBoundary({ error }: { error: Error }) {
   )
 }
 
-// https://remix.run/docs/en/v1/api/conventions#catchboundary
+/**
+ * Catch Boundary
+ *
+ * https://remix.run/docs/en/v1/api/conventions#catchboundary
+ */
 export function CatchBoundary() {
   let caught = useCatch()
 
@@ -121,6 +168,9 @@ export function CatchBoundary() {
   )
 }
 
+/**
+ * Document
+ */
 function Document({
   children,
   title,
@@ -128,6 +178,8 @@ function Document({
   children: React.ReactNode
   title?: string
 }) {
+  const [whatTheme] = useTheme()
+
   return (
     <html lang="en">
       <head>
@@ -142,7 +194,11 @@ function Document({
         /> */}
       </head>
 
-      <body className={darkTheme.className}>
+      <body
+        className={
+          whatTheme === 'light' ? theme.className : darkTheme.className
+        }
+      >
         {children}
         <ScrollRestoration />
         <Scripts />
@@ -152,6 +208,9 @@ function Document({
   )
 }
 
+/**
+ * Layout
+ */
 function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div>
