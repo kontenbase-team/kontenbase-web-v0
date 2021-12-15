@@ -66,7 +66,7 @@ export const {
     },
   },
   media: {
-    tablet: '(min-width: 426px)',
+    tablet: '(min-width: 501px)',
     desktop: '(min-width: 769px)',
     tv: '(min-width: 1201px)',
   },
