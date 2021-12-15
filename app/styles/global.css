@@ -3,11 +3,11 @@
  * quick baseline!
  */
 :root {
-  --color-foreground: hsl(0, 0%, 7%);
-  --color-background: hsl(0, 0%, 100%);
-  --color-links: hsl(213, 100%, 52%);
-  --color-links-hover: hsl(213, 100%, 43%);
-  --color-border: hsl(0, 0%, 82%);
+  --color-foreground: #121212;
+  --color-background: #ffffff;
+  --color-links: #0a78ff;
+  --color-links-hover: #0063db;
+  --color-border: #d1d1d1;
   --font-body: -apple-system, 'Segoe UI', Helvetica Neue, Helvetica, Roboto,
     Arial, sans-serif, system-ui, 'Apple Color Emoji', 'Segoe UI Emoji';
 }
@@ -152,16 +152,6 @@ input:where([type='search']) {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.remix__page {
-  --gap: 1rem;
-  --space: 2rem;
-  display: grid;
-  grid-auto-rows: min-content;
-  gap: var(--gap);
-  padding-top: var(--space);
-  padding-bottom: var(--space);
 }
 
 @media print, screen and (min-width: 640px) {

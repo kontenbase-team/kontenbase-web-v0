@@ -1,7 +1,7 @@
 import type { MetaFunction, LoaderFunction } from 'remix'
 import { useLoaderData, json, Link } from 'remix'
 
-import { Heading, Paragraph } from '~/components'
+import { HomeHero } from '~/contents'
 
 type IndexData = {
   resources: Array<{ name: string; url: string }>
@@ -44,21 +44,8 @@ export default function Index() {
   let data = useLoaderData<IndexData>()
 
   return (
-    <div className="remix__page">
-      <main>
-        <Heading as="h1">
-          No Code Backend API,
-          <br />
-          Fast and Easy!
-        </Heading>
-        <Paragraph>
-          Kontenbase allows you to easily create backend API, auth, and storage
-          in less than 1 minute without coding.
-        </Paragraph>
-      </main>
-      <aside>
-        <h2>Carousel Images</h2>
-      </aside>
+    <div>
+      <HomeHero />
     </div>
   )
 }
