@@ -44,8 +44,13 @@ const SubscribeForm = styled(Form, {
 export const SubscribeBoxForm = () => {
   return (
     <SubscribeForm>
-      <Input type="email" placeholder="yourname@email.com" size="wide" />
-      <Input type="submit" value="Subscribe" size="fixed" variant="primary" />
+      <Input
+        type="email"
+        placeholder="yourname@email.com"
+        variant="text"
+        size="wide"
+      />
+      <Input type="submit" value="Subscribe" variant="primary" size="fixed" />
     </SubscribeForm>
   )
 }

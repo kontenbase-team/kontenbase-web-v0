@@ -15,6 +15,10 @@ const InputStyled = styled('input', {
       },
     },
     variant: {
+      text: {
+        color: '$accent1',
+        backgroundColor: '$accent12',
+      },
       primary: {
         cursor: 'pointer',
         color: '$accent12',
@@ -35,7 +39,7 @@ interface InputProps {
   size?: 'wide' | 'fixed' | undefined
   type: string
   value?: string
-  variant?: 'primary' | undefined
+  variant?: 'primary' | 'text' | undefined
 }
 
 export const Input = (props: InputProps) => {
