@@ -1,12 +1,40 @@
+import { styled } from '~/stitches'
+
 interface AnchorProps {
   href: string
   children: React.ReactNode
 }
 
+const AnchorContainer = styled('a', {})
+
 export const Anchor = (props: AnchorProps) => {
   return (
-    <a href={props.href} target="_blank" rel="noopener noreferrer">
+    <AnchorContainer
+      href={props.href}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       {props.children}
-    </a>
+    </AnchorContainer>
+  )
+}
+
+const AnchorIconContainer = styled('a', {
+  svg: { height: '100%' },
+  color: '$text5',
+  '&:hover': {
+    color: '$text4',
+  },
+})
+
+export const AnchorIcon = (props: AnchorProps) => {
+  return (
+    <AnchorIconContainer
+      href={props.href}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {props.children}
+    </AnchorIconContainer>
   )
 }

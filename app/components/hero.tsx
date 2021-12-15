@@ -1,4 +1,5 @@
 import { styled } from '~/stitches'
+import { Content } from '~/components'
 
 interface HeroProps {
   children: React.ReactNode
@@ -6,10 +7,12 @@ interface HeroProps {
 
 const HeroContainer = styled('div', {
   padding: '3rem 0',
-  display: 'flex',
-  gap: '3rem',
 })
 
 export const Hero = (props: HeroProps) => {
-  return <HeroContainer>{props.children}</HeroContainer>
+  return (
+    <HeroContainer>
+      <Content>{props.children}</Content>
+    </HeroContainer>
+  )
 }

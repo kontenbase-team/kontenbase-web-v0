@@ -3,13 +3,14 @@
  * quick baseline!
  */
 :root {
-  --color-foreground: #121212;
-  --color-background: #ffffff;
-  --color-links: #0a78ff;
-  --color-links-hover: #0063db;
-  --color-border: #d1d1d1;
   --font-body: -apple-system, 'Segoe UI', Helvetica Neue, Helvetica, Roboto,
     Arial, sans-serif, system-ui, 'Apple Color Emoji', 'Segoe UI Emoji';
+  --color-foreground: #121212;
+  --color-background: #ffffff;
+  --color-border: #d1d1d1;
+  --color-links: var(--colors-blue9);
+  --color-links-hover: var(--colors-blue10);
+  --gutter: 1rem;
 }
 
 html {
@@ -27,7 +28,7 @@ html {
 }
 
 :focus {
-  outline: var(--color-links) solid 2px;
+  outline: var(--color-links) dotted 2px;
   outline-offset: 2px;
 }
 
