@@ -10,6 +10,24 @@ const CopyrightAndSocial = styled('div', {
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
+  flexDirection: 'column-reverse',
+  '@tablet': {
+    flexDirection: 'row',
+  },
+})
+
+const FollowSocial = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  '@tablet': {
+    alignItems: 'flex-start',
+  },
+  '@desktop': {
+    gap: '1rem',
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
 })
 
 /**
@@ -27,10 +45,10 @@ export const Footer = () => {
             <p>&copy; {year} Kontenbase</p>
           </div>
 
-          <div>
+          <FollowSocial>
             <span>Follow us on</span>
             <SocialMediaLinks />
-          </div>
+          </FollowSocial>
         </CopyrightAndSocial>
       </Content>
     </FooterContainer>

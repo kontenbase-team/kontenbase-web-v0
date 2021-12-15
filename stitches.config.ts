@@ -66,8 +66,9 @@ export const {
     },
   },
   media: {
-    desktop: '(min-width: 768px)',
-    bp1: '(min-width: 480px)',
+    tablet: '(min-width: 426px)',
+    desktop: '(min-width: 769px)',
+    tv: '(min-width: 1201px)',
   },
   utils: {
     marginX: (value: number) => ({ marginLeft: value, marginRight: value }),
