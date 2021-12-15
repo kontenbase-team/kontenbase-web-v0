@@ -13,6 +13,8 @@ import type { LinksFunction } from 'remix'
 import globalStylesUrl from '~/styles/global.css'
 import darkStylesUrl from '~/styles/dark.css'
 
+import { Logo } from '~/components'
+
 // https://remix.run/api/app#links
 export let links: LinksFunction = () => {
   return [
@@ -64,6 +66,7 @@ export default function App() {
 // https://remix.run/docs/en/v1/api/conventions#errorboundary
 export function ErrorBoundary({ error }: { error: Error }) {
   console.error(error)
+
   return (
     <Document title="Error!">
       <Layout>
@@ -149,7 +152,7 @@ function Layout({ children }: { children: React.ReactNode }) {
       <header className="remix-app__header">
         <div className="container remix-app__header-content">
           <Link to="/" title="Remix">
-            <h1>Kontenbase</h1>
+            <Logo />
           </Link>
           <nav aria-label="Main navigation" className="remix-app__header-nav">
             <ul>
@@ -157,10 +160,7 @@ function Layout({ children }: { children: React.ReactNode }) {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <a href="https://remix.run/docs">Remix Docs</a>
-              </li>
-              <li>
-                <a href="https://github.com/remix-run/remix">GitHub</a>
+                <a href="https://a.kontenbase.com/jobs">Jobs</a>
               </li>
             </ul>
           </nav>
