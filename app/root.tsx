@@ -12,6 +12,7 @@ import {
 } from 'remix'
 import type { LinksFunction } from 'remix'
 
+import { globalStyles } from '~/styles'
 import globalStylesUrl from '~/styles/global.css'
 import darkStylesUrl from '~/styles/dark.css'
 
@@ -34,11 +35,9 @@ export type LoaderData = {
 
 export const loader: LoaderFunction = async ({ request }) => {
   const themeSession = await getThemeSession(request)
-
   const data: LoaderData = {
     theme: themeSession.getTheme(),
   }
-
   return json(data)
 }
 
@@ -176,6 +175,7 @@ function Document({
   children: React.ReactNode
   title?: string
 }) {
+  globalStyles()
   const [whatTheme] = useTheme()
 
   return (

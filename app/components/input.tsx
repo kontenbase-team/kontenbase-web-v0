@@ -24,12 +24,15 @@ const InputStyled = styled('input', {
     },
     variant: {
       text: {
-        color: '$accent1',
-        backgroundColor: '$accent12',
+        color: '$accent12',
+        backgroundColor: '$accent1',
+        borderColor: '$accent6',
+        borderStyle: 'solid',
+        borderWidth: '1px 0 1px 1px',
       },
       primary: {
         cursor: 'pointer',
-        color: '$accent12',
+        color: '$white',
         backgroundColor: '$accent9',
         '&:hover': {
           backgroundColor: '$accent10',

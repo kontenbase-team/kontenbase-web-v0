@@ -15,6 +15,44 @@ import {
 
 import { createStitches } from '@stitches/react'
 
+const allTokens = {
+  black: 'black',
+  white: 'white',
+  background1: '$gray1',
+  background2: '$gray2',
+  accent1: '$tomato1',
+  accent2: '$tomato2',
+  accent3: '$tomato3',
+  accent4: '$tomato4',
+  accent5: '$tomato5',
+  accent6: '$tomato6',
+  accent7: '$tomato7',
+  accent8: '$tomato8',
+  accent9: '$tomato9',
+  accent10: '$tomato10',
+  accent11: '$tomato11',
+  accent12: '$tomato12',
+  heading1: '$accent11',
+  heading2: '$accent10',
+  heading3: '$accent9',
+  heading4: '$accent9',
+  heading5: '$accent9',
+  heading6: '$accent9',
+  text1: '$gray12',
+  text2: '$gray11',
+  text3: '$gray10',
+  info1: '$cyan9',
+  info2: '$cyan10',
+  success1: '$green9',
+  success2: '$green10',
+  valid1: '$green9',
+  valid2: '$green10',
+  warning1: '$yellow9',
+  warning2: '$yellow10',
+  pending1: '$yellow9',
+  pending2: '$yellow10',
+}
+
 export const {
   config,
   createTheme,
@@ -33,47 +71,7 @@ export const {
       ...green,
       ...red,
       ...yellow,
-
-      black: 'black',
-      white: 'white',
-
-      accent1: '$tomato1',
-      accent2: '$tomato2',
-      accent3: '$tomato3',
-      accent4: '$tomato4',
-      accent5: '$tomato5',
-      accent6: '$tomato6',
-      accent7: '$tomato7',
-      accent8: '$tomato8',
-      accent9: '$tomato9',
-      accent10: '$tomato10',
-      accent11: '$tomato11',
-      accent12: '$tomato12',
-
-      background1: '$gray1',
-      background2: '$gray2',
-
-      text1: '$accent11',
-      text2: '$accent10',
-      text3: '$accent9',
-      text4: '$gray12',
-      text5: '$gray11',
-      text6: '$gray10',
-
-      info1: '$cyan9',
-      info2: '$cyan10',
-
-      success1: '$green9',
-      success2: '$green10',
-
-      valid1: '$green9',
-      valid2: '$green10',
-
-      warning1: '$yellow9',
-      warning2: '$yellow10',
-
-      pending1: '$yellow9',
-      pending2: '$yellow10',
+      ...allTokens,
     },
     fontSizes: {
       input: '1.2rem',
@@ -97,43 +95,6 @@ export const darkTheme = createTheme('dark-theme', {
     ...greenDark,
     ...redDark,
     ...yellowDark,
-
-    accent1: '$tomato1',
-    accent2: '$tomato2',
-    accent3: '$tomato3',
-    accent4: '$tomato4',
-    accent5: '$tomato5',
-    accent6: '$tomato6',
-    accent7: '$tomato7',
-    accent8: '$tomato8',
-    accent9: '$tomato9',
-    accent10: '$tomato10',
-    accent11: '$tomato11',
-    accent12: '$tomato12',
-
-    background1: '$gray1',
-    background2: '$gray2',
-
-    text1: '$accent11',
-    text2: '$accent10',
-    text3: '$accent9',
-    text4: '$gray12',
-    text5: '$gray11',
-    text6: '$gray10',
-
-    info1: '$cyan9',
-    info2: '$cyan10',
-
-    success1: '$green9',
-    success2: '$green10',
-
-    valid1: '$green9',
-    valid2: '$green10',
-
-    warning1: '$yellow9',
-    warning2: '$yellow10',
-
-    pending1: '$yellow9',
-    pending2: '$yellow10',
+    ...allTokens,
   },
 })

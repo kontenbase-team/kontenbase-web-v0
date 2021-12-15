@@ -8,10 +8,9 @@ interface ContentProps {
 const ContentContainer = styled('div', {
   width: '1200px',
   // maxWidth: '100%',
-  maxWidth: 'calc(100% - var(--gutter) * 2)',
+  maxWidth: 'calc(100% - 1rem * 2)',
   marginRight: 'auto',
   marginLeft: 'auto',
-
   variants: {
     layout: {
       center: {
