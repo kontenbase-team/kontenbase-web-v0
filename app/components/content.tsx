@@ -1,6 +1,7 @@
 import { styled } from '~/stitches'
 
 interface ContentProps {
+  layout?: 'center' | undefined
   children: React.ReactNode
 }
 
@@ -10,8 +11,19 @@ const ContentContainer = styled('div', {
   maxWidth: 'calc(100% - var(--gutter) * 2)',
   marginRight: 'auto',
   marginLeft: 'auto',
+
+  variants: {
+    layout: {
+      center: {
+        display: 'flex',
+        justifyContent: 'center',
+      },
+    },
+  },
 })
 
 export const Content = (props: ContentProps) => {
-  return <ContentContainer>{props.children}</ContentContainer>
+  return (
+    <ContentContainer layout={props.layout}>{props.children}</ContentContainer>
+  )
 }

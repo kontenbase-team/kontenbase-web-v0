@@ -14,6 +14,14 @@ const InputStyled = styled('input', {
         minWidth: '150px',
       },
     },
+    border: {
+      'radius-left': {
+        borderRadius: '0.5rem 0 0 0.5rem',
+      },
+      'radius-right': {
+        borderRadius: '0 0.5rem 0.5rem 0',
+      },
+    },
     variant: {
       text: {
         color: '$accent1',
@@ -36,12 +44,20 @@ const InputStyled = styled('input', {
 
 interface InputProps {
   placeholder?: string
-  size?: 'wide' | 'fixed' | undefined
   type: string
   value?: string
+  size?: 'wide' | 'fixed' | undefined
   variant?: 'primary' | 'text' | undefined
+  border?: 'radius-left' | 'radius-right' | undefined
 }
 
 export const Input = (props: InputProps) => {
-  return <InputStyled variant={props.variant} size={props.size} {...props} />
+  return (
+    <InputStyled
+      variant={props.variant}
+      size={props.size}
+      border={props.border}
+      {...props}
+    />
+  )
 }
