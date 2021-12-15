@@ -1,4 +1,17 @@
-import { tomato, blue, gray, green, red, yellow } from '@radix-ui/colors'
+import {
+  tomato,
+  tomatoDark,
+  blue,
+  blueDark,
+  gray,
+  grayDark,
+  green,
+  greenDark,
+  red,
+  redDark,
+  yellow,
+  yellowDark,
+} from '@radix-ui/colors'
 
 import { createStitches } from '@stitches/react'
 
@@ -21,8 +34,8 @@ export const {
       ...red,
       ...yellow,
 
-      black: '#000000',
-      white: '#ffffff',
+      black: 'black',
+      white: 'white',
 
       accent0: '$tomato12',
       accent1: '$tomato11',
@@ -58,5 +71,46 @@ export const {
   },
   utils: {
     marginX: (value: number) => ({ marginLeft: value, marginRight: value }),
+  },
+})
+
+const darkTheme = createTheme({
+  colors: {
+    ...tomatoDark,
+    ...blueDark,
+    ...grayDark,
+    ...greenDark,
+    ...redDark,
+    ...yellowDark,
+
+    black: '#000000',
+    white: '#ffffff',
+
+    accent0: '$tomatoDark12',
+    accent1: '$tomatoDark11',
+    accent2: '$tomatoDark10',
+    accent3: '$tomatoDark9',
+
+    info1: '$cyanDark9',
+    info2: '$cyanDark10',
+
+    success1: '$greenDark9',
+    success2: '$greenDark10',
+
+    valid1: '$greenDark9',
+    valid2: '$greenDark10',
+
+    warning1: '$yellowDark9',
+    warning2: '$yellowDark10',
+
+    pending1: '$yellowDark9',
+    pending2: '$yellowDark10',
+
+    text1: '$accent1',
+    text2: '$accent2',
+    text3: '$accent3',
+    text4: '$grayDark12',
+    text5: '$grayDark11',
+    text6: '$grayDark10',
   },
 })
