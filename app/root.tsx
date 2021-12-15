@@ -22,6 +22,30 @@ export let links: LinksFunction = () => {
       href: darkStylesUrl,
       media: '(prefers-color-scheme: dark)',
     },
+    {
+      rel: 'apple-touch-icon',
+      sizes: '180x180',
+      href: '/icons/apple-touch-icon.png?v=1',
+    },
+    {
+      rel: 'icon',
+      type: 'image/png',
+      sizes: '32x32',
+      href: '/icons/favicon-32x32.png?v=1',
+    },
+    {
+      rel: 'icon',
+      type: 'image/png',
+      sizes: '16x16',
+      href: '/icons/favicon-16x16.png?v=1',
+    },
+    {
+      rel: 'mask-icon',
+      href: '/icons/safari-pinned-tab.svg?v=1',
+      color: '#05a2c2',
+    },
+    { rel: 'shortcut icon', href: '/icons/favicon.ico?v=1' },
+    { rel: 'manifest', href: '/icons/site.webmanifest?v=1' },
   ]
 }
 
