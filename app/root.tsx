@@ -1,5 +1,4 @@
 import {
-  Link,
   Links,
   LiveReload,
   Meta,
@@ -23,9 +22,8 @@ import {
   NonFlashOfWrongThemeEls,
 } from '~/utils/theme'
 import { getThemeSession } from '~/utils/theme.server'
-
 import { theme, darkTheme, getCssText } from '~/stitches'
-import { Anchor, Logo } from '~/components'
+import { Layout } from '~/components'
 
 /**
  * Loader
@@ -205,42 +203,5 @@ function Document({
         {process.env.NODE_ENV === 'development' && <LiveReload />}
       </body>
     </html>
-  )
-}
-
-/**
- * Layout
- */
-function Layout({ children }: { children: React.ReactNode }) {
-  return (
-    <div>
-      <header>
-        <div>
-          <Link to="/" title="Remix">
-            <Logo />
-          </Link>
-          <nav aria-label="Main navigation">
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Anchor href="https://a.kontenbase.com/jobs">Jobs</Anchor>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-
-      <div>
-        <div>{children}</div>
-      </div>
-
-      <footer>
-        <div>
-          <p>&copy; 2021 Kontenbase</p>
-        </div>
-      </footer>
-    </div>
   )
 }
