@@ -53,6 +53,7 @@ export const {
     },
   },
   media: {
+    desktop: '(min-width: 768px)',
     bp1: '(min-width: 480px)',
   },
   utils: {
