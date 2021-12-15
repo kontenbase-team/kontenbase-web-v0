@@ -1,0 +1,33 @@
+{
+  "name": "kontenbase-web",
+  "description": "Kontenbase Website",
+  "private": true,
+  "license": "",
+  "scripts": {
+    "postinstall": "remix setup node",
+    "dev": "remix dev",
+    "build": "remix build",
+    "start": "remix-serve build",
+    "deploy": "vercel",
+    "format": "prettier --write .",
+    "lint": "eslint . --fix --ext ts --ext tsx --ext js"
+  },
+  "dependencies": {
+    "@remix-run/react": "^1.0.6",
+    "@remix-run/serve": "^1.0.6",
+    "@remix-run/vercel": "^1.0.6",
+    "react-dom": "^17.0.2",
+    "react": "^17.0.2",
+    "remix": "^1.0.6"
+  },
+  "devDependencies": {
+    "@remix-run/dev": "^1.0.6",
+    "@types/react-dom": "^17.0.9",
+    "@types/react": "^17.0.24",
+    "typescript": "^4.1.2"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "sideEffects": false
+}
