@@ -2,10 +2,14 @@ import { styled } from '~/stitches'
 
 import { Content } from '~/components'
 
-const FooterContainer = styled('footer', {})
+const FooterContainer = styled('footer', {
+  padding: '2rem 0',
+})
+
 const CopyrightAndSocial = styled('div', {
   display: 'flex',
   justifyContent: 'space-between',
+  alignItems: 'center',
 })
 
 /**
