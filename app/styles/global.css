@@ -10,6 +10,7 @@
   --color-border: #d1d1d1;
   --color-links: var(--colors-blue9);
   --color-links-hover: var(--colors-blue10);
+  --gutter: 16px;
 }
 
 html {
