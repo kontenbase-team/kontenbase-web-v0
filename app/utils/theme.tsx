@@ -5,6 +5,7 @@ enum Theme {
   DARK = 'dark',
   LIGHT = 'light',
 }
+
 const themes: Array<Theme> = Object.values(Theme)
 
 type ThemeContextType = [
