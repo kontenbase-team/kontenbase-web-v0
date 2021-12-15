@@ -24,6 +24,7 @@ const Copyright = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
+  gap: '0.5rem',
   p: {
     margin: 0,
   },
@@ -33,7 +34,6 @@ const Copyright = styled('div', {
   '@desktop': {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: '1rem',
   },
 })
 
@@ -41,6 +41,7 @@ const Social = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
+  gap: '0.5rem',
   '@tablet': {
     alignItems: 'flex-start',
   },
