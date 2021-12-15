@@ -1,9 +1,11 @@
-.DS_Store
-node_modules
-
 .cache
-.vercel
+.DS_Store
+.env
 .output
+.vercel
+
+# Node.js
+node_modules
 
 # Remix
 /build
