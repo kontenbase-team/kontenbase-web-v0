@@ -45,7 +45,7 @@ export const SubscribeBoxForm = () => {
   return (
     <SubscribeForm>
       <Input type="email" placeholder="yourname@email.com" size="wide" />
-      <Input type="submit" value="Subscribe" />
+      <Input type="submit" value="Subscribe" size="fixed" variant="primary" />
     </SubscribeForm>
   )
 }

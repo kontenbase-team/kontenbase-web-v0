@@ -37,13 +37,28 @@ export const {
       black: 'black',
       white: 'white',
 
-      accent0: '$tomato12',
-      accent1: '$tomato11',
-      accent2: '$tomato10',
-      accent3: '$tomato9',
+      accent1: '$tomato1',
+      accent2: '$tomato2',
+      accent3: '$tomato3',
+      accent4: '$tomato4',
+      accent5: '$tomato5',
+      accent6: '$tomato6',
+      accent7: '$tomato7',
+      accent8: '$tomato8',
+      accent9: '$tomato9',
+      accent10: '$tomato10',
+      accent11: '$tomato11',
+      accent12: '$tomato12',
 
       background1: '$gray1',
-      background2: '$gray3',
+      background2: '$gray2',
+
+      text1: '$accent11',
+      text2: '$accent10',
+      text3: '$accent9',
+      text4: '$gray12',
+      text5: '$gray11',
+      text6: '$gray10',
 
       info1: '$cyan9',
       info2: '$cyan10',
@@ -59,13 +74,6 @@ export const {
 
       pending1: '$yellow9',
       pending2: '$yellow10',
-
-      text1: '$accent1',
-      text2: '$accent2',
-      text3: '$accent3',
-      text4: '$gray12',
-      text5: '$gray11',
-      text6: '$gray10',
     },
     fontSizes: {
       input: '1.2rem',
@@ -90,13 +98,28 @@ export const darkTheme = createTheme('dark-theme', {
     ...redDark,
     ...yellowDark,
 
-    accent0: '$tomato12',
-    accent1: '$tomato11',
-    accent2: '$tomato10',
-    accent3: '$tomato9',
+    accent1: '$tomato1',
+    accent2: '$tomato2',
+    accent3: '$tomato3',
+    accent4: '$tomato4',
+    accent5: '$tomato5',
+    accent6: '$tomato6',
+    accent7: '$tomato7',
+    accent8: '$tomato8',
+    accent9: '$tomato9',
+    accent10: '$tomato10',
+    accent11: '$tomato11',
+    accent12: '$tomato12',
 
     background1: '$gray1',
     background2: '$gray2',
+
+    text1: '$accent11',
+    text2: '$accent10',
+    text3: '$accent9',
+    text4: '$gray12',
+    text5: '$gray11',
+    text6: '$gray10',
 
     info1: '$cyan9',
     info2: '$cyan10',
@@ -112,12 +135,5 @@ export const darkTheme = createTheme('dark-theme', {
 
     pending1: '$yellow9',
     pending2: '$yellow10',
-
-    text1: '$accent1',
-    text2: '$accent2',
-    text3: '$accent3',
-    text4: '$gray12',
-    text5: '$gray11',
-    text6: '$gray10',
   },
 })
