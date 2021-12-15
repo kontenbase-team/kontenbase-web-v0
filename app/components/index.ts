@@ -1,2 +1,4 @@
-export * from './logo'
+export * from './heading'
 export * from './anchor'
+
+export * from './logo'
