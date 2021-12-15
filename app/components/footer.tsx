@@ -1,6 +1,6 @@
 import { styled } from '~/stitches'
 
-import { Content } from '~/components'
+import { Content, SocialMediaLinks } from '~/components'
 
 const FooterContainer = styled('footer', {
   padding: '2rem 0',
@@ -26,6 +26,7 @@ export const Footer = () => {
 
           <div>
             <span>Follow us</span>
+            <SocialMediaLinks />
           </div>
         </CopyrightAndSocial>
       </Content>
