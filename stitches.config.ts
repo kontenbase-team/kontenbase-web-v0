@@ -74,7 +74,7 @@ export const {
   },
 })
 
-const darkTheme = createTheme({
+const darkTheme = createTheme('dark-theme', {
   colors: {
     ...tomatoDark,
     ...blueDark,
