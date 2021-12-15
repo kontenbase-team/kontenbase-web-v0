@@ -50,6 +50,9 @@ const InputStyled = styled('input', {
         '&:focus': {
           backgroundColor: '$accent11',
         },
+        '&:disabled': {
+          backgroundColor: '$accent6',
+        },
       },
     },
   },
@@ -60,6 +63,7 @@ interface InputProps {
   placeholder?: string
   type: string
   value?: string
+  disabled?: boolean
 
   size?: 'wide' | 'fixed' | undefined
   variant?: 'primary' | 'text' | undefined

@@ -1,5 +1,5 @@
 import type { MetaFunction, LoaderFunction, ActionFunction } from 'remix'
-import { useLoaderData, json } from 'remix'
+import { useLoaderData, useTransition, json } from 'remix'
 import axios from 'axios'
 
 import { HomeHero, SubscribeSection } from '~/contents'
@@ -52,24 +52,33 @@ export const action: ActionFunction = async ({ request }) => {
   }
 
   // Action internal handler
-  const formData = await request.formData()
-  const subscriber = await subscribeEmail(formData)
+  try {
+    const formData = await request.formData()
+    const subscriber = await subscribeEmail(formData)
 
-  console.log({ subscriber })
+    console.log({ subscriber })
 
-  return json({
-    message: 'Successfully subscribed!',
-    subscriber,
-  })
+    return json({
+      message: 'Successfully subscribed!',
+      subscriber,
+    })
+  } catch (error) {
+    return json({
+      message: 'Failed',
+      error,
+    })
+  }
 }
 
 export default function Index() {
-  let data = useLoaderData<IndexData>()
+  const data = useLoaderData<IndexData>()
+  const transition = useTransition()
 
   return (
     <>
       <HomeHero />
-      <SubscribeSection />
+      <SubscribeSection transition={transition} />
+      {/* <pre>{JSON.stringify(transition, null, 2)}</pre> */}
     </>
   )
 }

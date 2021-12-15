@@ -21,14 +21,14 @@ const SubscribeBox = styled('div', {
   '*': { margin: 0 },
 })
 
-export const SubscribeSection = () => {
+export const SubscribeSection = (props: { transition: any }) => {
   return (
     <SubscribeSectionContainer>
       <Content layout="center">
         <SubscribeBox>
           <Heading as="h2">We are launching soon!</Heading>
           <Paragraph>Join our early adopter program as tester</Paragraph>
-          <SubscribeBoxForm />
+          <SubscribeBoxForm transition={props.transition} />
         </SubscribeBox>
       </Content>
     </SubscribeSectionContainer>
@@ -40,7 +40,7 @@ const SubscribeForm = styled(Form, {
   width: '100%',
 })
 
-export const SubscribeBoxForm = () => {
+export const SubscribeBoxForm = (props: { transition: any }) => {
   return (
     <SubscribeForm method="post" action="/?index">
       <Input
@@ -53,10 +53,11 @@ export const SubscribeBoxForm = () => {
       />
       <Input
         type="submit"
-        value="Subscribe"
         variant="primary"
         size="fixed"
         border="radius-right"
+        disabled={props.transition.submission}
+        value={props.transition.submission ? 'Subscribing...' : 'Subscribe'}
       />
     </SubscribeForm>
   )

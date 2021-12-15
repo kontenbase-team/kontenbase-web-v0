@@ -41,7 +41,7 @@ export const globalStyles = globalCss({
   'pre, code': { margin: 0, fontFamily: '$mono' },
 
   '::selection': {
-    backgroundColor: '$violet5',
+    backgroundColor: '$accent4',
   },
 
   ':-moz-focusring': {
