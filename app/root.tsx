@@ -13,7 +13,7 @@ import type { LinksFunction } from 'remix'
 import globalStylesUrl from '~/styles/global.css'
 import darkStylesUrl from '~/styles/dark.css'
 
-import { Logo } from '~/components'
+import { Anchor, Logo } from '~/components'
 
 // https://remix.run/api/app#links
 export let links: LinksFunction = () => {
@@ -160,7 +160,7 @@ function Layout({ children }: { children: React.ReactNode }) {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <a href="https://a.kontenbase.com/jobs">Jobs</a>
+                <Anchor href="https://a.kontenbase.com/jobs">Jobs</Anchor>
               </li>
             </ul>
           </nav>
