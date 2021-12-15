@@ -1,7 +1,7 @@
 import type { MetaFunction, LoaderFunction } from 'remix'
-import { useLoaderData, json, Link } from 'remix'
+import { useLoaderData, json } from 'remix'
 
-import { HomeHero } from '~/contents'
+import { HomeHero, SubscribeSection } from '~/contents'
 
 type IndexData = {}
 
@@ -23,8 +23,9 @@ export default function Index() {
   let data = useLoaderData<IndexData>()
 
   return (
-    <div>
+    <>
       <HomeHero />
-    </div>
+      <SubscribeSection />
+    </>
   )
 }
