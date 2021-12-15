@@ -5,6 +5,15 @@ Kontenbase website for landing page and marketing purpose.
 - This is mostly for content-specific pages.
 - This is not the main platform application.
 
+## Tech Stack
+
+- React
+- Remix
+  - Router
+- Stitches
+- Radix UI
+- Vercel
+
 ---
 
 # Remix App
