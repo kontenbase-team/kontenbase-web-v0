@@ -13,6 +13,7 @@ import type { LinksFunction } from 'remix'
 import globalStylesUrl from '~/styles/global.css'
 import darkStylesUrl from '~/styles/dark.css'
 
+import { getCssText } from '~/stitches'
 import { Anchor, Logo } from '~/components'
 
 // https://remix.run/api/app#links
@@ -135,7 +136,12 @@ function Document({
         {title ? <title>{title}</title> : null}
         <Meta />
         <Links />
+        <style
+          id="stitches"
+          dangerouslySetInnerHTML={{ __html: getCssText() }}
+        />
       </head>
+
       <body>
         {children}
         <ScrollRestoration />
