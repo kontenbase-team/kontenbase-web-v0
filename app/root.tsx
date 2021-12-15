@@ -5,6 +5,9 @@ import {
   Meta,
   Outlet,
   Scripts,
+  json,
+  useLoaderData,
+  LoaderFunction,
   ScrollRestoration,
   useCatch,
 } from 'remix'
@@ -13,7 +16,38 @@ import type { LinksFunction } from 'remix'
 import globalStylesUrl from '~/styles/global.css'
 import darkStylesUrl from '~/styles/dark.css'
 
-// https://remix.run/api/app#links
+import {
+  useTheme,
+  ThemeProvider,
+  Theme,
+  NonFlashOfWrongThemeEls,
+} from '~/utils/theme'
+import { getThemeSession } from '~/utils/theme.server'
+
+import { theme, darkTheme, getCssText } from '~/stitches'
+import { Anchor, Logo } from '~/components'
+
+/**
+ * Loader
+ */
+export type LoaderData = {
+  theme: Theme | null
+}
+
+export const loader: LoaderFunction = async ({ request }) => {
+  const themeSession = await getThemeSession(request)
+
+  const data: LoaderData = {
+    theme: themeSession.getTheme(),
+  }
+
+  return json(data)
+}
+
+/**
+ * Links
+ * https://remix.run/api/app#links
+ */
 export let links: LinksFunction = () => {
   return [
     { rel: 'stylesheet', href: globalStylesUrl },
@@ -22,24 +56,61 @@ export let links: LinksFunction = () => {
       href: darkStylesUrl,
       media: '(prefers-color-scheme: dark)',
     },
+    {
+      rel: 'apple-touch-icon',
+      sizes: '180x180',
+      href: '/icons/apple-touch-icon.png?v=1',
+    },
+    {
+      rel: 'icon',
+      type: 'image/png',
+      sizes: '32x32',
+      href: '/icons/favicon-32x32.png?v=1',
+    },
+    {
+      rel: 'icon',
+      type: 'image/png',
+      sizes: '16x16',
+      href: '/icons/favicon-16x16.png?v=1',
+    },
+    {
+      rel: 'mask-icon',
+      href: '/icons/safari-pinned-tab.svg?v=1',
+      color: '#05a2c2',
+    },
+    { rel: 'shortcut icon', href: '/icons/favicon.ico?v=1' },
+    { rel: 'manifest', href: '/icons/site.webmanifest?v=1' },
   ]
 }
 
-// https://remix.run/api/conventions#default-export
-// https://remix.run/api/conventions#route-filenames
+/**
+ * App
+ *
+ * https://remix.run/api/conventions#default-export
+ * https://remix.run/api/conventions#route-filenames
+ */
 export default function App() {
+  const data = useLoaderData<LoaderData>()
+
   return (
-    <Document>
-      <Layout>
-        <Outlet />
-      </Layout>
-    </Document>
+    <ThemeProvider specifiedTheme={data.theme}>
+      <Document>
+        <Layout>
+          <Outlet />
+        </Layout>
+      </Document>
+    </ThemeProvider>
   )
 }
 
-// https://remix.run/docs/en/v1/api/conventions#errorboundary
+/**
+ * Error Boundary
+ *
+ * https://remix.run/docs/en/v1/api/conventions#errorboundary
+ */
 export function ErrorBoundary({ error }: { error: Error }) {
   console.error(error)
+
   return (
     <Document title="Error!">
       <Layout>
@@ -57,7 +128,11 @@ export function ErrorBoundary({ error }: { error: Error }) {
   )
 }
 
-// https://remix.run/docs/en/v1/api/conventions#catchboundary
+/**
+ * Catch Boundary
+ *
+ * https://remix.run/docs/en/v1/api/conventions#catchboundary
+ */
 export function CatchBoundary() {
   let caught = useCatch()
 
@@ -93,6 +168,9 @@ export function CatchBoundary() {
   )
 }
 
+/**
+ * Document
+ */
 function Document({
   children,
   title,
@@ -100,6 +178,8 @@ function Document({
   children: React.ReactNode
   title?: string
 }) {
+  const [whatTheme] = useTheme()
+
   return (
     <html lang="en">
       <head>
@@ -108,8 +188,17 @@ function Document({
         {title ? <title>{title}</title> : null}
         <Meta />
         <Links />
+        {/* <style
+          id="stitches"
+          dangerouslySetInnerHTML={{ __html: getCssText() }}
+        /> */}
       </head>
-      <body>
+
+      <body
+        className={
+          whatTheme === 'light' ? theme.className : darkTheme.className
+        }
+      >
         {children}
         <ScrollRestoration />
         <Scripts />
@@ -119,34 +208,36 @@ function Document({
   )
 }
 
+/**
+ * Layout
+ */
 function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="remix-app">
-      <header className="remix-app__header">
-        <div className="container remix-app__header-content">
+    <div>
+      <header>
+        <div>
           <Link to="/" title="Remix">
-            <h1>Kontenbase</h1>
+            <Logo />
           </Link>
-          <nav aria-label="Main navigation" className="remix-app__header-nav">
+          <nav aria-label="Main navigation">
             <ul>
               <li>
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <a href="https://remix.run/docs">Remix Docs</a>
-              </li>
-              <li>
-                <a href="https://github.com/remix-run/remix">GitHub</a>
+                <Anchor href="https://a.kontenbase.com/jobs">Jobs</Anchor>
               </li>
             </ul>
           </nav>
         </div>
       </header>
-      <div className="remix-app__main">
-        <div className="container remix-app__main-content">{children}</div>
+
+      <div>
+        <div>{children}</div>
       </div>
-      <footer className="remix-app__footer">
-        <div className="container remix-app__footer-content">
+
+      <footer>
+        <div>
           <p>&copy; 2021 Kontenbase</p>
         </div>
       </footer>
