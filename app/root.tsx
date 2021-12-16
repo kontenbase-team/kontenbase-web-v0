@@ -25,6 +25,7 @@ import {
 import { getThemeSession } from '~/utils/theme.server'
 import { theme, darkTheme, getCssText } from '~/stitches'
 import { Layout } from '~/components'
+import React from 'react'
 
 /**
  * Loader
@@ -47,7 +48,11 @@ export const loader: LoaderFunction = async ({ request }) => {
  */
 export let links: LinksFunction = () => {
   return [
-    { rel: 'stylesheet', href: globalStylesUrl },
+    {
+      rel: 'stylesheet',
+      href: globalStylesUrl,
+      media: '(prefers-color-scheme: light)',
+    },
     {
       rel: 'stylesheet',
       href: darkStylesUrl,
@@ -86,17 +91,14 @@ export let links: LinksFunction = () => {
  * https://remix.run/api/conventions#default-export
  * https://remix.run/api/conventions#route-filenames
  */
-export default function App() {
-  const data = useLoaderData<LoaderData>()
 
+export default function App() {
   return (
-    <ThemeProvider specifiedTheme={data.theme}>
-      <Document>
-        <Layout>
-          <Outlet />
-        </Layout>
-      </Document>
-    </ThemeProvider>
+    <Document>
+      <Layout>
+        <Outlet />
+      </Layout>
+    </Document>
   )
 }
 
@@ -175,36 +177,44 @@ function Document({
   title?: string
   children: React.ReactNode
 }) {
-  const data = useLoaderData<LoaderData>()
-  const [currentTheme] = useTheme()
-
   globalStyles()
+  const data = useLoaderData<LoaderData>()
 
   return (
-    <html lang="en">
-      <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
-        {title ? <title>{title}</title> : null}
-        <Meta />
-        <Links />
-        {/* <style
-          id="stitches"
-          dangerouslySetInnerHTML={{ __html: getCssText() }}
-        /> */}
-        <NonFlashOfWrongThemeEls ssrTheme={Boolean(data.theme)} />
-      </head>
+    <ThemeProvider specifiedTheme={data.theme}>
+      <html lang="en">
+        <head>
+          <meta charSet="utf-8" />
+          <meta name="viewport" content="width=device-width,initial-scale=1" />
+          {title ? <title>{title}</title> : null}
+          <Meta />
+          <Links />
+          <style
+            id="stitches"
+            dangerouslySetInnerHTML={{ __html: getCssText() }}
+          />
+          {/* <NonFlashOfWrongThemeEls ssrTheme={Boolean(data.theme)} /> */}
+        </head>
 
-      <body
-        className={
-          currentTheme === 'dark' ? darkTheme.className : theme.className
-        }
-      >
-        {children}
-        <ScrollRestoration />
-        <Scripts />
-        {process.env.NODE_ENV === 'development' && <LiveReload />}
-      </body>
-    </html>
+        <DocumentBody>{children}</DocumentBody>
+      </html>
+    </ThemeProvider>
+  )
+}
+
+const DocumentBody = ({ children }: { children: React.ReactNode }) => {
+  const [currentTheme] = useTheme()
+
+  return (
+    <body
+      className={
+        currentTheme === 'dark' ? darkTheme.className : theme.className
+      }
+    >
+      {children}
+      <ScrollRestoration />
+      <Scripts />
+      {process.env.NODE_ENV === 'development' && <LiveReload />}
+    </body>
   )
 }
