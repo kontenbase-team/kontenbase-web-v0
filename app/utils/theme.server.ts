@@ -1,10 +1,12 @@
 import { createCookieSessionStorage } from 'remix'
 
 import { Theme, isTheme } from './theme'
+import { envServer } from '~/utils'
 
 const themeStorage = createCookieSessionStorage({
   cookie: {
     name: 'kontenbase_theme',
+    secrets: [String(envServer.SESSION_SECRET)],
     sameSite: 'lax',
     path: '/',
     expires: new Date('2100-10-18'),
