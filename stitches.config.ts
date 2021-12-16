@@ -47,6 +47,8 @@ const colorTokens = {
   success2: '$green10',
   valid1: '$green9',
   valid2: '$green10',
+  error1: '$red9',
+  error2: '$red10',
   warning1: '$yellow9',
   warning2: '$yellow10',
   pending1: '$yellow9',

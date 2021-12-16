@@ -1,7 +1,7 @@
 import { Form } from 'remix'
 
 import { styled } from '~/stitches'
-import { Content, Heading, Paragraph, Input } from '~/components'
+import { Content, Heading, Paragraph, Input, Alert } from '~/components'
 
 const SubscribeSectionContainer = styled('section', {
   padding: '5rem 0',
@@ -35,9 +35,11 @@ export const SubscribeSection = (props: SubscribeSectionProps) => {
           <Heading as="h2">We are launching soon!</Heading>
           <Paragraph>Join our early adopter program as tester</Paragraph>
           <SubscribeBoxForm transition={props.transition} />
-          {props.actionData?.error && <p>{props.actionData?.message}</p>}
+          {props.actionData?.error && (
+            <Alert variant="error">{props.actionData?.message}</Alert>
+          )}
           {props.actionData?.subscriber?.email && (
-            <p>{props.actionData?.message}</p>
+            <Alert variant="success">{props.actionData?.message}</Alert>
           )}
         </SubscribeBox>
       </Content>

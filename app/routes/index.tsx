@@ -78,12 +78,6 @@ export default function Index() {
   const loaderData = useLoaderData<IndexData>()
   const actionData = useActionData()
 
-  console.log({
-    transition,
-    loaderData,
-    actionData,
-  })
-
   return (
     <>
       <HomeHero />
