@@ -8,8 +8,8 @@ const SubscribeSectionContainer = styled('section', {
   display: 'flex',
   justifyContent: 'center',
   padding: '2rem 0',
-  '@tablet': { padding: '3rem 0' },
-  '@desktop': { padding: '4rem 0' },
+  '@tablet': { padding: '2.5rem 0' },
+  '@desktop': { padding: '3rem 0' },
 })
 
 const SubscribeBox = styled('div', {

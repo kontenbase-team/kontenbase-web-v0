@@ -30,7 +30,7 @@ const images = [
 
 const CarouselContainer = styled('div', {
   borderRadius: '0.25rem',
-  border: '10px solid $red5',
+  border: '0.5rem solid $red3',
 })
 
 const CarouselImageContainer = styled('div', {
