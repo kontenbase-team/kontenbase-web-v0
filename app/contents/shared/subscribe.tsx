@@ -4,10 +4,12 @@ import { styled } from '~/stitches'
 import { Content, Heading, Paragraph, Input, Alert } from '~/components'
 
 const SubscribeSectionContainer = styled('section', {
-  padding: '5rem 0',
   background: '$background2',
   display: 'flex',
   justifyContent: 'center',
+  padding: '2rem 0',
+  '@tablet': { padding: '3rem 0' },
+  '@desktop': { padding: '4rem 0' },
 })
 
 const SubscribeBox = styled('div', {

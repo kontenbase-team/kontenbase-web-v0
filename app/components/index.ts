@@ -1,5 +1,6 @@
 export * from './alert'
 export * from './anchor'
+export * from './box'
 export * from './content'
 export * from './footer'
 export * from './header'
