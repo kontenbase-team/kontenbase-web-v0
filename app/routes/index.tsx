@@ -1,10 +1,13 @@
 import type { MetaFunction, LoaderFunction, ActionFunction } from 'remix'
-import { useLoaderData, useTransition, json } from 'remix'
+import { useLoaderData, useActionData, useTransition, json } from 'remix'
 import axios from 'axios'
 
 import { HomeHero, SubscribeSection } from '~/contents'
 import { envServer } from '~/utils'
 
+/**
+ * Meta
+ */
 export let meta: MetaFunction = () => {
   return {
     title: 'Kontenbase - No Code Backend API, Fast and Easy!',
@@ -13,72 +16,75 @@ export let meta: MetaFunction = () => {
   }
 }
 
+/**
+ * Loader
+ */
+
 type IndexData = {}
 
 export let loader: LoaderFunction = () => {
-  // console.info('BUTTONDOWN_API_KEY', process.env.BUTTONDOWN_API_KEY)
-
   let data: IndexData = {}
 
   return json(data)
 }
 
+/**
+ * Action
+ */
 export const action: ActionFunction = async ({ request }) => {
   // Action external API request
-  const subscribeEmail = async (formData: any) => {
+  const subscribeEmail = async (email: string) => {
     try {
-      const email = formData.get('email')
-      console.log({ email })
-
       const response = await axios.post(
         'https://api.buttondown.email/v1/subscribers',
         { email: email, notes: 'early' },
         { headers: { Authorization: `Token ${envServer.BUTTONDOWN_API_KEY}` } }
       )
-      const subscriber = response.data
-      return subscriber
+      return response.data
     } catch (error: any) {
-      if (error.response) {
-        console.error(error.response.data)
-        console.error(error.response.status)
-        const errorMessage = error.response.data[0]
-        return errorMessage
-      } else if (error.request) {
-        console.error(error.request)
-      } else {
-        console.error('Error', error.message)
-      }
+      console.error(error.response.status, error.response.data)
+      return error.response.data[0]
     }
   }
 
   // Action internal handler
   try {
     const formData = await request.formData()
-    const subscriber = await subscribeEmail(formData)
-
-    console.log({ subscriber })
-
-    return json({
-      message: 'Successfully subscribed!',
-      subscriber,
-    })
+    const email = String(formData.get('email'))
+    if (email) {
+      const data = await subscribeEmail(email)
+      if (data?.email) {
+        return json({
+          message: `${data.email} is successfully subscribed!`,
+          subscriber: data,
+        })
+      } else {
+        return json({ error: true, message: data })
+      }
+    } else {
+      return json({ error: true, message: 'Sorry, please provide an email' })
+    }
   } catch (error) {
-    return json({
-      message: 'Failed',
-      error,
-    })
+    return json({ error: true, message: 'Sorry, failed for unknown reason' })
   }
 }
 
+/**
+ * Home Page
+ */
 export default function Index() {
-  const data = useLoaderData<IndexData>()
+  const loaderData = useLoaderData<IndexData>()
+  const actionData = useActionData()
   const transition = useTransition()
 
   return (
     <>
       <HomeHero />
-      <SubscribeSection transition={transition} />
-      {/* <pre>{JSON.stringify(transition, null, 2)}</pre> */}
+      <SubscribeSection
+        transition={transition}
+        loaderData={loaderData}
+        actionData={actionData}
+      />
     </>
   )
 }

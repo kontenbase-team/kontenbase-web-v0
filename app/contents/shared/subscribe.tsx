@@ -16,12 +16,18 @@ const SubscribeBox = styled('div', {
   justifyContent: 'center',
   alignItems: 'center',
   gap: '1rem',
-  maxWidth: '500px',
+  maxWidth: '600px',
   width: '100%',
   '*': { margin: 0 },
 })
 
-export const SubscribeSection = (props: { transition: any }) => {
+interface SubscribeSectionProps {
+  transition: any
+  loaderData: any
+  actionData: any
+}
+
+export const SubscribeSection = (props: SubscribeSectionProps) => {
   return (
     <SubscribeSectionContainer>
       <Content layout="center">
@@ -29,6 +35,7 @@ export const SubscribeSection = (props: { transition: any }) => {
           <Heading as="h2">We are launching soon!</Heading>
           <Paragraph>Join our early adopter program as tester</Paragraph>
           <SubscribeBoxForm transition={props.transition} />
+          {props.actionData?.error && <p>{props.actionData?.message}</p>}
         </SubscribeBox>
       </Content>
     </SubscribeSectionContainer>
@@ -46,15 +53,15 @@ export const SubscribeBoxForm = (props: { transition: any }) => {
       <Input
         name="email"
         type="email"
-        placeholder="you@email.com"
-        variant="text"
         size="wide"
+        variant="text"
         border="radius-left"
+        placeholder="name@email.com"
       />
       <Input
         type="submit"
-        variant="primary"
         size="fixed"
+        variant="primary"
         border="radius-right"
         disabled={props.transition.submission}
         value={props.transition.submission ? 'Subscribing...' : 'Subscribe'}
