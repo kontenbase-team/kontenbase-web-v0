@@ -56,7 +56,7 @@ export const action: ActionFunction = async ({ request }) => {
       const data = await subscribeEmail(email)
       if (data?.email) {
         return json({
-          message: `${data.email} is successfully subscribed!`,
+          message: `${data.email} is subscribed! Check the inbox to confirm`,
           subscriber: data,
         })
       } else {
