@@ -21,8 +21,8 @@ export const Anchor = (props: AnchorProps) => {
 
 const AnchorIconContainer = styled('a', {
   svg: { height: '100%' },
-  color: '$gray5',
-  '&:hover': { color: '$gray4' },
+  color: '$gray11',
+  '&:hover': { color: '$gray12' },
 })
 
 export const AnchorIcon = (props: AnchorProps) => {
