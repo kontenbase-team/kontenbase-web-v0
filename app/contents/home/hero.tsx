@@ -7,7 +7,7 @@ interface HomeHeroProps {
 
 const HomeHeroContainer = styled('div', {
   display: 'flex',
-  gap: '3rem',
+  gap: '2rem',
   justifyContent: 'space-between',
   alignItems: 'center',
   flexDirection: 'column',
@@ -28,7 +28,7 @@ const HomeHeroMain = styled('main', {
   maxWidth: '600px',
   width: '100%',
   h1: {
-    maxWidth: '21ch',
+    maxWidth: '23ch',
   },
 })
 
