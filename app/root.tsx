@@ -169,14 +169,16 @@ export function CatchBoundary() {
  * Document
  */
 function Document({
-  children,
   title,
+  children,
 }: {
-  children: React.ReactNode
   title?: string
+  children: React.ReactNode
 }) {
+  const data = useLoaderData<LoaderData>()
   const [currentTheme] = useTheme()
-  // globalStyles()
+
+  globalStyles()
 
   return (
     <html lang="en">
@@ -186,10 +188,11 @@ function Document({
         {title ? <title>{title}</title> : null}
         <Meta />
         <Links />
-        <style
+        {/* <style
           id="stitches"
           dangerouslySetInnerHTML={{ __html: getCssText() }}
-        />
+        /> */}
+        <NonFlashOfWrongThemeEls ssrTheme={Boolean(data.theme)} />
       </head>
 
       <body

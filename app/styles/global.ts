@@ -10,7 +10,7 @@ export const globalStyles = globalCss({
 
   body: {
     backgroundColor: '$background1',
-    color: '$text4',
+    color: '$text1',
     padding: '0',
     margin: '0',
     lineHeight: '1.5',
