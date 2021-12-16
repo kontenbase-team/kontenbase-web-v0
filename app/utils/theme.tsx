@@ -99,7 +99,7 @@ const clientThemeCode = `
   if (themeAlreadyApplied) {
     // this script shouldn't exist if the theme is already applied!
     console.warn(
-      "Hi there, could you let Kent know you're seeing this message? Thanks!",
+      "Hey, let us know if you found this warningmessage. Thanks!",
     );
   } else {
     cl.add(theme);
@@ -121,28 +121,6 @@ const clientThemeCode = `
   }
 })();
 `
-
-function handleDarkAndLightModeEls() {
-  const theme = getPreferredTheme()
-  const darkEls = document.querySelectorAll('dark-mode')
-  const lightEls = document.querySelectorAll('light-mode')
-  for (const darkEl of darkEls) {
-    if (theme === 'dark') {
-      for (const child of darkEl.childNodes) {
-        darkEl.parentElement?.append(child)
-      }
-    }
-    darkEl.remove()
-  }
-  for (const lightEl of lightEls) {
-    if (theme === 'light') {
-      for (const child of lightEl.childNodes) {
-        lightEl.parentElement?.append(child)
-      }
-    }
-    lightEl.remove()
-  }
-}
 
 function NonFlashOfWrongThemeEls({ ssrTheme }: { ssrTheme: boolean }) {
   const [theme] = useTheme()
@@ -220,7 +198,6 @@ function isTheme(value: unknown): value is Theme {
 }
 
 export {
-  handleDarkAndLightModeEls,
   ThemeProvider,
   useTheme,
   themes,

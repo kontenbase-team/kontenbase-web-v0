@@ -6,7 +6,7 @@ interface HeroProps {
 }
 
 const HeroContainer = styled('div', {
-  padding: '3rem 0',
+  padding: '10rem 0',
 })
 
 export const Hero = (props: HeroProps) => {

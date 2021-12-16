@@ -1,14 +1,22 @@
 import { SVGProps } from 'react'
+
+import { styled } from '~/stitches'
 import { useTheme, Theme } from '~/utils/theme'
+
+const LogoContainer = styled('div', {
+  svg: { height: '25px', width: '93.5px' },
+  '@tablet': { svg: { height: '37.5px', width: '140px' } },
+  '@desktop': { svg: { height: '50px', width: '187px' } },
+})
 
 export const Logo = () => {
   const [theme] = useTheme()
   const fill = theme === 'light' ? 'black' : 'white'
 
   return (
-    <div>
+    <LogoContainer>
       <KontenbaseSVG fill={fill} />
-    </div>
+    </LogoContainer>
   )
 }
 

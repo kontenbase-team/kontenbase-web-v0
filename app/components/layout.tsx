@@ -10,6 +10,7 @@ const LayoutContainer = styled('div', {
 })
 
 const LayoutContent = styled('div', {
+  paddingTop: '2rem',
   flex: 1,
 })
 
