@@ -26,12 +26,8 @@
   opacity: 1;
   cursor: pointer;
 }
-.react-multiple-carousel__arrow:hover {
-  color: var(--colors-tomato9);
-}
 .react-multiple-carousel__arrow::before {
   font-size: 1rem;
-  color: var(--colors-tomato9);
   display: block;
   font-family: revicons;
   text-align: center;
@@ -84,7 +80,7 @@
 }
 .react-multi-carousel-dot button:hover:active,
 .react-multi-carousel-dot--active button {
-  background: var(--colors-gray12);
+  background: #121212;
 }
 .react-multi-carousel-item {
   transform-style: preserve-3d;
