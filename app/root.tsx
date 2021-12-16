@@ -175,8 +175,8 @@ function Document({
   children: React.ReactNode
   title?: string
 }) {
-  globalStyles()
   const [whatTheme] = useTheme()
+  globalStyles()
 
   return (
     <html lang="en">
@@ -192,11 +192,7 @@ function Document({
         />
       </head>
 
-      <body
-        className={
-          whatTheme === 'light' ? theme.className : darkTheme.className
-        }
-      >
+      <body>
         {children}
         <ScrollRestoration />
         <Scripts />
