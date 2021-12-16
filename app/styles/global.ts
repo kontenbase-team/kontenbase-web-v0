@@ -11,8 +11,6 @@ export const globalStyles = globalCss({
   body: {
     padding: '0',
     margin: '0',
-    backgroundColor: '$background1',
-    color: '$text4',
     lineHeight: '1.5',
     fontFamily: `-apple-system, 'Segoe UI', Helvetica Neue, Helvetica, Roboto,
     Arial, sans-serif, system-ui, 'Apple Color Emoji', 'Segoe UI Emoji'`,
