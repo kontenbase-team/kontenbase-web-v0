@@ -5,12 +5,12 @@ interface HeadingProps {
   children: React.ReactNode
 }
 
-const H1 = styled('h1', { color: '$text1', fontSize: '3rem' })
-const H2 = styled('h2', { color: '$text2', fontSize: '2rem' })
-const H3 = styled('h3', { color: '$text3', fontSize: '1.75rem' })
-const H4 = styled('h4', { color: '$text4', fontSize: '1.5rem' })
-const H5 = styled('h5', { color: '$text5', fontSize: '1.25rem' })
-const H6 = styled('h6', { color: '$text6', fontSize: '1rem' })
+const H1 = styled('h1', { color: '$heading1', fontSize: '3rem' })
+const H2 = styled('h2', { color: '$heading2', fontSize: '2rem' })
+const H3 = styled('h3', { color: '$heading3', fontSize: '1.75rem' })
+const H4 = styled('h4', { color: '$heading4', fontSize: '1.5rem' })
+const H5 = styled('h5', { color: '$heading5', fontSize: '1.25rem' })
+const H6 = styled('h6', { color: '$heading6', fontSize: '1rem' })
 
 export const Heading = ({ as = 'h1', children }: HeadingProps) => {
   switch (as) {

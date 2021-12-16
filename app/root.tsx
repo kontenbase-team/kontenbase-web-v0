@@ -12,6 +12,7 @@ import {
 } from 'remix'
 import type { LinksFunction } from 'remix'
 
+import { globalStyles } from '~/styles'
 import globalStylesUrl from '~/styles/global.css'
 import darkStylesUrl from '~/styles/dark.css'
 
@@ -34,11 +35,9 @@ export type LoaderData = {
 
 export const loader: LoaderFunction = async ({ request }) => {
   const themeSession = await getThemeSession(request)
-
   const data: LoaderData = {
     theme: themeSession.getTheme(),
   }
-
   return json(data)
 }
 
@@ -170,13 +169,16 @@ export function CatchBoundary() {
  * Document
  */
 function Document({
-  children,
   title,
+  children,
 }: {
-  children: React.ReactNode
   title?: string
+  children: React.ReactNode
 }) {
-  const [whatTheme] = useTheme()
+  const data = useLoaderData<LoaderData>()
+  const [currentTheme] = useTheme()
+
+  globalStyles()
 
   return (
     <html lang="en">
@@ -184,17 +186,18 @@ function Document({
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         {title ? <title>{title}</title> : null}
-        <style
-          id="stitches"
-          dangerouslySetInnerHTML={{ __html: getCssText() }}
-        />
         <Meta />
         <Links />
+        {/* <style
+          id="stitches"
+          dangerouslySetInnerHTML={{ __html: getCssText() }}
+        /> */}
+        <NonFlashOfWrongThemeEls ssrTheme={Boolean(data.theme)} />
       </head>
 
       <body
         className={
-          whatTheme === 'light' ? theme.className : darkTheme.className
+          currentTheme === 'dark' ? darkTheme.className : theme.className
         }
       >
         {children}

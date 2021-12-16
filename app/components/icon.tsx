@@ -27,8 +27,6 @@ export function Icon(props: IconProps) {
     /**
      * Social media
      */
-    case 'website':
-      return <WebsiteIcon />
     case 'twitter':
       return <TwitterIcon />
     case 'github':

@@ -1,7 +1,5 @@
-:root {
-  --color-foreground: #ffffff;
-  --color-background: #121212;
-  --color-border: #404040;
-  --color-links: var(--colors-blue9);
-  --color-links-hover: var(--colors-blue10);
+html,
+body {
+  background-color: #161616;
+  color: #ffffff;
 }
