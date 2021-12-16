@@ -20,6 +20,10 @@ const colorTokens = {
   white: 'white',
   background1: '$gray1',
   background2: '$gray2',
+  background3: '$gray3',
+  background4: '$gray4',
+  background5: '$gray5',
+  background6: '$gray6',
   accent1: '$tomato1',
   accent2: '$tomato2',
   accent3: '$tomato3',
@@ -52,6 +56,10 @@ const colorTokens = {
 }
 
 const fontSizeTokens = {
+  navlink1: '0.8rem',
+  navlink2: '1rem',
+  navlink3: '1.2rem',
+
   input1: '1rem',
   input2: '1.1rem',
   input3: '1.2rem',
