@@ -1,0 +1,96 @@
+.react-multi-carousel-list {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+.react-multi-carousel-track {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform, transition;
+}
+.react-multiple-carousel__arrow {
+  position: absolute;
+  transition: all 0.2s;
+  border-radius: 35px;
+  z-index: 10;
+  border: 0;
+  min-width: 30px;
+  min-height: 36px;
+  opacity: 1;
+  cursor: pointer;
+}
+.react-multiple-carousel__arrow::before {
+  font-size: 1rem;
+  display: block;
+  font-family: revicons;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+.react-multiple-carousel__arrow:disabled {
+  cursor: default;
+}
+.react-multiple-carousel__arrow--left {
+  left: calc(2% + 1px);
+}
+.react-multiple-carousel__arrow--left::before {
+  content: '←';
+}
+.react-multiple-carousel__arrow--right {
+  right: calc(2% + 1px);
+}
+.react-multiple-carousel__arrow--right::before {
+  content: '→';
+}
+.react-multi-carousel-dot-list {
+  position: absolute;
+  bottom: 10px;
+  display: flex;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  margin: auto;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+}
+.react-multi-carousel-dot button {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  opacity: 1;
+  box-shadow: none;
+  transition: background 0.2s;
+  border-width: 2px;
+  border-style: solid;
+  border-color: grey;
+  padding: 0;
+  margin: 0;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+.react-multi-carousel-dot button:hover:active,
+.react-multi-carousel-dot--active button {
+  background: #121212;
+}
+.react-multi-carousel-item {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .react-multi-carousel-item {
+    flex-shrink: 0 !important;
+  }
+  .react-multi-carousel-track {
+    overflow: visible !important;
+  }
+}

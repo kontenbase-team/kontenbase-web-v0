@@ -2,15 +2,25 @@ import { styled } from '~/stitches'
 
 interface AnchorProps {
   href: string
+  display?: 'block' | undefined
   children: React.ReactNode
 }
 
-const AnchorContainer = styled('a', {})
+const AnchorContainer = styled('a', {
+  variants: {
+    display: {
+      block: {
+        display: 'block',
+      },
+    },
+  },
+})
 
 export const Anchor = (props: AnchorProps) => {
   return (
     <AnchorContainer
       href={props.href}
+      display={props.display}
       target="_blank"
       rel="noopener noreferrer"
     >

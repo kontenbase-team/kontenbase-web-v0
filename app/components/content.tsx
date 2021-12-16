@@ -6,7 +6,7 @@ interface ContentProps {
 }
 
 const ContentContainer = styled('div', {
-  width: '1200px',
+  width: '1280px',
   // maxWidth: '100%',
   maxWidth: 'calc(100% - 1rem * 2)',
   marginRight: 'auto',

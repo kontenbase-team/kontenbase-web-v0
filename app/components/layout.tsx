@@ -5,8 +5,8 @@ import { Header, Footer, Anchor, Logo } from '~/components'
 const LayoutContainer = styled('div', {
   display: 'flex',
   flexDirection: 'column',
-  // minHeight: '100vh',
-  minHeight: 'calc(100vh - env(safe-area-inset-bottom))',
+  minHeight: '100vh',
+  // minHeight: 'calc(100vh - env(safe-area-inset-bottom))',
 })
 
 const LayoutContent = styled('div', {

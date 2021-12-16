@@ -15,6 +15,7 @@ import type { LinksFunction } from 'remix'
 import { globalStyles } from '~/styles'
 import globalStylesUrl from '~/styles/global.css'
 import darkStylesUrl from '~/styles/dark.css'
+import carouselUrl from '~/styles/carousel.css'
 
 import {
   useTheme,
@@ -51,12 +52,15 @@ export let links: LinksFunction = () => {
     {
       rel: 'stylesheet',
       href: globalStylesUrl,
-      media: '(prefers-color-scheme: light)',
     },
     {
       rel: 'stylesheet',
       href: darkStylesUrl,
       media: '(prefers-color-scheme: dark)',
+    },
+    {
+      rel: 'stylesheet',
+      href: carouselUrl,
     },
     {
       rel: 'apple-touch-icon',

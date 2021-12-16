@@ -11,7 +11,7 @@ const HeaderContainer = styled('header', {
   top: '0',
   left: '0',
   width: '100%',
-  zIndex: '9999px',
+  zIndex: '9999',
 })
 
 const LogoNavigation = styled('div', {
