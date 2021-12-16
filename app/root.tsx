@@ -175,7 +175,7 @@ function Document({
   children: React.ReactNode
   title?: string
 }) {
-  const [whatTheme] = useTheme()
+  const [currentTheme] = useTheme()
   globalStyles()
 
   return (
@@ -186,13 +186,17 @@ function Document({
         {title ? <title>{title}</title> : null}
         <Meta />
         <Links />
-        <style
+        {/* <style
           id="stitches"
           dangerouslySetInnerHTML={{ __html: getCssText() }}
-        />
+        /> */}
       </head>
 
-      <body>
+      <body
+        className={
+          currentTheme === 'dark' ? darkTheme.className : theme.className
+        }
+      >
         {children}
         <ScrollRestoration />
         <Scripts />
