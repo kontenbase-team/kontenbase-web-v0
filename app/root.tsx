@@ -176,7 +176,7 @@ function Document({
   title?: string
 }) {
   const [currentTheme] = useTheme()
-  globalStyles()
+  // globalStyles()
 
   return (
     <html lang="en">
