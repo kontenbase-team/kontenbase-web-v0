@@ -42,11 +42,13 @@ const NavigationContainer = styled('nav', {
   ul: {
     display: 'flex',
     listStyleType: 'none',
-    gap: '1rem',
     padding: '0',
     margin: '0',
     fontWeight: 'bold',
-    fontSize: '$navlink3',
+    gap: '0.5rem',
+    fontSize: '$navlink1',
+    '@tablet': { gap: '0.75rem', fontSize: '$navlink2' },
+    '@desktop': { gap: '1rem', fontSize: '$navlink3' },
     li: {
       a: {
         padding: '0.5rem',
