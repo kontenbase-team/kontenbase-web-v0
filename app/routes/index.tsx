@@ -8,7 +8,7 @@ import { envServer } from '~/utils'
 /**
  * Meta
  */
-export let meta: MetaFunction = () => {
+export const meta: MetaFunction = () => {
   return {
     title: 'Kontenbase - No Code Backend API, Fast and Easy!',
     description:
@@ -22,8 +22,8 @@ export let meta: MetaFunction = () => {
 
 type IndexData = {}
 
-export let loader: LoaderFunction = () => {
-  let data: IndexData = {}
+export const loader: LoaderFunction = () => {
+  const data: IndexData = {}
 
   return json(data)
 }
@@ -40,6 +40,7 @@ export const action: ActionFunction = async ({ request }) => {
         { email: email, notes: 'early' },
         { headers: { Authorization: `Token ${envServer.BUTTONDOWN_API_KEY}` } }
       )
+      console.log(response.data)
       return response.data
     } catch (error: any) {
       console.error(error.response.status, error.response.data)
@@ -73,9 +74,15 @@ export const action: ActionFunction = async ({ request }) => {
  * Home Page
  */
 export default function Index() {
+  const transition = useTransition()
   const loaderData = useLoaderData<IndexData>()
   const actionData = useActionData()
-  const transition = useTransition()
+
+  console.log({
+    transition,
+    loaderData,
+    actionData,
+  })
 
   return (
     <>

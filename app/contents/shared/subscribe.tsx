@@ -36,6 +36,9 @@ export const SubscribeSection = (props: SubscribeSectionProps) => {
           <Paragraph>Join our early adopter program as tester</Paragraph>
           <SubscribeBoxForm transition={props.transition} />
           {props.actionData?.error && <p>{props.actionData?.message}</p>}
+          {props.actionData?.subscriber?.email && (
+            <p>{props.actionData?.message}</p>
+          )}
         </SubscribeBox>
       </Content>
     </SubscribeSectionContainer>
@@ -63,8 +66,10 @@ export const SubscribeBoxForm = (props: { transition: any }) => {
         size="fixed"
         variant="primary"
         border="radius-right"
-        disabled={props.transition.submission}
-        value={props.transition.submission ? 'Subscribing...' : 'Subscribe'}
+        disabled={props.transition?.state !== 'idle'}
+        value={
+          props.transition?.state !== 'idle' ? 'Subscribing...' : 'Subscribe'
+        }
       />
     </SubscribeForm>
   )
