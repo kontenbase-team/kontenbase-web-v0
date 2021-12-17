@@ -193,7 +193,7 @@ function Document({
           {title ? <title>{title}</title> : null}
           <Meta />
           <Links />
-          {/* <NonFlashOfWrongThemeEls ssrTheme={Boolean(data.theme)} /> */}
+          <NonFlashOfWrongThemeEls ssrTheme={Boolean(data.theme)} />
         </head>
 
         <DocumentBody>{children}</DocumentBody>
