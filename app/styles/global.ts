@@ -19,11 +19,10 @@ export const globalStyles = globalCss({
   },
 
   a: {
-    color: '$blue9',
+    color: '$brand9',
     textDecoration: 'none',
     '&:hover': {
-      color: '$blue10',
-      textDecoration: 'underline',
+      color: '$brand10',
     },
   },
 
@@ -41,7 +40,7 @@ export const globalStyles = globalCss({
   'pre, code': { margin: 0, fontFamily: '$mono' },
 
   '::selection': {
-    backgroundColor: '$accent4',
+    backgroundColor: '$brand4',
   },
 
   ':-moz-focusring': {

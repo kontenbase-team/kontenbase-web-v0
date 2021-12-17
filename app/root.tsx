@@ -24,7 +24,7 @@ import {
   NonFlashOfWrongThemeEls,
 } from '~/utils/theme'
 import { getThemeSession } from '~/utils/theme.server'
-import { theme, darkTheme, getCssText } from '~/stitches'
+import { theme as defaultTheme, darkTheme, getCssText } from '~/stitches'
 import { Layout } from '~/components'
 import React from 'react'
 
@@ -207,12 +207,12 @@ function Document({
 }
 
 const DocumentBody = ({ children }: { children: React.ReactNode }) => {
-  const [currentTheme] = useTheme()
+  const [theme] = useTheme()
 
   return (
     <body
       className={
-        currentTheme === 'dark' ? darkTheme.className : theme.className
+        theme === 'dark' ? darkTheme.className : defaultTheme.className
       }
     >
       {children}
