@@ -119,6 +119,7 @@ const spaceTokens = {
 const sizesTokens = {
   ...spaceTokens,
 
+  none: '0',
   1: '5px',
   2: '10px',
   3: '15px',
@@ -149,7 +150,6 @@ const sizesTokens = {
 }
 
 const radiiTokens = {
-  none: '0',
   1: '4px',
   2: '6px',
   3: '8px',
@@ -177,7 +177,7 @@ const zIndicesTokens = {
   hide: -1,
   max: '999',
   auto: 'auto',
-  base: 0,
+  base: '0',
   docked: 10,
   dropdown: 1000,
   sticky: 1100,
@@ -292,9 +292,10 @@ const mediaTokens = {
 }
 
 const utilsFunctions = {
-  p: (value: Stitches.PropertyValue<'padding'>) => ({
-    padding: value,
-  }),
+  // Interferes with paragraph element
+  // p: (value: Stitches.PropertyValue<'padding'>) => ({
+  //   padding: value,
+  // }),
   pt: (value: Stitches.PropertyValue<'paddingTop'>) => ({
     paddingTop: value,
   }),
