@@ -193,10 +193,6 @@ function Document({
           {title ? <title>{title}</title> : null}
           <Meta />
           <Links />
-          <style
-            id="stitches"
-            dangerouslySetInnerHTML={{ __html: getCssText() }}
-          />
           {/* <NonFlashOfWrongThemeEls ssrTheme={Boolean(data.theme)} /> */}
         </head>
 
