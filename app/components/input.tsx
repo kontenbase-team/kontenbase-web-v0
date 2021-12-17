@@ -34,24 +34,24 @@ const InputStyled = styled('input', {
     },
     variant: {
       text: {
-        color: '$accent12',
-        backgroundColor: '$accent1',
-        borderColor: '$accent6',
+        color: '$brand12',
+        backgroundColor: '$brand1',
+        borderColor: '$brand6',
         borderStyle: 'solid',
         borderWidth: '1px 0 1px 1px',
       },
       primary: {
         cursor: 'pointer',
         color: '$white',
-        backgroundColor: '$accent9',
+        backgroundColor: '$brand9',
         '&:hover': {
-          backgroundColor: '$accent10',
+          backgroundColor: '$brand10',
         },
         '&:focus': {
-          backgroundColor: '$accent11',
+          backgroundColor: '$brand11',
         },
         '&:disabled': {
-          backgroundColor: '$accent6',
+          backgroundColor: '$brand6',
         },
       },
     },
