@@ -81,7 +81,7 @@ const colorTokens = {
 
 const spaceTokens = {
   px: '1px',
-  0: '0',
+  none: '0',
   0.5: '0.125rem',
   1: '0.25rem',
   1.5: '0.375rem',
@@ -149,7 +149,7 @@ const sizesTokens = {
 }
 
 const radiiTokens = {
-  0: '0',
+  none: '0',
   1: '4px',
   2: '6px',
   3: '8px',
