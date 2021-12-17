@@ -57,7 +57,7 @@ export const Carousel = () => {
       >
         {images.map((banner, index) => {
           return (
-            <CarouselImageContainer>
+            <CarouselImageContainer key={`carousel-image-${index}`}>
               <AspectRatio.Root ratio={16 / 10}>
                 <CarouselImage
                   alt={`Kontenbase screenshot ${index + 1}`}
