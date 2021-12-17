@@ -7,10 +7,12 @@ interface ContentProps {
 
 const ContentContainer = styled('div', {
   width: '1280px',
-  // maxWidth: '100%',
-  maxWidth: 'calc(100% - 1rem * 2)',
   marginRight: 'auto',
   marginLeft: 'auto',
+  maxWidth: 'calc(100% - 1rem * 2)',
+  '@tablet': {
+    maxWidth: 'calc(100% - 2rem * 2)',
+  },
   variants: {
     layout: {
       center: {
