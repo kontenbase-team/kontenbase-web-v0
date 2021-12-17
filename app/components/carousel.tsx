@@ -55,13 +55,13 @@ export const Carousel = () => {
         swipeable
         ssr
       >
-        {images.map((banner, index) => {
+        {images.map((imageUrl, index) => {
           return (
             <CarouselImageContainer key={`carousel-image-${index}`}>
               <AspectRatio.Root ratio={16 / 10}>
                 <CarouselImage
                   alt={`Kontenbase screenshot ${index + 1}`}
-                  src={images[index]}
+                  src={imageUrl}
                 />
               </AspectRatio.Root>
             </CarouselImageContainer>
