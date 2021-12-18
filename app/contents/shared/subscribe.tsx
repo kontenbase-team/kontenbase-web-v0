@@ -49,7 +49,7 @@ interface SubscribeSectionProps {
 export const SubscribeSection = (props: SubscribeSectionProps) => {
   return (
     <SubscribeSectionContainer>
-      <Content layout="center">
+      <Content layout="center-horizontal">
         <SubscribeAndImage>
           <SubscribeBox>
             <Heading as="h2">We are launching soon!</Heading>

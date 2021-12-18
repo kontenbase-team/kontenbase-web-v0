@@ -14,7 +14,9 @@ interface ExplainerProps {
   explainer: Explainer
 }
 
-const ExplainerContainer = styled('div', {})
+const ExplainerContainer = styled('div', {
+  width: '$full',
+})
 
 export const Explainer: FunctionComponent<ExplainerProps> = (props) => {
   return (
