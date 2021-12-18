@@ -18,7 +18,7 @@ const ExplainerCollection = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   width: '$full',
-  mt: '$10',
+  my: '$10',
   gap: '$32',
 })
 

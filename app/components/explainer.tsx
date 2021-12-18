@@ -16,10 +16,6 @@ interface ExplainerProps {
   explainer: Explainer
 }
 
-// mobile: '(min-width: 0px)',
-//   tablet: '(min-width: 501px)',
-//   desktop: '(min-width: 769px)',
-//   tv: '(min-width: 1201px)',
 const ExplainerSectionContainer = styled('section', {
   display: 'flex',
   justifyContent: 'center',
@@ -63,8 +59,10 @@ const StepName = styled('span', {
 })
 
 const StepTitle = styled('h4', {
-  fontSize: '$9',
   my: '$5',
+  fontSize: '$8',
+  '@tablet': { fontSize: '$9' },
+  '@desktop': { fontSize: '$10' },
 })
 
 const StepDescription = styled(Paragraph, {
@@ -78,7 +76,7 @@ const ExplainerMedia = styled('div', {
   border: '0.5rem solid $red3',
   borderRadius: '0.25rem',
   overflow: 'hidden',
-  maxWidth: '720px',
+  maxWidth: '800px',
   width: '100%',
 })
 

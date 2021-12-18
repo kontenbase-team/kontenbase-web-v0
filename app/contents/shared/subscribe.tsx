@@ -53,7 +53,9 @@ export const SubscribeSection = (props: SubscribeSectionProps) => {
         <SubscribeAndImage>
           <SubscribeBox>
             <Heading as="h2">We are launching soon!</Heading>
-            <Paragraph>Join our early adopter program as tester</Paragraph>
+            <Paragraph>
+              Join our early adopter program as alpha tester
+            </Paragraph>
             <SubscribeBoxForm transition={props.transition} />
             {props.actionData?.error && (
               <Alert variant="error">{props.actionData?.message}</Alert>
