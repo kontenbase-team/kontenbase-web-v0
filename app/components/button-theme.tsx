@@ -1,5 +1,6 @@
-import { styled } from '~/stitches'
-import { buttonStyles } from '~/components'
+import { useState, useEffect, FunctionComponent } from 'react'
+
+import { styled, darkTheme } from '~/stitches'
 
 export const ButtonToggleThemeContainer = styled('button', {
   all: 'unset',
@@ -14,14 +15,29 @@ export const ButtonToggleThemeContainer = styled('button', {
   backgroundColor: '$gray9',
   '&:hover': { backgroundColor: '$gray10' },
   '&:active': { backgroundColor: '$gray11' },
-  '&:focus': { backgroundColor: '$gray11' },
+  '&:focus': { outline: '$blue9 dotted 2px', outlineOffset: '1px' },
 })
 
 interface ButtonToggleThemeProps {}
 
-export const ButtonToggleTheme: React.FunctionComponent<ButtonToggleThemeProps> =
+export const ButtonToggleTheme: FunctionComponent<ButtonToggleThemeProps> =
   () => {
-    return <ButtonToggleThemeContainer>DARK</ButtonToggleThemeContainer>
+    const [theme, setTheme] = useState('theme-default')
+
+    useEffect(() => {
+      document.body.classList.remove('theme-default', darkTheme)
+      document.body.classList.add(theme)
+    }, [theme])
+
+    return (
+      <ButtonToggleThemeContainer
+        onClick={() =>
+          setTheme(theme === 'theme-default' ? darkTheme : 'theme-default')
+        }
+      >
+        {theme === 'theme-default' ? 'LIGHT' : 'DARK'}
+      </ButtonToggleThemeContainer>
+    )
   }
 
 export default ButtonToggleTheme

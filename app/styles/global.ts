@@ -49,6 +49,6 @@ export const globalStyles = globalCss({
 
   ':focus': {
     outline: '$blue9 dotted 2px',
-    outlineOffset: '2px',
+    outlineOffset: '1px',
   },
 })
