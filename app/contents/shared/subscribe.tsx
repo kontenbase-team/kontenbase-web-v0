@@ -5,7 +5,6 @@ import { Content, Heading, Paragraph, Input, Alert } from '~/components'
 
 const SubscribeSectionContainer = styled('section', {
   background: '$background2',
-
   padding: '2.5rem 0',
   '@tablet': { padding: '2.5rem 0' },
   '@desktop': { padding: '3.5rem 0' },
