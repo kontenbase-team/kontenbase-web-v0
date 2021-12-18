@@ -1,7 +1,13 @@
 import { Link } from 'remix'
 
 import { styled } from '~/stitches'
-import { Content, Anchor, AnchorButton, Button, Logo } from '~/components'
+import {
+  Anchor,
+  AnchorButton,
+  ButtonToggleTheme,
+  Content,
+  Logo,
+} from '~/components'
 
 const HeaderContainer = styled('header', {
   padding: '1rem 0',
@@ -78,6 +84,10 @@ export const Navigation = () => {
   return (
     <NavigationContainer aria-label="Main navigation">
       <NavigationList>
+        <NavigationItem>
+          <ButtonToggleTheme />
+        </NavigationItem>
+
         <NavigationItem>
           <NavigationLink to="/">Home</NavigationLink>
         </NavigationItem>
