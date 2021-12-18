@@ -476,6 +476,8 @@ export const {
 
 export type CSS = Stitches.CSS<typeof config>
 
+export const lightTheme = createTheme('light-mode')
+
 export const darkTheme = createTheme('dark-mode', {
   colors: {
     ...tomatoDark,

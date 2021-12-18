@@ -24,7 +24,7 @@ import {
   NonFlashOfWrongThemeEls,
 } from '~/utils/theme'
 import { getThemeSession } from '~/utils/theme.server'
-import { theme as defaultTheme, darkTheme, getCssText } from '~/stitches'
+import { lightTheme, darkTheme, getCssText } from '~/stitches'
 import { Layout } from '~/components'
 import React from 'react'
 
@@ -210,11 +210,7 @@ const DocumentBody = ({ children }: { children: React.ReactNode }) => {
   const [theme] = useTheme()
 
   return (
-    <body
-      className={
-        theme === 'dark' ? darkTheme.className : defaultTheme.className
-      }
-    >
+    <body className={theme === 'dark' ? darkTheme : lightTheme}>
       {children}
       <ScrollRestoration />
       <Scripts />

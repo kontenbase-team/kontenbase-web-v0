@@ -1,7 +1,8 @@
-import { useState, useEffect, FunctionComponent } from 'react'
+import { FunctionComponent } from 'react'
 
-import { styled, darkTheme } from '~/stitches'
+import { styled } from '~/stitches'
 import { Icon } from '~/components'
+import { Theme, useTheme } from '~/utils/theme'
 
 export const ButtonToggleThemeContainer = styled('button', {
   all: 'unset',
@@ -26,20 +27,15 @@ interface ButtonToggleThemeProps {}
 
 export const ButtonToggleTheme: FunctionComponent<ButtonToggleThemeProps> =
   () => {
-    const [theme, setTheme] = useState('theme-default')
+    const [theme, setTheme] = useTheme()
 
-    useEffect(() => {
-      document.body.classList.remove('theme-default', darkTheme)
-      document.body.classList.add(theme)
-    }, [theme])
+    const handleChangeTheme = () => {
+      setTheme(theme === Theme.DARK ? Theme.LIGHT : Theme.DARK)
+    }
 
     return (
-      <ButtonToggleThemeContainer
-        onClick={() =>
-          setTheme(theme === 'theme-default' ? darkTheme : 'theme-default')
-        }
-      >
-        <Icon name={theme === 'theme-default' ? 'light' : 'dark'} />
+      <ButtonToggleThemeContainer onClick={handleChangeTheme}>
+        <Icon name={theme === Theme.DARK ? Theme.DARK : Theme.LIGHT} />
       </ButtonToggleThemeContainer>
     )
   }
