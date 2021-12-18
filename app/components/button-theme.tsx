@@ -1,20 +1,24 @@
 import { useState, useEffect, FunctionComponent } from 'react'
 
 import { styled, darkTheme } from '~/stitches'
+import { Icon } from '~/components'
 
 export const ButtonToggleThemeContainer = styled('button', {
   all: 'unset',
+  display: 'inline-flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  flexShrink: 0,
+  WebkitTapHighlightColor: 'rgba(0,0,0,0)',
   userSelect: 'none',
   cursor: 'pointer',
-  height: '$4',
-  px: '$2',
-  fontWeight: '$bold',
-  borderRadius: '$pill',
-  fontSize: '$1',
-  color: '$white',
-  backgroundColor: '$gray9',
-  '&:hover': { backgroundColor: '$gray10' },
-  '&:active': { backgroundColor: '$gray11' },
+  borderRadius: '$round',
+  fontSize: '$5',
+  size: '$6',
+  color: '$yellow11',
+  backgroundColor: '$yellow3',
+  '&:hover': { backgroundColor: '$yellow4' },
+  '&:active': { backgroundColor: '$yellow5' },
   '&:focus': { outline: '$blue9 dotted 2px', outlineOffset: '1px' },
 })
 
@@ -35,7 +39,7 @@ export const ButtonToggleTheme: FunctionComponent<ButtonToggleThemeProps> =
           setTheme(theme === 'theme-default' ? darkTheme : 'theme-default')
         }
       >
-        {theme === 'theme-default' ? 'LIGHT' : 'DARK'}
+        <Icon name={theme === 'theme-default' ? 'light' : 'dark'} />
       </ButtonToggleThemeContainer>
     )
   }
