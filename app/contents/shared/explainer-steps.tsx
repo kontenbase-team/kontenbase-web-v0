@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react'
 
 import { styled } from '~/stitches'
-import { Content, Heading, Explainer } from '~/components'
+import { Content, Heading, ExplainerSection } from '~/components'
 import type { Explainer } from '~/components'
 
 interface ExplainerStepsProps {}
@@ -19,18 +19,21 @@ const ExplainerCollection = styled('div', {
   flexDirection: 'column',
   width: '$full',
   mt: '$10',
-  gap: '$20',
+  gap: '$32',
 })
 
 export const ExplainerSteps: FunctionComponent<ExplainerStepsProps> = () => {
   return (
     <ExplainerStepsContainer>
       <Content layout="center-vertical">
-        <Heading as="h1">How it works?</Heading>
+        <Heading as="h3" css={{ fontSize: '$9' }}>
+          How it works?
+        </Heading>
         <ExplainerCollection>
           {(explainerSteps as Explainer[]).map((explainer, index) => {
             return (
-              <Explainer
+              // @ts-ignore
+              <ExplainerSection
                 key={explainer.slug}
                 step={index + 1}
                 explainer={explainer}

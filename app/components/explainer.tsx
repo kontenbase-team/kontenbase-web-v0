@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react'
 
 import { styled } from '~/stitches'
-import { AspectRatio } from '~/components'
+import { Heading, Paragraph, AspectRatio } from '~/components'
 
 export type Explainer = {
   slug: string
@@ -29,11 +29,33 @@ const ExplainerSectionContainer = styled('section', {
   },
 })
 
+/**
+ * Text
+ */
 const ExplainerText = styled('div', {
   maxWidth: '500px',
   minWidth: '300px',
 })
 
+const StepName = styled('span', {
+  textTransform: 'uppercase',
+  fontWeight: '$bold',
+  fontSize: '$6',
+  color: '$brand11',
+})
+
+const StepTitle = styled('h4', {
+  fontSize: '$9',
+  my: '$8',
+})
+
+const StepDescription = styled(Paragraph, {
+  fontSize: '$5',
+})
+
+/**
+ * Media
+ */
 const ExplainerMedia = styled('div', {
   border: '0.5rem solid $red3',
   borderRadius: '0.25rem',
@@ -55,9 +77,9 @@ export const ExplainerSection: FunctionComponent<ExplainerProps> = ({
   return (
     <ExplainerSectionContainer direction={explainer.direction}>
       <ExplainerText>
-        <span>Step {step}</span>
-        <h1>{explainer.title}</h1>
-        <p>{explainer.description}</p>
+        <StepName>Step {step}</StepName>
+        <StepTitle>{explainer.title}</StepTitle>
+        <StepDescription>{explainer.description}</StepDescription>
       </ExplainerText>
 
       <ExplainerMedia>

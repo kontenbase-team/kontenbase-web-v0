@@ -4,14 +4,14 @@
     "title": "Data Modeling",
     "description": "Design your API without coding. Easy!",
     "direction": "right",
-    "imageUrl": "/images/kontenbase-screenshot-1.png"
+    "imageUrl": "/images/kontenbase-screenshot-2.png"
   },
   {
     "slug": "dont-reinvent-the-wheel",
     "title": "Don't Reinvent the Wheel",
     "description": "From Auth, Storage, and Data Migration. Battery Included!",
     "direction": "left",
-    "imageUrl": "/images/kontenbase-screenshot-2.png"
+    "imageUrl": "/images/kontenbase-screenshot-3.png"
   },
   {
     "slug": "try-api-right-in-your-browser",

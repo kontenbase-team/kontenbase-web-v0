@@ -47,11 +47,11 @@ const colorTokens = {
   brand12: '$tomato12',
 
   heading1: '$brand11',
-  heading2: '$brand10',
-  heading3: '$brand9',
-  heading4: '$brand9',
-  heading5: '$brand9',
-  heading6: '$brand9',
+  heading2: '$brand11',
+  heading3: '$brand11',
+  heading4: '$gray11',
+  heading5: '$gray11',
+  heading6: '$gray11',
 
   text1: '$gray12',
 
@@ -175,14 +175,15 @@ const fontsTokens = {
 
 const fontSizesTokens = {
   1: '12px',
-  2: '13px',
-  3: '15px',
-  4: '17px',
-  5: '19px',
-  6: '21px',
-  7: '27px',
+  2: '14px',
+  3: '16px',
+  4: '18px',
+  5: '1.2rem',
+  6: '20px',
+  7: '25px',
   8: '35px',
-  9: '59px',
+  9: '45px',
+  10: '55px',
 
   input1: '1rem',
   input2: '1.1rem',
