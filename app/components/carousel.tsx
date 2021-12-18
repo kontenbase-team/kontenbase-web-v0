@@ -24,8 +24,8 @@ const responsive = {
 
 const images = [
   '/images/kontenbase-screenshot-1.png',
-  '/images/kontenbase-screenshot-1.png',
-  '/images/kontenbase-screenshot-1.png',
+  '/images/kontenbase-screenshot-2.png',
+  '/images/kontenbase-screenshot-3.png',
 ]
 
 const CarouselContainer = styled('div', {
