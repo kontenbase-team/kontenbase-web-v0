@@ -26,7 +26,7 @@ export const ExplainerSteps: FunctionComponent<ExplainerStepsProps> = () => {
   return (
     <ExplainerStepsContainer>
       <Content layout="center-vertical">
-        <Heading as="h3" css={{ fontSize: '$9' }}>
+        <Heading as="h3" css={{ fontSize: '$10' }}>
           How it works?
         </Heading>
         <ExplainerCollection>

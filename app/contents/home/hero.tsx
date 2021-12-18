@@ -27,12 +27,8 @@ const HomeHeroMain = styled('main', {
   alignItems: 'center',
   maxWidth: '600px',
   width: '100%',
-  h1: {
-    maxWidth: '23ch',
-  },
-  p: {
-    maxWidth: '50ch',
-  },
+  h1: { maxWidth: '23ch' },
+  p: { maxWidth: '50ch' },
 })
 
 const HomeHeroAside = styled('aside', {

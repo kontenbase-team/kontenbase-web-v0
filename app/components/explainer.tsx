@@ -16,15 +16,33 @@ interface ExplainerProps {
   explainer: Explainer
 }
 
+// mobile: '(min-width: 0px)',
+//   tablet: '(min-width: 501px)',
+//   desktop: '(min-width: 769px)',
+//   tv: '(min-width: 1201px)',
 const ExplainerSectionContainer = styled('section', {
+  display: 'flex',
+  justifyContent: 'center',
+  '@tv': { justifyContent: 'flex-start' },
+})
+
+const ExplainerTextMedia = styled('div', {
+  gap: '$10',
   width: '$full',
   display: 'flex',
-  gap: '$10',
   justifyContent: 'space-between',
+  maxWidth: '720px',
+  '@tv': { maxWidth: '100%' },
   variants: {
     direction: {
-      right: { flexDirection: 'row' },
-      left: { flexDirection: 'row-reverse' },
+      right: {
+        flexDirection: 'column',
+        '@tv': { flexDirection: 'row' },
+      },
+      left: {
+        flexDirection: 'column',
+        '@tv': { flexDirection: 'row-reverse' },
+      },
     },
   },
 })
@@ -46,7 +64,7 @@ const StepName = styled('span', {
 
 const StepTitle = styled('h4', {
   fontSize: '$9',
-  my: '$8',
+  my: '$5',
 })
 
 const StepDescription = styled(Paragraph, {
@@ -59,8 +77,9 @@ const StepDescription = styled(Paragraph, {
 const ExplainerMedia = styled('div', {
   border: '0.5rem solid $red3',
   borderRadius: '0.25rem',
-  width: 720,
   overflow: 'hidden',
+  maxWidth: '720px',
+  width: '100%',
 })
 
 const ExplainerImage = styled('img', {
@@ -75,18 +94,20 @@ export const ExplainerSection: FunctionComponent<ExplainerProps> = ({
   explainer,
 }) => {
   return (
-    <ExplainerSectionContainer direction={explainer.direction}>
-      <ExplainerText>
-        <StepName>Step {step}</StepName>
-        <StepTitle>{explainer.title}</StepTitle>
-        <StepDescription>{explainer.description}</StepDescription>
-      </ExplainerText>
+    <ExplainerSectionContainer>
+      <ExplainerTextMedia direction={explainer.direction}>
+        <ExplainerText>
+          <StepName>Step {step}</StepName>
+          <StepTitle>{explainer.title}</StepTitle>
+          <StepDescription>{explainer.description}</StepDescription>
+        </ExplainerText>
 
-      <ExplainerMedia>
-        <AspectRatio.Root ratio={16 / 10}>
-          <ExplainerImage alt={explainer.title} src={explainer.imageUrl} />
-        </AspectRatio.Root>
-      </ExplainerMedia>
+        <ExplainerMedia>
+          <AspectRatio.Root ratio={16 / 10}>
+            <ExplainerImage alt={explainer.title} src={explainer.imageUrl} />
+          </AspectRatio.Root>
+        </ExplainerMedia>
+      </ExplainerTextMedia>
     </ExplainerSectionContainer>
   )
 }
