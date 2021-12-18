@@ -2,7 +2,7 @@ import type { MetaFunction, LoaderFunction, ActionFunction } from 'remix'
 import { useLoaderData, useActionData, useTransition, json } from 'remix'
 import axios from 'axios'
 
-import { HomeHero, SubscribeSection } from '~/contents'
+import { HomeHero, SubscribeSection, ExplainerSteps } from '~/contents'
 import { envServer } from '~/utils'
 
 /**
@@ -81,6 +81,12 @@ export default function Index() {
   return (
     <>
       <HomeHero />
+      <SubscribeSection
+        transition={transition}
+        loaderData={loaderData}
+        actionData={actionData}
+      />
+      <ExplainerSteps />
       <SubscribeSection
         transition={transition}
         loaderData={loaderData}

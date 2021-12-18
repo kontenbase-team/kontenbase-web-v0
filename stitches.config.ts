@@ -47,11 +47,11 @@ const colorTokens = {
   brand12: '$tomato12',
 
   heading1: '$brand11',
-  heading2: '$brand10',
-  heading3: '$brand9',
-  heading4: '$brand9',
-  heading5: '$brand9',
-  heading6: '$brand9',
+  heading2: '$brand11',
+  heading3: '$brand11',
+  heading4: '$gray11',
+  heading5: '$gray11',
+  heading6: '$gray11',
 
   text1: '$gray12',
 
@@ -132,21 +132,6 @@ const sizesTokens = {
   min: 'min-content',
   max: 'max-content',
   full: '100%',
-
-  '3xs': '14rem',
-  '2xs': '16rem',
-  xs: '20rem',
-  sm: '24rem',
-  md: '28rem',
-  lg: '32rem',
-  xl: '36rem',
-  '2xl': '42rem',
-  '3xl': '48rem',
-  '4xl': '56rem',
-  '5xl': '64rem',
-  '6xl': '72rem',
-  '7xl': '80rem',
-  '8xl': '90rem',
 }
 
 const radiiTokens = {
@@ -154,14 +139,6 @@ const radiiTokens = {
   2: '6px',
   3: '8px',
   4: '12px',
-
-  sm: '0.125rem',
-  base: '0.25rem',
-  md: '0.375rem',
-  lg: '0.5rem',
-  xl: '0.75rem',
-  '2xl': '1rem',
-  '3xl': '1.5rem',
   round: '50%',
   full: '9999px',
   pill: '9999px',
@@ -173,7 +150,6 @@ const zIndicesTokens = {
   3: '300',
   4: '400',
   5: '500',
-
   hide: -1,
   max: '999',
   auto: 'auto',
@@ -199,32 +175,19 @@ const fontsTokens = {
 
 const fontSizesTokens = {
   1: '12px',
-  2: '13px',
-  3: '15px',
-  4: '17px',
-  5: '19px',
-  6: '21px',
-  7: '27px',
+  2: '14px',
+  3: '16px',
+  4: '18px',
+  5: '1.2rem',
+  6: '20px',
+  7: '25px',
   8: '35px',
-  9: '59px',
+  9: '45px',
+  10: '55px',
 
   input1: '1rem',
   input2: '1.1rem',
   input3: '1.2rem',
-
-  xs: '0.75rem',
-  sm: '0.875rem',
-  md: '1rem',
-  lg: '1.125rem',
-  xl: '1.25rem',
-  '2xl': '1.5rem',
-  '3xl': '1.875rem',
-  '4xl': '2.25rem',
-  '5xl': '3rem',
-  '6xl': '3.75rem',
-  '7xl': '4.5rem',
-  '8xl': '6rem',
-  '9xl': '8rem',
 }
 
 const fontWeightsTokens = {
@@ -269,18 +232,10 @@ const letterSpacingsTokens = {
 }
 
 const mediaTokens = {
-  xs: '0em',
-  sm: '30em',
-  md: '48em',
-  lg: '62em',
-  xl: '80em',
-  '2xl': '96em',
-
   mobile: '(min-width: 0px)',
   tablet: '(min-width: 501px)',
   desktop: '(min-width: 769px)',
   tv: '(min-width: 1201px)',
-
   motion: '(prefers-reduced-motion)',
   hover: '(any-hover: hover)',
   dark: '(prefers-color-scheme: dark)',

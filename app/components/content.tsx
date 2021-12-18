@@ -1,7 +1,7 @@
 import { styled } from '~/stitches'
 
 interface ContentProps {
-  layout?: 'center' | undefined
+  layout?: 'center-horizontal' | 'center-vertical' | undefined
   children: React.ReactNode
 }
 
@@ -15,10 +15,15 @@ const ContentContainer = styled('div', {
   },
   variants: {
     layout: {
-      center: {
+      'center-horizontal': {
         display: 'flex',
         justifyContent: 'center',
         textAlign: 'center',
+      },
+      'center-vertical': {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
       },
     },
   },

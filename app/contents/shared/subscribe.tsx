@@ -5,7 +5,6 @@ import { Content, Heading, Paragraph, Input, Alert } from '~/components'
 
 const SubscribeSectionContainer = styled('section', {
   background: '$background2',
-
   padding: '2.5rem 0',
   '@tablet': { padding: '2.5rem 0' },
   '@desktop': { padding: '3.5rem 0' },
@@ -50,11 +49,13 @@ interface SubscribeSectionProps {
 export const SubscribeSection = (props: SubscribeSectionProps) => {
   return (
     <SubscribeSectionContainer>
-      <Content layout="center">
+      <Content layout="center-horizontal">
         <SubscribeAndImage>
           <SubscribeBox>
             <Heading as="h2">We are launching soon!</Heading>
-            <Paragraph>Join our early adopter program as tester</Paragraph>
+            <Paragraph>
+              Join our early adopter program as alpha tester
+            </Paragraph>
             <SubscribeBoxForm transition={props.transition} />
             {props.actionData?.error && (
               <Alert variant="error">{props.actionData?.message}</Alert>
