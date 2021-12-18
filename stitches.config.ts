@@ -208,10 +208,6 @@ const fontSizesTokens = {
   8: '35px',
   9: '59px',
 
-  navlink1: '0.9rem',
-  navlink2: '1rem',
-  navlink3: '1.1rem',
-
   input1: '1rem',
   input2: '1.1rem',
   input3: '1.2rem',

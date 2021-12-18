@@ -26,7 +26,7 @@ export const buttonStyles = {
   px: '$4',
   fontFamily: '$untitled',
   fontSize: '$2',
-  fontWeight: 500,
+  fontWeight: '$bold',
   fontVariantNumeric: 'tabular-nums',
 
   '&:disabled': {

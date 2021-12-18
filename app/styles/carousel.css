@@ -18,11 +18,11 @@
 .react-multiple-carousel__arrow {
   position: absolute;
   transition: all 0.2s;
-  border-radius: 35px;
+  border-radius: 50%;
   z-index: 10;
   border: 0;
-  min-width: 30px;
-  min-height: 36px;
+  width: 30px;
+  height: 30px;
   opacity: 1;
   cursor: pointer;
 }
@@ -64,8 +64,8 @@
 }
 .react-multi-carousel-dot button {
   display: inline-block;
-  width: 12px;
-  height: 12px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   opacity: 1;
   box-shadow: none;
@@ -80,7 +80,7 @@
 }
 .react-multi-carousel-dot button:hover:active,
 .react-multi-carousel-dot--active button {
-  background: #121212;
+  background: var(--colors-brand9);
 }
 .react-multi-carousel-item {
   transform-style: preserve-3d;

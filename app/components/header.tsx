@@ -47,30 +47,31 @@ const NavigationList = styled('ul', {
   padding: '0',
   margin: '0',
   fontWeight: 'bold',
+  fontSize: '$3',
   gap: '0.5rem',
-  fontSize: '$navlink1',
-  '@tablet': { gap: '0.75rem', fontSize: '$navlink2' },
-  '@desktop': { gap: '1rem', fontSize: '$navlink3' },
+  '@tablet': { gap: '0.75rem' },
+  '@desktop': { gap: '1rem' },
 })
 
 const NavigationItem = styled('li', {})
 
-const NavigationLink = styled(Link, {
+const navigationItemChildStyles = {
   padding: '0.5rem',
   borderRadius: '$2',
   color: '$brand9',
+  px: '$3',
+  py: '$2',
   '&:hover': {
     backgroundColor: '$brand3',
   },
+}
+
+const NavigationLink = styled(Link, {
+  ...navigationItemChildStyles,
 })
 
 const NavigationAnchor = styled(Anchor, {
-  padding: '0.5rem',
-  borderRadius: '$2',
-  color: '$brand9',
-  '&:hover': {
-    backgroundColor: '$brand3',
-  },
+  ...navigationItemChildStyles,
 })
 
 export const Navigation = () => {
