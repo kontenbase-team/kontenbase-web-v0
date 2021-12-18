@@ -1,2 +1,2 @@
 export * from './subscribe'
-export * from './explainer'
+export * from './explainer-steps'
