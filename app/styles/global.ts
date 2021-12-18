@@ -35,9 +35,18 @@ export const globalStyles = globalCss({
     marginBottom: '2rem',
   },
 
-  svg: { display: 'block' },
+  img: {
+    userSelect: 'none',
+  },
 
-  'pre, code': { margin: 0, fontFamily: '$mono' },
+  svg: {
+    display: 'block',
+  },
+
+  'pre, code': {
+    margin: 0,
+    fontFamily: '$mono',
+  },
 
   '::selection': {
     backgroundColor: '$brand4',
