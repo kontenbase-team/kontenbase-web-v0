@@ -2,6 +2,9 @@ import {
   // General
   FaCircle as CircleIcon,
   FaGlobe as WebsiteIcon,
+  // Theme
+  FaSun as DarkIcon,
+  FaMoon as LightIcon,
   // Social media
   FaFacebook as FacebookIcon,
   FaGithub as GitHubIcon,
@@ -24,6 +27,13 @@ export function Icon(props: IconProps) {
       return <CircleIcon />
     case 'website':
       return <WebsiteIcon />
+    /**
+     * Theme
+     */
+    case 'light':
+      return <LightIcon />
+    case 'dark':
+      return <DarkIcon />
     /**
      * Social media
      */

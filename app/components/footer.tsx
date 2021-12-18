@@ -7,7 +7,7 @@ const FooterContainer = styled('footer', {
   padding: '2rem 0',
 })
 
-const CopyrightAndSocial = styled('div', {
+const CopyrightSocial = styled('div', {
   display: 'flex',
   justifyContent: 'space-between',
   flexDirection: 'column-reverse',
@@ -20,7 +20,7 @@ const CopyrightAndSocial = styled('div', {
   },
 })
 
-const Copyright = styled('div', {
+const CopyrightGreeting = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
@@ -59,17 +59,17 @@ export const Footer = () => {
   return (
     <FooterContainer>
       <Content>
-        <CopyrightAndSocial>
-          <Copyright>
+        <CopyrightSocial>
+          <CopyrightGreeting>
             <p>&copy; {getYear()} Kontenbase.</p>
             <p>Happy {getDayName()}!</p>
-          </Copyright>
+          </CopyrightGreeting>
 
           <Social>
             <span>Follow us on</span>
             <SocialMediaLinks />
           </Social>
-        </CopyrightAndSocial>
+        </CopyrightSocial>
       </Content>
     </FooterContainer>
   )

@@ -24,7 +24,7 @@ import {
   NonFlashOfWrongThemeEls,
 } from '~/utils/theme'
 import { getThemeSession } from '~/utils/theme.server'
-import { theme, darkTheme, getCssText } from '~/stitches'
+import { lightTheme, darkTheme, getCssText } from '~/stitches'
 import { Layout } from '~/components'
 import React from 'react'
 
@@ -197,7 +197,7 @@ function Document({
             id="stitches"
             dangerouslySetInnerHTML={{ __html: getCssText() }}
           />
-          {/* <NonFlashOfWrongThemeEls ssrTheme={Boolean(data.theme)} /> */}
+          <NonFlashOfWrongThemeEls ssrTheme={Boolean(data.theme)} />
         </head>
 
         <DocumentBody>{children}</DocumentBody>
@@ -207,14 +207,10 @@ function Document({
 }
 
 const DocumentBody = ({ children }: { children: React.ReactNode }) => {
-  const [currentTheme] = useTheme()
+  const [theme] = useTheme()
 
   return (
-    <body
-      className={
-        currentTheme === 'dark' ? darkTheme.className : theme.className
-      }
-    >
+    <body className={theme === 'dark' ? darkTheme : lightTheme}>
       {children}
       <ScrollRestoration />
       <Scripts />

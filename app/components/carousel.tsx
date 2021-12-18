@@ -24,8 +24,8 @@ const responsive = {
 
 const images = [
   '/images/kontenbase-screenshot-1.png',
-  '/images/kontenbase-screenshot-1.png',
-  '/images/kontenbase-screenshot-1.png',
+  '/images/kontenbase-screenshot-2.png',
+  '/images/kontenbase-screenshot-3.png',
 ]
 
 const CarouselContainer = styled('div', {
@@ -55,13 +55,13 @@ export const Carousel = () => {
         swipeable
         ssr
       >
-        {images.map((banner, index) => {
+        {images.map((imageUrl, index) => {
           return (
-            <CarouselImageContainer>
+            <CarouselImageContainer key={`carousel-image-${index}`}>
               <AspectRatio.Root ratio={16 / 10}>
                 <CarouselImage
                   alt={`Kontenbase screenshot ${index + 1}`}
-                  src={images[index]}
+                  src={imageUrl}
                 />
               </AspectRatio.Root>
             </CarouselImageContainer>

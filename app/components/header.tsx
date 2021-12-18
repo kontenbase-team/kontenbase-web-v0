@@ -1,7 +1,13 @@
 import { Link } from 'remix'
 
 import { styled } from '~/stitches'
-import { Content, Anchor, Logo } from '~/components'
+import {
+  Anchor,
+  AnchorButton,
+  ButtonToggleTheme,
+  Content,
+  Logo,
+} from '~/components'
 
 const HeaderContainer = styled('header', {
   padding: '1rem 0',
@@ -38,40 +44,66 @@ export const Header = () => {
   )
 }
 
-const NavigationContainer = styled('nav', {
-  ul: {
-    display: 'flex',
-    listStyleType: 'none',
-    padding: '0',
-    margin: '0',
-    fontWeight: 'bold',
-    gap: '0.5rem',
-    fontSize: '$navlink1',
-    '@tablet': { gap: '0.75rem', fontSize: '$navlink2' },
-    '@desktop': { gap: '1rem', fontSize: '$navlink3' },
-    li: {
-      a: {
-        padding: '0.5rem',
-        color: '$accent9',
-      },
-    },
+const NavigationContainer = styled('nav', {})
+
+const NavigationList = styled('ul', {
+  display: 'flex',
+  listStyleType: 'none',
+  alignItems: 'center',
+  padding: '0',
+  margin: '0',
+  fontWeight: 'bold',
+  fontSize: '$3',
+  gap: '0.5rem',
+  '@tablet': { gap: '0.75rem' },
+  '@desktop': { gap: '1rem' },
+})
+
+const NavigationItem = styled('li', {})
+
+const navigationItemChildStyles = {
+  padding: '0.5rem',
+  borderRadius: '$2',
+  color: '$brand9',
+  px: '$3',
+  py: '$2',
+  '&:hover': {
+    backgroundColor: '$brand3',
   },
+}
+
+const NavigationLink = styled(Link, {
+  ...navigationItemChildStyles,
+})
+
+const NavigationAnchor = styled(Anchor, {
+  ...navigationItemChildStyles,
 })
 
 export const Navigation = () => {
   return (
     <NavigationContainer aria-label="Main navigation">
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Anchor href="https://app.kontenbase.com/login">Login</Anchor>
-        </li>
-        <li>
-          <Anchor href="https://a.kontenbase.com/jobs">Jobs</Anchor>
-        </li>
-      </ul>
+      <NavigationList>
+        <NavigationItem>
+          <ButtonToggleTheme />
+        </NavigationItem>
+
+        <NavigationItem>
+          <NavigationLink to="/">Home</NavigationLink>
+        </NavigationItem>
+
+        <NavigationItem>
+          <NavigationAnchor href="https://a.kontenbase.com/jobs">
+            Jobs
+          </NavigationAnchor>
+        </NavigationItem>
+
+        <NavigationItem>
+          <AnchorButton variant="brand" href="https://app.kontenbase.com/login">
+            Login
+          </AnchorButton>
+        </NavigationItem>
+      </NavigationList>
     </NavigationContainer>
   )
 }
