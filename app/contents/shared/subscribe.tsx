@@ -5,14 +5,21 @@ import { Content, Heading, Paragraph, Input, Alert } from '~/components'
 
 const SubscribeSectionContainer = styled('section', {
   background: '$background2',
+
+  padding: '2.5rem 0',
+  '@tablet': { padding: '2.5rem 0' },
+  '@desktop': { padding: '3.5rem 0' },
+})
+
+const SubscribeAndImage = styled('div', {
+  position: 'relative',
+  width: '100%',
   display: 'flex',
   justifyContent: 'center',
-  padding: '2rem 0',
-  '@tablet': { padding: '2.5rem 0' },
-  '@desktop': { padding: '3rem 0' },
 })
 
 const SubscribeBox = styled('div', {
+  zIndex: '$1',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
@@ -21,6 +28,17 @@ const SubscribeBox = styled('div', {
   maxWidth: '600px',
   width: '100%',
   '*': { margin: 0 },
+})
+
+const RocketImage = styled('img', {
+  position: 'absolute',
+  height: '250px',
+  opacity: '0.1',
+  right: '-5rem',
+  bottom: '-2rem',
+  '@tablet': { opacity: '0.2', bottom: '0' },
+  '@desktop': { height: '275px', bottom: '0' },
+  '@tv': { height: '300px', opacity: '1', bottom: '-3rem' },
 })
 
 interface SubscribeSectionProps {
@@ -33,17 +51,20 @@ export const SubscribeSection = (props: SubscribeSectionProps) => {
   return (
     <SubscribeSectionContainer>
       <Content layout="center">
-        <SubscribeBox>
-          <Heading as="h2">We are launching soon!</Heading>
-          <Paragraph>Join our early adopter program as tester</Paragraph>
-          <SubscribeBoxForm transition={props.transition} />
-          {props.actionData?.error && (
-            <Alert variant="error">{props.actionData?.message}</Alert>
-          )}
-          {props.actionData?.subscriber?.email && (
-            <Alert variant="success">{props.actionData?.message}</Alert>
-          )}
-        </SubscribeBox>
+        <SubscribeAndImage>
+          <SubscribeBox>
+            <Heading as="h2">We are launching soon!</Heading>
+            <Paragraph>Join our early adopter program as tester</Paragraph>
+            <SubscribeBoxForm transition={props.transition} />
+            {props.actionData?.error && (
+              <Alert variant="error">{props.actionData?.message}</Alert>
+            )}
+            {props.actionData?.subscriber?.email && (
+              <Alert variant="success">{props.actionData?.message}</Alert>
+            )}
+          </SubscribeBox>
+          <RocketImage src="/images/rocket.svg" alt="Rocket illustration" />
+        </SubscribeAndImage>
       </Content>
     </SubscribeSectionContainer>
   )

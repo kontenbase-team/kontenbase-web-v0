@@ -30,6 +30,9 @@ const HomeHeroMain = styled('main', {
   h1: {
     maxWidth: '23ch',
   },
+  p: {
+    maxWidth: '50ch',
+  },
 })
 
 const HomeHeroAside = styled('aside', {
