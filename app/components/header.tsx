@@ -57,8 +57,8 @@ const NavigationList = styled('ul', {
   margin: '0',
   fontWeight: 'bold',
   fontSize: '$3',
-  gap: '0.2rem',
-  '@tablet': { gap: '0.5rem' },
+  gap: '0.5rem',
+  '@tablet': { gap: '0.75rem' },
   '@desktop': { gap: '1rem' },
 })
 
@@ -79,10 +79,8 @@ const navigationItemChildStyles = {
   padding: '0.5rem',
   borderRadius: '$2',
   color: '$brand9',
-  px: '$1',
   py: '$2',
-  '@tablet': { px: '$2' },
-  '@desktop': { px: '$3' },
+  px: '$3',
   '&:hover': {
     backgroundColor: '$brand3',
   },
