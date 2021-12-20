@@ -55,6 +55,7 @@ export const meta: MetaFunction = () => {
   const description =
     'Kontenbase allows you to easily create backend API, auth, and storage in less than 1 minute without coding.'
   const ogImageUrl = '/images/kontenbase-og.png?v=1'
+  const ogImageAlt = 'No Code Backend as a Service'
   const twiterImageUrl = '/images/kontenbase-twitter.png?v=1'
 
   return {
@@ -67,6 +68,7 @@ export const meta: MetaFunction = () => {
     'og:url': 'https://kontenbase.com/',
     'og:locale': 'en_US',
     'og:image': ogImageUrl,
+    'og:image:alt': ogImageAlt,
     'og:type': 'website',
 
     'twitter:card': 'summary_large_image',
