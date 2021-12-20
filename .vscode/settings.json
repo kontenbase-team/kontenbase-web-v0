@@ -18,5 +18,12 @@
     "titleBar.inactiveBackground": "#4d000099",
     "titleBar.inactiveForeground": "#e7e7e799"
   },
-  "peacock.color": "#4d0000"
+  "peacock.color": "#4d0000",
+  "files.exclude": {
+    "node_modules": true,
+    "out": true,
+    "build": true,
+    ".vercel": true,
+    ".cache": true
+  }
 }
