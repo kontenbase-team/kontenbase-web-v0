@@ -19,7 +19,9 @@ const ExplainerCollection = styled('div', {
   flexDirection: 'column',
   width: '$full',
   my: '$10',
-  gap: '$32',
+  gap: '$20',
+  '@tablet': { gap: '$24' },
+  '@desktop': { gap: '$32' },
 })
 
 export const ExplainerSteps: FunctionComponent<ExplainerStepsProps> = () => {
