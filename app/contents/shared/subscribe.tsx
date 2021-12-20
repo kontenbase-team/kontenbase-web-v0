@@ -4,6 +4,7 @@ import { styled } from '~/stitches'
 import { Content, Heading, Paragraph, Input, Alert } from '~/components'
 
 const SubscribeSectionContainer = styled('section', {
+  position: 'relative',
   background: '$background2',
   padding: '2.5rem 0',
   '@tablet': { padding: '2.5rem 0' },
@@ -11,7 +12,6 @@ const SubscribeSectionContainer = styled('section', {
 })
 
 const SubscribeAndImage = styled('div', {
-  position: 'relative',
   width: '100%',
   display: 'flex',
   justifyContent: 'center',
@@ -33,11 +33,19 @@ const RocketImage = styled('img', {
   position: 'absolute',
   height: '250px',
   opacity: '0.1',
-  right: '0',
-  bottom: '-2rem',
-  '@tablet': { opacity: '0.2', bottom: '0' },
-  '@desktop': { height: '275px', bottom: '0' },
-  '@tv': { height: '300px', opacity: '1', bottom: '-3rem' },
+  right: '0.25rem',
+  top: '-2rem',
+  '@tablet': {
+    opacity: '0.2',
+  },
+  '@desktop': {
+    height: '275px',
+  },
+  '@tv': {
+    height: '300px',
+    opacity: '1',
+    top: '-3rem',
+  },
 })
 
 interface SubscribeSectionProps {
@@ -64,9 +72,9 @@ export const SubscribeSection = (props: SubscribeSectionProps) => {
               <Alert variant="success">{props.actionData?.message}</Alert>
             )}
           </SubscribeBox>
-          <RocketImage src="/images/rocket.svg" alt="Rocket illustration" />
         </SubscribeAndImage>
       </Content>
+      <RocketImage src="/images/rocket.svg" alt="Rocket illustration" />
     </SubscribeSectionContainer>
   )
 }
