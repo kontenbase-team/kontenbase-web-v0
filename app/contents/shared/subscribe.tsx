@@ -31,18 +31,18 @@ const SubscribeBox = styled('div', {
 
 const RocketImage = styled('img', {
   position: 'absolute',
-  height: '250px',
   opacity: '0.1',
   right: '0.25rem',
   top: '-2rem',
+  height: '220px',
   '@tablet': {
     opacity: '0.2',
   },
   '@desktop': {
-    height: '275px',
+    height: '260px',
   },
   '@tv': {
-    height: '300px',
+    height: '290px',
     opacity: '1',
     top: '-3rem',
   },
