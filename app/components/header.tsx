@@ -10,7 +10,6 @@ import {
 } from '~/components'
 
 const HeaderContainer = styled('header', {
-  padding: '1rem 0',
   position: 'fixed',
   backgroundColor: '$background1',
   borderBottom: '1px solid $background6',
@@ -18,6 +17,10 @@ const HeaderContainer = styled('header', {
   left: '0',
   width: '100%',
   zIndex: '9999',
+  padding: '0.5rem 0',
+  '@tablet': {
+    padding: '1rem 0',
+  },
 })
 
 const LogoNavigation = styled('div', {
@@ -59,7 +62,18 @@ const NavigationList = styled('ul', {
   '@desktop': { gap: '1rem' },
 })
 
-const NavigationItem = styled('li', {})
+const NavigationItem = styled('li', {
+  variants: {
+    visible: {
+      tablet: {
+        display: 'none',
+        '@tablet': {
+          display: 'block',
+        },
+      },
+    },
+  },
+})
 
 const navigationItemChildStyles = {
   padding: '0.5rem',
@@ -100,7 +114,7 @@ export const Navigation = () => {
           </NavigationAnchor>
         </NavigationItem>
 
-        <NavigationItem>
+        <NavigationItem visible="tablet">
           <AnchorButton variant="brand" href="https://app.kontenbase.com/login">
             Login
           </AnchorButton>
