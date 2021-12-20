@@ -6,11 +6,15 @@ import {
   Scripts,
   json,
   useLoaderData,
-  LoaderFunction,
   ScrollRestoration,
   useCatch,
 } from 'remix'
-import type { LinksFunction } from 'remix'
+import type {
+  MetaFunction,
+  LinksFunction,
+  LoaderFunction,
+  ActionFunction,
+} from 'remix'
 
 import { globalStyles } from '~/styles'
 import globalStylesUrl from '~/styles/global.css'
@@ -41,6 +45,39 @@ export const loader: LoaderFunction = async ({ request }) => {
     theme: themeSession.getTheme(),
   }
   return json(data)
+}
+
+/**
+ * Meta
+ */
+export const meta: MetaFunction = () => {
+  const name = 'Kontenbase'
+  const description =
+    'Kontenbase allows you to easily create backend API, auth, and storage in less than 1 minute without coding.'
+  const ogImageUrl = '/images/kontenbase-og.png?v=1'
+  const ogImageAlt = 'No Code Backend as a Service'
+  const twiterImageUrl = '/images/kontenbase-twitter.png?v=1'
+
+  return {
+    title: 'Kontenbase - No Code Backend API, Fast and Easy!',
+    description: description,
+
+    'og:site_name': name,
+    'og:title': name,
+    'og:description': description,
+    'og:url': 'https://kontenbase.com/',
+    'og:locale': 'en_US',
+    'og:image': ogImageUrl,
+    'og:image:alt': ogImageAlt,
+    'og:type': 'website',
+
+    'twitter:card': 'summary_large_image',
+    'twitter:site': '@kontenbase',
+    'twitter:creator': '@kontenbase',
+    'twitter:title': name,
+    'twitter:description': description,
+    'twitter:image': twiterImageUrl,
+  }
 }
 
 /**
