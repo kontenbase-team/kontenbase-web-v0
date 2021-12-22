@@ -9,6 +9,7 @@ export type Explainer = {
   description: string
   imageUrl: string
   videoUrl?: string
+  videoEmbedId?: string
   direction: 'left' | 'right' | undefined
 }
 
@@ -103,7 +104,7 @@ export const ExplainerSection: FunctionComponent<ExplainerProps> = ({
 
         <ExplainerMedia>
           <AspectRatio.Root ratio={16 / 10}>
-            {explainer.videoUrl ? (
+            {explainer.videoUrl && explainer.videoEmbedId ? (
               <ExplainerVideo explainer={explainer} />
             ) : (
               <ExplainerImage alt={explainer.title} src={explainer.imageUrl} />
