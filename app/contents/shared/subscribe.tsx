@@ -34,9 +34,10 @@ const RocketImage = styled('img', {
   opacity: '0.1',
   right: '0.25rem',
   top: '-2rem',
-  height: '220px',
+  height: '200px',
   '@tablet': {
     opacity: '0.2',
+    height: '220px',
   },
   '@desktop': {
     height: '260px',
