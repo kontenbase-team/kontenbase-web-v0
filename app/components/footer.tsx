@@ -9,11 +9,16 @@ const FooterContainer = styled('footer', {
 
 const CopyrightSocial = styled('div', {
   display: 'flex',
+  flexWrap: 'wrap',
   justifyContent: 'space-between',
   flexDirection: 'column-reverse',
   gap: '2rem',
+  fontSize: '$2',
+  textAlign: 'center',
   '@tablet': {
     flexDirection: 'row',
+    fontSize: '$3',
+    textAlign: 'left',
   },
   '@desktop': {
     alignItems: 'center',
@@ -25,12 +30,9 @@ const CopyrightGreeting = styled('div', {
   flexDirection: 'column',
   alignItems: 'center',
   gap: '0.5rem',
-  fontSize: '$2',
-  textAlign: 'center',
+
   p: { margin: 0 },
   '@tablet': {
-    fontSize: '$2',
-    textAlign: 'left',
     alignItems: 'flex-start',
   },
   '@desktop': {
