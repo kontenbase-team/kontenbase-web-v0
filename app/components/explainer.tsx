@@ -1,13 +1,15 @@
 import { FunctionComponent } from 'react'
 
 import { styled } from '~/stitches'
-import { Heading, Paragraph, AspectRatio } from '~/components'
+import { Paragraph, AspectRatio, VideoYouTube } from '~/components'
 
 export type Explainer = {
   slug: string
   title: string
   description: string
   imageUrl: string
+  videoUrl?: string
+  videoEmbedId?: string
   direction: 'left' | 'right' | undefined
 }
 
@@ -73,8 +75,8 @@ const StepDescription = styled(Paragraph, {
  * Media
  */
 const ExplainerMedia = styled('div', {
-  border: '0.5rem solid $red3',
   borderRadius: '0.25rem',
+  border: '0.5rem solid $red3',
   overflow: 'hidden',
   maxWidth: '800px',
   width: '100%',
@@ -101,8 +103,12 @@ export const ExplainerSection: FunctionComponent<ExplainerProps> = ({
         </ExplainerText>
 
         <ExplainerMedia>
-          <AspectRatio.Root ratio={16 / 10}>
-            <ExplainerImage alt={explainer.title} src={explainer.imageUrl} />
+          <AspectRatio.Root ratio={16 / 9}>
+            {explainer.videoUrl && explainer.videoEmbedId ? (
+              <ExplainerVideo explainer={explainer} />
+            ) : (
+              <ExplainerImage alt={explainer.title} src={explainer.imageUrl} />
+            )}
           </AspectRatio.Root>
         </ExplainerMedia>
       </ExplainerTextMedia>
@@ -110,4 +116,13 @@ export const ExplainerSection: FunctionComponent<ExplainerProps> = ({
   )
 }
 
-export default ExplainerSection
+interface ExplainerVideoProps {
+  explainer: Explainer
+}
+
+export const ExplainerVideo: FunctionComponent<ExplainerVideoProps> = ({
+  explainer,
+}) => {
+  // @ts-ignore
+  return <VideoYouTube data={explainer} />
+}

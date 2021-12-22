@@ -1,30 +1,40 @@
 [
   {
+    "step": 1,
     "slug": "data-modeling",
     "title": "Data Modeling",
     "description": "Design your API without coding. Easy!",
     "direction": "right",
-    "imageUrl": "/images/kontenbase-screenshot-2.png"
+    "imageUrl": "/images/kontenbase-screenshot-2.png",
+    "videoUrl": "https://youtu.be/i-CpGMyE4aA",
+    "videoEmbedId": "i-CpGMyE4aA"
   },
   {
+    "step": 2,
     "slug": "dont-reinvent-the-wheel",
     "title": "Don't Reinvent the Wheel",
     "description": "From Auth, Storage, and Data Migration. Battery Included!",
     "direction": "left",
-    "imageUrl": "/images/kontenbase-screenshot-3.png"
+    "imageUrl": "/images/kontenbase-screenshot-3.png",
+    "videoUrl": "https://youtu.be/VktPV1-J-hY",
+    "videoEmbedId": "VktPV1-J-hY"
   },
   {
+    "step": 3,
     "slug": "try-api-right-in-your-browser",
     "title": "Try API Right in Your Browser",
     "description": "Publish API without Ops! No deployment time. Fast!",
     "direction": "right",
-    "imageUrl": "/images/kontenbase-screenshot-3.png"
+    "imageUrl": "/images/kontenbase-screenshot-3.png",
+    "videoUrl": "https://youtu.be/mligVBFiK3g",
+    "videoEmbedId": "mligVBFiK3g"
   },
   {
+    "step": 4,
     "slug": "consume-api-without-frontend-barrier",
     "title": "Consume API without Frontend Barrier",
-    "description": "Whether React, Vue, Angular. Up to you!",
+    "description": "Whether React, Vue, Angular, or others. Up to you!",
     "direction": "left",
-    "imageUrl": "/images/kontenbase-screenshot-3.png"
+    "imageUrl": "/images/kontenbase-screenshot-4.png"
   }
 ]

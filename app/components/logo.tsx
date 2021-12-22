@@ -5,15 +5,25 @@ import { useTheme, Theme } from '~/utils/theme'
 
 const LogoContainer = styled('div', {
   svg: {
-    height: '25px',
-    width: '93.5px',
     path: {
       [`&.dynamic-color`]: { fill: 'black' },
       [`body.${darkTheme} &.dynamic-color`]: { fill: 'white' },
     },
+    height: '25px',
+    width: '93.5px',
   },
-  '@tablet': { svg: { height: '37.5px', width: '140px' } },
-  '@desktop': { svg: { height: '50px', width: '187px' } },
+  '@tablet': {
+    svg: {
+      height: '37.5px',
+      width: '140px',
+    },
+  },
+  '@desktop': {
+    svg: {
+      height: '40px',
+      width: '145px',
+    },
+  },
 })
 
 export const Logo = () => {
