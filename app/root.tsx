@@ -52,18 +52,19 @@ export const loader: LoaderFunction = async ({ request }) => {
  */
 export const meta: MetaFunction = () => {
   const name = 'Kontenbase'
+  const title = 'Kontenbase'
   const description =
-    'Kontenbase allows you to easily create backend API, auth, and storage in less than 1 minute without coding.'
+    'No code backend API, fast and easy! Easily create backend API, auth, and storage in less than 1 minute without coding.'
   const ogImageUrl = '/images/kontenbase-og.png?v=1'
-  const ogImageAlt = 'No Code Backend as a Service'
+  const ogImageAlt = 'Kontenbase is a No Code Backend as a Service'
   const twiterImageUrl = '/images/kontenbase-twitter.png?v=1'
 
   return {
-    title: 'Kontenbase - No Code Backend API, Fast and Easy!',
+    title: title,
     description: description,
 
     'og:site_name': name,
-    'og:title': name,
+    'og:title': title,
     'og:description': description,
     'og:url': 'https://kontenbase.com/',
     'og:locale': 'en_US',
@@ -74,7 +75,7 @@ export const meta: MetaFunction = () => {
     'twitter:card': 'summary_large_image',
     'twitter:site': '@kontenbase',
     'twitter:creator': '@kontenbase',
-    'twitter:title': name,
+    'twitter:title': title,
     'twitter:description': description,
     'twitter:image': twiterImageUrl,
   }
