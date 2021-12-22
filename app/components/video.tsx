@@ -1,6 +1,13 @@
-import PropTypes from 'prop-types'
+import { FunctionComponent } from 'react'
 
 import { styled } from '~/stitches'
+
+interface VideoYouTubeProps {
+  data: {
+    title: string
+    videoEmbedId: string
+  }
+}
 
 const IFrameContainer = styled('iframe', {
   left: '0',
@@ -10,7 +17,9 @@ const IFrameContainer = styled('iframe', {
   position: 'absolute',
 })
 
-export const VideoYouTube = ({ data }: any) => {
+export const VideoYouTube: FunctionComponent<VideoYouTubeProps> = ({
+  data,
+}) => {
   return (
     <div>
       <IFrameContainer

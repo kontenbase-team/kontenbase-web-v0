@@ -123,5 +123,6 @@ interface ExplainerVideoProps {
 export const ExplainerVideo: FunctionComponent<ExplainerVideoProps> = ({
   explainer,
 }) => {
+  // @ts-ignore
   return <VideoYouTube data={explainer} />
 }
