@@ -9,11 +9,16 @@ const FooterContainer = styled('footer', {
 
 const CopyrightSocial = styled('div', {
   display: 'flex',
+  flexWrap: 'wrap',
   justifyContent: 'space-between',
   flexDirection: 'column-reverse',
   gap: '2rem',
+  fontSize: '$2',
+  textAlign: 'center',
   '@tablet': {
     flexDirection: 'row',
+    fontSize: '$3',
+    textAlign: 'left',
   },
   '@desktop': {
     alignItems: 'center',
@@ -25,9 +30,8 @@ const CopyrightGreeting = styled('div', {
   flexDirection: 'column',
   alignItems: 'center',
   gap: '0.5rem',
-  p: {
-    margin: 0,
-  },
+
+  p: { margin: 0 },
   '@tablet': {
     alignItems: 'flex-start',
   },
@@ -61,7 +65,7 @@ export const Footer = () => {
       <Content>
         <CopyrightSocial>
           <CopyrightGreeting>
-            <p>&copy; {getYear()} Kontenbase.</p>
+            <p>Copyright &copy; {getYear()} Kontenbase.</p>
             <p>Happy {getDayName()}!</p>
           </CopyrightGreeting>
 
