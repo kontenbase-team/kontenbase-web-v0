@@ -6,7 +6,8 @@
     "description": "Design your API without coding. Easy!",
     "direction": "right",
     "imageUrl": "/images/kontenbase-screenshot-2.png",
-    "videoUrl": "https://youtu.be/i-CpGMyE4aA"
+    "videoUrl": "https://youtu.be/i-CpGMyE4aA",
+    "videoEmbedId": "i-CpGMyE4aA"
   },
   {
     "step": 2,
@@ -15,7 +16,8 @@
     "description": "From Auth, Storage, and Data Migration. Battery Included!",
     "direction": "left",
     "imageUrl": "/images/kontenbase-screenshot-3.png",
-    "videoUrl": "https://youtu.be/VktPV1-J-hY"
+    "videoUrl": "https://youtu.be/VktPV1-J-hY",
+    "videoEmbedId": "VktPV1-J-hY"
   },
   {
     "step": 3,
@@ -24,7 +26,8 @@
     "description": "Publish API without Ops! No deployment time. Fast!",
     "direction": "right",
     "imageUrl": "/images/kontenbase-screenshot-3.png",
-    "videoUrl": "https://youtu.be/mligVBFiK3g"
+    "videoUrl": "https://youtu.be/mligVBFiK3g",
+    "videoEmbedId": "mligVBFiK3g"
   },
   {
     "step": 4,
