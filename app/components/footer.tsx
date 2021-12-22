@@ -25,10 +25,12 @@ const CopyrightGreeting = styled('div', {
   flexDirection: 'column',
   alignItems: 'center',
   gap: '0.5rem',
-  p: {
-    margin: 0,
-  },
+  fontSize: '$2',
+  textAlign: 'center',
+  p: { margin: 0 },
   '@tablet': {
+    fontSize: '$2',
+    textAlign: 'left',
     alignItems: 'flex-start',
   },
   '@desktop': {
@@ -61,7 +63,7 @@ export const Footer = () => {
       <Content>
         <CopyrightSocial>
           <CopyrightGreeting>
-            <p>&copy; {getYear()} Kontenbase.</p>
+            <p>Copyright &copy; {getYear()} Kontenbase.</p>
             <p>Happy {getDayName()}!</p>
           </CopyrightGreeting>
 
