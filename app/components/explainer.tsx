@@ -8,6 +8,7 @@ export type Explainer = {
   title: string
   description: string
   imageUrl: string
+  videoUrl?: string
   direction: 'left' | 'right' | undefined
 }
 
@@ -102,7 +103,11 @@ export const ExplainerSection: FunctionComponent<ExplainerProps> = ({
 
         <ExplainerMedia>
           <AspectRatio.Root ratio={16 / 10}>
-            <ExplainerImage alt={explainer.title} src={explainer.imageUrl} />
+            {explainer.videoUrl ? (
+              <ExplainerVideo url={explainer.videoUrl} />
+            ) : (
+              <ExplainerImage alt={explainer.title} src={explainer.imageUrl} />
+            )}
           </AspectRatio.Root>
         </ExplainerMedia>
       </ExplainerTextMedia>
@@ -110,4 +115,17 @@ export const ExplainerSection: FunctionComponent<ExplainerProps> = ({
   )
 }
 
-export default ExplainerSection
+interface ExplainerVideoProps {
+  url: string
+}
+
+const ExplainerVideoContainer = styled('div', {
+  width: '100%',
+  height: '100%',
+})
+
+export const ExplainerVideo: FunctionComponent<ExplainerVideoProps> = ({
+  url,
+}) => {
+  return <ExplainerVideoContainer>{url}</ExplainerVideoContainer>
+}
