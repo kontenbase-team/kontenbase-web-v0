@@ -1,3 +1,5 @@
+import { FunctionComponent } from 'react'
+
 import { styled } from '~/stitches'
 import ReactMultiCarousel from 'react-multi-carousel'
 
@@ -22,12 +24,6 @@ const responsive = {
   },
 }
 
-const images = [
-  '/images/kontenbase-screenshot-1.png',
-  '/images/kontenbase-screenshot-2.png',
-  '/images/kontenbase-screenshot-3.png',
-]
-
 const CarouselContainer = styled('div', {
   borderRadius: '0.25rem',
   border: '0.5rem solid $red3',
@@ -44,7 +40,11 @@ const CarouselImage = styled('img', {
   height: '100%',
 })
 
-export const Carousel = () => {
+export interface CarouselProps {
+  images: string[]
+}
+
+export const Carousel: FunctionComponent<CarouselProps> = ({ images }) => {
   return (
     <CarouselContainer>
       <ReactMultiCarousel
