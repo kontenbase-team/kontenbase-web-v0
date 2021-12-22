@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react'
 
 import { styled } from '~/stitches'
-import { Heading, Paragraph, AspectRatio } from '~/components'
+import { Paragraph, AspectRatio, VideoYouTube } from '~/components'
 
 export type Explainer = {
   slug: string
@@ -104,7 +104,7 @@ export const ExplainerSection: FunctionComponent<ExplainerProps> = ({
         <ExplainerMedia>
           <AspectRatio.Root ratio={16 / 10}>
             {explainer.videoUrl ? (
-              <ExplainerVideo url={explainer.videoUrl} />
+              <ExplainerVideo explainer={explainer} />
             ) : (
               <ExplainerImage alt={explainer.title} src={explainer.imageUrl} />
             )}
@@ -116,16 +116,11 @@ export const ExplainerSection: FunctionComponent<ExplainerProps> = ({
 }
 
 interface ExplainerVideoProps {
-  url: string
+  explainer: Explainer
 }
 
-const ExplainerVideoContainer = styled('div', {
-  width: '100%',
-  height: '100%',
-})
-
 export const ExplainerVideo: FunctionComponent<ExplainerVideoProps> = ({
-  url,
+  explainer,
 }) => {
-  return <ExplainerVideoContainer>{url}</ExplainerVideoContainer>
+  return <VideoYouTube data={explainer} />
 }

@@ -14,12 +14,12 @@ export const VideoYouTube = ({ data }: any) => {
   return (
     <IFrameContainer
       title={data.title}
-      width="560"
-      height="315"
       src={`https://www.youtube.com/embed/${data.videoEmbedId}`}
+      width="1280"
+      height="720"
       frameBorder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowFullScreen
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     />
   )
 }
