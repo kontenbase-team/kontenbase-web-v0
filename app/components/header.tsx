@@ -102,7 +102,7 @@ export const Navigation = () => {
           <ButtonToggleTheme />
         </NavigationItem>
 
-        <NavigationItem>
+        <NavigationItem visible="tablet">
           <NavigationLink to="/">Home</NavigationLink>
         </NavigationItem>
 
@@ -112,7 +112,7 @@ export const Navigation = () => {
           </NavigationAnchor>
         </NavigationItem>
 
-        <NavigationItem visible="tablet">
+        <NavigationItem>
           <AnchorButton variant="brand" href="https://app.kontenbase.com/login">
             Login
           </AnchorButton>
