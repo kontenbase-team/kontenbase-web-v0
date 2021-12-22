@@ -75,6 +75,8 @@ const StepDescription = styled(Paragraph, {
  * Media
  */
 const ExplainerMedia = styled('div', {
+  borderRadius: '0.25rem',
+  border: '0.5rem solid $red3',
   overflow: 'hidden',
   maxWidth: '800px',
   width: '100%',
