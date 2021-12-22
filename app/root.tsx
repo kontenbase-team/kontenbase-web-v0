@@ -159,10 +159,7 @@ export function ErrorBoundary({ error }: { error: Error }) {
           <h1>There was an error</h1>
           <p>{error.message}</p>
           <hr />
-          <p>
-            Hey, developer, you should replace this with what you want your
-            users to see.
-          </p>
+          <p>Sorry, there is an error. Please try again or refresh the page.</p>
         </div>
       </Layout>
     </Document>
@@ -182,14 +179,14 @@ export function CatchBoundary() {
     case 401:
       message = (
         <p>
-          Oops! Looks like you tried to visit a page that you do not have access
+          Sorry, looks like you tried to visit a page that you don't have access
           to.
         </p>
       )
       break
     case 404:
       message = (
-        <p>Oops! Looks like you tried to visit a page that does not exist.</p>
+        <p> Sorry, looks like you tried to visit a page that doesn't exist.</p>
       )
       break
 
