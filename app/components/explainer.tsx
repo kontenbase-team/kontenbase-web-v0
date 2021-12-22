@@ -75,8 +75,6 @@ const StepDescription = styled(Paragraph, {
  * Media
  */
 const ExplainerMedia = styled('div', {
-  border: '0.5rem solid $red3',
-  borderRadius: '0.25rem',
   overflow: 'hidden',
   maxWidth: '800px',
   width: '100%',
@@ -103,15 +101,13 @@ export const ExplainerSection: FunctionComponent<ExplainerProps> = ({
         </ExplainerText>
 
         <ExplainerMedia>
-          {explainer.videoUrl && explainer.videoEmbedId ? (
-            <AspectRatio.Root ratio={16 / 10}>
+          <AspectRatio.Root ratio={16 / 9}>
+            {explainer.videoUrl && explainer.videoEmbedId ? (
               <ExplainerVideo explainer={explainer} />
-            </AspectRatio.Root>
-          ) : (
-            <AspectRatio.Root ratio={16 / 9}>
+            ) : (
               <ExplainerImage alt={explainer.title} src={explainer.imageUrl} />
-            </AspectRatio.Root>
-          )}
+            )}
+          </AspectRatio.Root>
         </ExplainerMedia>
       </ExplainerTextMedia>
     </ExplainerSectionContainer>
