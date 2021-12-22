@@ -103,13 +103,15 @@ export const ExplainerSection: FunctionComponent<ExplainerProps> = ({
         </ExplainerText>
 
         <ExplainerMedia>
-          <AspectRatio.Root ratio={16 / 10}>
-            {explainer.videoUrl && explainer.videoEmbedId ? (
+          {explainer.videoUrl && explainer.videoEmbedId ? (
+            <AspectRatio.Root ratio={16 / 10}>
               <ExplainerVideo explainer={explainer} />
-            ) : (
+            </AspectRatio.Root>
+          ) : (
+            <AspectRatio.Root ratio={16 / 9}>
               <ExplainerImage alt={explainer.title} src={explainer.imageUrl} />
-            )}
-          </AspectRatio.Root>
+            </AspectRatio.Root>
+          )}
         </ExplainerMedia>
       </ExplainerTextMedia>
     </ExplainerSectionContainer>
