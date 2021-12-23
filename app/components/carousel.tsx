@@ -42,7 +42,7 @@ const CarouselImage = styled('img', {
 
 const CarouselCaption = styled('div', {
   position: 'absolute',
-  color: '$black12',
+  color: '$textAbsolute1',
   background: '$tomatoA8',
   padding: '$2',
   fontSize: '$5',

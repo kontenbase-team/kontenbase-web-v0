@@ -413,6 +413,7 @@ export const {
       ...red,
       ...yellow,
       ...colorTokens,
+      textAbsolute1: '$gray12',
     },
     space: { ...spaceTokens },
     sizes: { ...sizesTokens },
