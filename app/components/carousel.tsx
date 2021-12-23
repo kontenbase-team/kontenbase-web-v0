@@ -40,11 +40,16 @@ const CarouselImage = styled('img', {
   height: '100%',
 })
 
-export interface CarouselProps {
-  images: string[]
+export type CarouselItem = {
+  caption: string
+  imageUrl: string
 }
 
-export const Carousel: FunctionComponent<CarouselProps> = ({ images }) => {
+export interface CarouselProps {
+  items: CarouselItem[]
+}
+
+export const Carousel: FunctionComponent<CarouselProps> = ({ items }) => {
   return (
     <CarouselContainer>
       <ReactMultiCarousel
@@ -55,14 +60,11 @@ export const Carousel: FunctionComponent<CarouselProps> = ({ images }) => {
         swipeable
         ssr
       >
-        {images.map((imageUrl, index) => {
+        {items.map((item, index) => {
           return (
-            <CarouselImageContainer key={`carousel-image-${index}`}>
+            <CarouselImageContainer key={`carousel-item-${index}`}>
               <AspectRatio.Root ratio={16 / 10}>
-                <CarouselImage
-                  alt={`Kontenbase screenshot ${index + 1}`}
-                  src={imageUrl}
-                />
+                <CarouselImage alt={`${item.caption}`} src={item.imageUrl} />
               </AspectRatio.Root>
             </CarouselImageContainer>
           )

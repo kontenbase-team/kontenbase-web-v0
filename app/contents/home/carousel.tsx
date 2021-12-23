@@ -1,7 +1,7 @@
 import { Carousel } from '~/components'
 
-import carouselImages from './carousel-images.json'
+import carouselItems from './carousel-items.json'
 
 export const HomeCarousel = () => {
-  return <Carousel images={carouselImages} />
+  return <Carousel items={carouselItems} />
 }
