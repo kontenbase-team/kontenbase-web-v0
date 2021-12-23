@@ -3,6 +3,8 @@ import {
   whiteA,
   tomato,
   tomatoDark,
+  tomatoA,
+  tomatoDarkA,
   blue,
   blueDark,
   gray,
@@ -404,6 +406,7 @@ export const {
       ...blackA,
       ...whiteA,
       ...tomato,
+      ...tomatoA,
       ...blue,
       ...gray,
       ...green,
@@ -436,6 +439,7 @@ export const lightTheme = createTheme('light-mode')
 export const darkTheme = createTheme('dark-mode', {
   colors: {
     ...tomatoDark,
+    ...tomatoDarkA,
     ...blueDark,
     ...grayDark,
     ...greenDark,

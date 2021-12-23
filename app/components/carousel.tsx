@@ -29,7 +29,7 @@ const CarouselContainer = styled('div', {
   border: '0.5rem solid $red3',
 })
 
-const CarouselImageContainer = styled('div', {
+const CarouselItemContainer = styled('div', {
   display: 'flex',
 })
 
@@ -39,6 +39,19 @@ const CarouselImage = styled('img', {
   width: '100%',
   height: '100%',
 })
+
+const CarouselCaption = styled('div', {
+  position: 'absolute',
+  color: '$black12',
+  background: '$tomatoA8',
+  padding: '$2',
+  fontSize: '$5',
+  fontWeight: '$bold',
+  width: '$full',
+  textAlign: 'center',
+})
+
+//
 
 export type CarouselItem = {
   caption: string
@@ -62,11 +75,14 @@ export const Carousel: FunctionComponent<CarouselProps> = ({ items }) => {
       >
         {items.map((item, index) => {
           return (
-            <CarouselImageContainer key={`carousel-item-${index}`}>
+            <CarouselItemContainer key={`carousel-item-${index}`}>
               <AspectRatio.Root ratio={16 / 10}>
                 <CarouselImage alt={`${item.caption}`} src={item.imageUrl} />
               </AspectRatio.Root>
-            </CarouselImageContainer>
+              <CarouselCaption>
+                <span>{item.caption}</span>
+              </CarouselCaption>
+            </CarouselItemContainer>
           )
         })}
       </ReactMultiCarousel>
