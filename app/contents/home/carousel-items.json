@@ -18,5 +18,9 @@
   {
     "caption": "Authorization",
     "imageUrl": "/screenshots/kontenbase-authorization.png"
+  },
+  {
+    "caption": "Connect to any frontend or framework",
+    "imageUrl": "/screenshots/kontenbase-frontend.png"
   }
 ]

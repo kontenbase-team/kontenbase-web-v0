@@ -29,7 +29,7 @@ export const VideoYouTube: FunctionComponent<VideoYouTubeProps> = ({
         height="720"
         frameBorder="0"
         allowFullScreen
-        allow="accelerometer; autoplay, clipboard-write; encrypted-media; gyroscope; picture-in-picture; modestbranding"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
       />
     </div>
   )
