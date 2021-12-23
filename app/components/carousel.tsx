@@ -1,3 +1,5 @@
+import { FunctionComponent } from 'react'
+
 import { styled } from '~/stitches'
 import ReactMultiCarousel from 'react-multi-carousel'
 
@@ -22,18 +24,12 @@ const responsive = {
   },
 }
 
-const images = [
-  '/images/kontenbase-screenshot-1.png',
-  '/images/kontenbase-screenshot-2.png',
-  '/images/kontenbase-screenshot-3.png',
-]
-
 const CarouselContainer = styled('div', {
   borderRadius: '0.25rem',
   border: '0.5rem solid $red3',
 })
 
-const CarouselImageContainer = styled('div', {
+const CarouselItemContainer = styled('div', {
   display: 'flex',
 })
 
@@ -44,7 +40,29 @@ const CarouselImage = styled('img', {
   height: '100%',
 })
 
-export const Carousel = () => {
+const CarouselCaption = styled('div', {
+  position: 'absolute',
+  color: '$textAbsolute1',
+  background: '$tomatoA8',
+  padding: '$2',
+  fontSize: '$5',
+  fontWeight: '$bold',
+  width: '$full',
+  textAlign: 'center',
+})
+
+//
+
+export type CarouselItem = {
+  caption: string
+  imageUrl: string
+}
+
+export interface CarouselProps {
+  items: CarouselItem[]
+}
+
+export const Carousel: FunctionComponent<CarouselProps> = ({ items }) => {
   return (
     <CarouselContainer>
       <ReactMultiCarousel
@@ -55,16 +73,16 @@ export const Carousel = () => {
         swipeable
         ssr
       >
-        {images.map((imageUrl, index) => {
+        {items.map((item, index) => {
           return (
-            <CarouselImageContainer key={`carousel-image-${index}`}>
+            <CarouselItemContainer key={`carousel-item-${index}`}>
               <AspectRatio.Root ratio={16 / 10}>
-                <CarouselImage
-                  alt={`Kontenbase screenshot ${index + 1}`}
-                  src={imageUrl}
-                />
+                <CarouselImage alt={`${item.caption}`} src={item.imageUrl} />
               </AspectRatio.Root>
-            </CarouselImageContainer>
+              <CarouselCaption>
+                <span>{item.caption}</span>
+              </CarouselCaption>
+            </CarouselItemContainer>
           )
         })}
       </ReactMultiCarousel>

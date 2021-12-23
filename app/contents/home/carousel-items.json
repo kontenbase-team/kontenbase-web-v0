@@ -1,0 +1,22 @@
+[
+  {
+    "caption": "Customize fields",
+    "imageUrl": "/screenshots/kontenbase-customize-fields.png"
+  },
+  {
+    "caption": "Try API to send request",
+    "imageUrl": "/screenshots/kontenbase-try-api-request.png"
+  },
+  {
+    "caption": "Try API to check response",
+    "imageUrl": "/screenshots/kontenbase-try-api-response.png"
+  },
+  {
+    "caption": "Authentication",
+    "imageUrl": "/screenshots/kontenbase-authentication.png"
+  },
+  {
+    "caption": "Authorization",
+    "imageUrl": "/screenshots/kontenbase-authorization.png"
+  }
+]
