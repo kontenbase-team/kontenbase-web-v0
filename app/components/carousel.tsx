@@ -31,6 +31,7 @@ const CarouselContainer = styled('div', {
 
 const CarouselItemContainer = styled('div', {
   display: 'flex',
+  minHeight: '186px',
 })
 
 const CarouselImage = styled('img', {
@@ -50,8 +51,6 @@ const CarouselCaption = styled('div', {
   width: '$full',
   textAlign: 'center',
 })
-
-//
 
 export type CarouselItem = {
   caption: string
