@@ -6,8 +6,8 @@
     "description": "Design your API without coding. Easy!",
     "direction": "right",
     "imageUrl": "/images/kontenbase-screenshot-2.png",
-    "videoUrl": "https://youtu.be/i-CpGMyE4aA",
-    "videoEmbedId": "i-CpGMyE4aA"
+    "videoUrl": "https://youtu.be/Gmp8chYZ1QU",
+    "videoEmbedId": "Gmp8chYZ1QU"
   },
   {
     "step": 2,
@@ -16,8 +16,8 @@
     "description": "From Auth, Storage, and Data Migration. Battery Included!",
     "direction": "left",
     "imageUrl": "/images/kontenbase-screenshot-3.png",
-    "videoUrl": "https://youtu.be/VktPV1-J-hY",
-    "videoEmbedId": "VktPV1-J-hY"
+    "videoUrl": "https://youtu.be/eOUHEUxhxc8",
+    "videoEmbedId": "eOUHEUxhxc8"
   },
   {
     "step": 3,
@@ -26,8 +26,8 @@
     "description": "Publish API without Ops! No deployment time. Fast!",
     "direction": "right",
     "imageUrl": "/images/kontenbase-screenshot-3.png",
-    "videoUrl": "https://youtu.be/mligVBFiK3g",
-    "videoEmbedId": "mligVBFiK3g"
+    "videoUrl": "https://youtu.be/H8t3CZhKHkI",
+    "videoEmbedId": "H8t3CZhKHkI"
   },
   {
     "step": 4,
@@ -35,6 +35,8 @@
     "title": "Consume API without Frontend Barrier",
     "description": "Whether React, Vue, Angular, or others. Up to you!",
     "direction": "left",
-    "imageUrl": "/images/kontenbase-screenshot-4.png"
+    "imageUrl": "/images/kontenbase-screenshot-4.png",
+    "videoUrl": "https://youtu.be/_wgANT3qX7c",
+    "videoEmbedId": "_wgANT3qX7c"
   }
 ]
