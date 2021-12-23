@@ -5,7 +5,7 @@
     "title": "Data Modeling",
     "description": "Design your API without coding. Easy!",
     "direction": "right",
-    "imageUrl": "/images/kontenbase-screenshot-2.png",
+    "imageUrl": "/screenshots/kontenbase-customize-fields.png",
     "videoUrl": "https://youtu.be/Gmp8chYZ1QU",
     "videoEmbedId": "Gmp8chYZ1QU"
   },
@@ -15,7 +15,7 @@
     "title": "Don't Reinvent the Wheel",
     "description": "From Auth, Storage, and Data Migration. Battery Included!",
     "direction": "left",
-    "imageUrl": "/images/kontenbase-screenshot-3.png",
+    "imageUrl": "/screenshots/kontenbase-authentication.png",
     "videoUrl": "https://youtu.be/eOUHEUxhxc8",
     "videoEmbedId": "eOUHEUxhxc8"
   },
@@ -25,7 +25,7 @@
     "title": "Try API Right in Your Browser",
     "description": "Publish API without Ops! No deployment time. Fast!",
     "direction": "right",
-    "imageUrl": "/images/kontenbase-screenshot-3.png",
+    "imageUrl": "/screenshots/kontenbase-try-api-request.png",
     "videoUrl": "https://youtu.be/H8t3CZhKHkI",
     "videoEmbedId": "H8t3CZhKHkI"
   },
@@ -35,7 +35,7 @@
     "title": "Consume API without Frontend Barrier",
     "description": "Whether React, Vue, Angular, or others. Up to you!",
     "direction": "left",
-    "imageUrl": "/images/kontenbase-screenshot-4.png",
+    "imageUrl": "/screenshots/kontenbase-frontend.png",
     "videoUrl": "https://youtu.be/_wgANT3qX7c",
     "videoEmbedId": "_wgANT3qX7c"
   }
