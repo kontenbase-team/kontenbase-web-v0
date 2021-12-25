@@ -2,6 +2,7 @@ import type { MetaFunction, LoaderFunction } from 'remix'
 import { useLoaderData, useActionData, json } from 'remix'
 
 import { HomeHero } from '~/contents'
+import { ReactGA } from '~/utils'
 
 /**
  * Meta
@@ -28,6 +29,8 @@ export const loader: LoaderFunction = () => {
  * Pricing Page
  */
 export default function Pricing() {
+  ReactGA.send({ hitType: 'pageview', page: '/pricing' })
+
   const loaderData = useLoaderData<PricingData>()
   const actionData = useActionData()
 

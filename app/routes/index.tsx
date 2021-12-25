@@ -3,6 +3,7 @@ import { useLoaderData, useActionData, useTransition, json } from 'remix'
 import axios from 'axios'
 
 import { HomeHero, SubscribeSection, ExplainerSteps } from '~/contents'
+import { ReactGA } from '~/utils'
 
 /**
  * Meta
@@ -73,6 +74,8 @@ export const action: ActionFunction = async ({ request }) => {
  * Home Page
  */
 export default function Index() {
+  ReactGA.send({ hitType: 'pageview', page: '/' })
+
   const transition = useTransition()
   const loaderData = useLoaderData<IndexData>()
   const actionData = useActionData()
