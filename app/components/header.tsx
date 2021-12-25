@@ -112,11 +112,11 @@ export const Navigation = () => {
           </NavigationAnchor>
         </NavigationItem>
 
-        <NavigationItem>
+        {/* <NavigationItem>
           <AnchorButton variant="brand" href="https://app.kontenbase.com/login">
             Login
           </AnchorButton>
-        </NavigationItem>
+        </NavigationItem> */}
       </NavigationList>
     </NavigationContainer>
   )
