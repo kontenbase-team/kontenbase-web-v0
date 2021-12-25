@@ -16,11 +16,6 @@ import type {
   ActionFunction,
 } from 'remix'
 
-import { globalStyles } from '~/styles'
-import globalStylesUrl from '~/styles/global.css'
-import darkStylesUrl from '~/styles/dark.css'
-import carouselUrl from '~/styles/carousel.css'
-
 import {
   useTheme,
   ThemeProvider,
@@ -28,6 +23,13 @@ import {
   NonFlashOfWrongThemeEls,
 } from '~/utils/theme'
 import { getThemeSession } from '~/utils/theme.server'
+import { getEnv } from '~/utils/env.server'
+
+import { globalStyles } from '~/styles'
+import globalStylesUrl from '~/styles/global.css'
+import darkStylesUrl from '~/styles/dark.css'
+import carouselUrl from '~/styles/carousel.css'
+
 import { lightTheme, darkTheme, getCssText } from '~/stitches'
 import { Layout } from '~/components'
 
@@ -36,13 +38,16 @@ import { Layout } from '~/components'
  */
 export type LoaderData = {
   theme: Theme | null
+  ENV: ReturnType<typeof getEnv>
 }
 
 export const loader: LoaderFunction = async ({ request }) => {
   const themeSession = await getThemeSession(request)
   const data: LoaderData = {
     theme: themeSession.getTheme(),
+    ENV: getEnv(),
   }
+
   return json(data)
 }
 
@@ -234,7 +239,14 @@ function Document({
           <NonFlashOfWrongThemeEls ssrTheme={Boolean(data.theme)} />
         </head>
 
-        <DocumentBody>{children}</DocumentBody>
+        <DocumentBody>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `window.ENV = ${JSON.stringify(data.ENV)};`,
+            }}
+          />
+          {children}
+        </DocumentBody>
       </html>
     </ThemeProvider>
   )

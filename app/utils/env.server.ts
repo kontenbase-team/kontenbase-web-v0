@@ -1,19 +1,41 @@
-export const APP_ENV = process.env.NODE_ENV
-export const NODE_ENV = process.env.NODE_ENV
-export const WEB_URL = process.env.NEXT_PUBLIC_WEB_URL
-export const API_URL = process.env.NEXT_PUBLIC_API_URL
-
-export const isVercel = process.env.VERCEL === '1'
-
-export const isDevelopment =
-  process.env.NODE_ENV !== 'production' ||
-  process.env.APP_ENV !== 'development' ||
-  !isVercel
-export const isStaging = process.env.APP_ENV === 'staging'
-export const isProduction =
-  process.env.NODE_ENV === 'production' || process.env.APP_ENV !== 'production'
-
-export const envServer = {
-  SESSION_SECRET: process.env.SESSION_SECRET,
-  BUTTONDOWN_API_KEY: process.env.BUTTONDOWN_API_KEY,
+function getEnv() {
+  return {
+    NODE_ENV: process.env.NODE_ENV, // development | production
+    APP_ENV: process.env.APP_ENV, // local | development | staging | production
+    API_URL: process.env.API_URL, // localhost | api.domain.com
+    VERCEL: process.env.VERCEL,
+    BUTTONDOWN_API_KEY: process.env.BUTTONDOWN_API_KEY,
+  }
 }
+
+function getEnvServer(key: string, devValue?: string) {
+  return getEnvRequired(process.env, key, devValue)
+}
+
+function getEnvRequired(
+  obj: Record<string, string | undefined>,
+  key: string,
+  devValue: string = `${key}-dev-value`
+) {
+  let value = devValue
+  const envVal = obj[key]
+  if (envVal) {
+    value = envVal
+  } else if (obj.NODE_ENV === 'production') {
+    throw new Error(`${key} is a required env variable`)
+  }
+  return value
+}
+
+type ENV = ReturnType<typeof getEnv>
+
+// App puts these on
+declare global {
+  // eslint-disable-next-line
+  var ENV: ENV
+  interface Window {
+    ENV: ENV
+  }
+}
+
+export { getEnv, getEnvServer }

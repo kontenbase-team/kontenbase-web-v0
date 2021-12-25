@@ -3,7 +3,6 @@ import { useLoaderData, useActionData, useTransition, json } from 'remix'
 import axios from 'axios'
 
 import { HomeHero, SubscribeSection, ExplainerSteps } from '~/contents'
-import { envServer } from '~/utils'
 
 /**
  * Meta
@@ -38,7 +37,7 @@ export const action: ActionFunction = async ({ request }) => {
       const response = await axios.post(
         'https://api.buttondown.email/v1/subscribers',
         { email: email, notes: 'early' },
-        { headers: { Authorization: `Token ${envServer.BUTTONDOWN_API_KEY}` } }
+        { headers: { Authorization: `Token ${ENV.BUTTONDOWN_API_KEY}` } }
       )
       console.log(response.data)
       return response.data

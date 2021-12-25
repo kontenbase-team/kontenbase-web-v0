@@ -2,6 +2,10 @@ import { renderToString } from 'react-dom/server'
 import { RemixServer } from 'remix'
 import type { EntryContext } from 'remix'
 
+import { getEnv } from '~/utils'
+
+global.ENV = getEnv()
+
 export default function handleRequest(
   request: Request,
   responseStatusCode: number,
