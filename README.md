@@ -12,7 +12,11 @@ Kontenbase website for landing page and marketing purpose.
   - Router
 - Stitches
 - Radix UI
+- react-multi-carousel
+- Splitbee
+- Google Analytics
 - Vercel
+- Cloudflare
 
 ---
 
