@@ -3,6 +3,7 @@
   "short_name": "Kontenbase",
   "theme_color": "#e54d2e",
   "background_color": "#e54d2e",
+  "start_url": "https://kontenbase.com",
   "icons": [
     {
       "src": "/icons/android-chrome-192x192.png?v=1",
