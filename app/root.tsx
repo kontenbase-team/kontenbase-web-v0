@@ -30,7 +30,6 @@ import {
 import { getThemeSession } from '~/utils/theme.server'
 import { lightTheme, darkTheme, getCssText } from '~/stitches'
 import { Layout } from '~/components'
-import React from 'react'
 
 /**
  * Loader
@@ -173,8 +172,8 @@ export function ErrorBoundary({ error }: { error: Error }) {
  */
 export function CatchBoundary() {
   let caught = useCatch()
-
   let message
+
   switch (caught.status) {
     case 401:
       message = (
