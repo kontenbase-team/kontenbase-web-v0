@@ -18,7 +18,7 @@ export type PostMarkdownAttributes = {
 // Relative to the server output, not the source!
 const postsPath = path.join(__dirname, '../../posts')
 
-// console.log({ postsPath })
+console.log({ postsPath })
 
 function isValidPostAttributes(
   attributes: any

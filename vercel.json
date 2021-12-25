@@ -8,7 +8,7 @@
     "api/index.js": {
       "memory": 1024,
       "maxDuration": 5,
-      "includeFiles": "posts/*.md"
+      "includeFiles": "posts/*.mdx"
     }
   }
 }
