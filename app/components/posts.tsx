@@ -33,7 +33,7 @@ export const PostsCollection = ({ posts }: PostsProps) => {
   return (
     <PostsContainer>
       {posts.map((post) => (
-        <Link to={post.slug}>
+        <Link key={post.slug} to={post.slug}>
           <PostSection key={post.slug}>
             <Heading as="h4">{post.title}</Heading>
           </PostSection>
