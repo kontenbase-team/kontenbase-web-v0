@@ -1,3 +1,7 @@
+/**
+ * This will expose all variables within global ENV
+ * Only for client-side env
+ */
 function getEnv() {
   return {
     NODE_ENV: process.env.NODE_ENV, // development | production
@@ -5,9 +9,14 @@ function getEnv() {
     API_URL: process.env.API_URL, // localhost | api.domain.com
     VERCEL: process.env.VERCEL,
     BUTTONDOWN_API_KEY: process.env.BUTTONDOWN_API_KEY,
+    SPLITBEE_ID: process.env.SPLITBEE_ID,
+    GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID,
   }
 }
 
+/**
+ * Only use for server-side env
+ */
 function getEnvServer(key: string, devValue?: string) {
   return getEnvRequired(process.env, key, devValue)
 }
