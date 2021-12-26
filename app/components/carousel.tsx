@@ -45,11 +45,15 @@ const CarouselCaption = styled('div', {
   position: 'absolute',
   color: '$textAbsolute1',
   background: '$tomatoA8',
-  padding: '$2',
-  fontSize: '$5',
-  fontWeight: '$bold',
   width: '$full',
   textAlign: 'center',
+  fontWeight: '$bold',
+  fontSize: '$2',
+  padding: '$1',
+  '@tablet': {
+    fontSize: '$5',
+    padding: '$2',
+  },
 })
 
 export type CarouselItem = {
