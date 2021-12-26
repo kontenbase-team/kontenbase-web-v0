@@ -16,7 +16,8 @@ Kontenbase website for landing page and marketing purpose.
 - Splitbee
 - Google Analytics
 - Vercel
-- Cloudflare
+- Cloudflare Pages
+- Cloudflare DNS
 
 ---
 
