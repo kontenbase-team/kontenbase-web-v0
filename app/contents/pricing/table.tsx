@@ -1,11 +1,11 @@
-import { Content, TableComparison } from '~/components'
+import { Content, TableComparisonBuilder, TableComparison } from '~/components'
+import pricingPlans from './pricing-plans.json'
 
-interface PricingTableProps {}
-
-export const PricingTable: React.FunctionComponent<PricingTableProps> = () => {
+export const PricingTable: React.FunctionComponent = () => {
   return (
     <Content>
-      <TableComparison />
+      <TableComparisonBuilder data={pricingPlans} />
+      {/* <TableComparison/> */}
     </Content>
   )
 }
