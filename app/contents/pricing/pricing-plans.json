@@ -12,8 +12,21 @@
     }
   ],
   "body": [
-    [{ "text": "Name" }, { "text": "Name" }, { "text": "Name" }],
-    [{ "text": "Name" }, { "text": "Name" }, { "text": "Name" }]
+    ["☁ API and Database", "", ""],
+    ["API Requests", "Unlimited", "Unlimited"],
+    ["Realtime API", "✅", "✅"],
+    ["Customizable fields", "✅", "✅"],
+    ["Database space", "50 MB", "100 MB"],
+    ["Sleep / Pause after inactivity", "1 day", "7 days"],
+    ["Bandwidth / Transfer limits", "100 MB", "1 GB"],
+    ["Remove Kontenbase branding in API response", "-", "✅"],
+    ["👥 Users and Auth", "", ""],
+    ["Registered users", "100", "1,000"],
+    ["📦 Object Storage", "", ""],
+    ["Object Storage up to", "1 GB", "2 GB"],
+    ["Workspace team members", "-", "-"],
+    ["💬 Support and Help", "", ""],
+    ["Support", "Community", "Email"]
   ],
   "foot": [
     {

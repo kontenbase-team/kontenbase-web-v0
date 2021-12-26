@@ -61,38 +61,37 @@ export const TableComparisonBuilder: React.FunctionComponent<TableComparisonBuil
 
         <Tbody>
           <Tr>
-            <Td>
+            <Td style={{ verticalAlign: 'top' }}>
               <Heading as="h5">Pricing</Heading>
             </Td>
             <Td>
-              <div>
-                <Heading as="h5">
-                  <PriceText>$0</PriceText> forever
-                </Heading>
-                <P>For personal hobby projects and experiments.</P>
-                <AnchorButton href="https://app.kontenbase.com">
-                  Get started
-                </AnchorButton>
-              </div>
+              <Heading as="h5">
+                <PriceText>$0</PriceText> forever
+              </Heading>
+              <P>For personal hobby projects and experiments.</P>
+              <AnchorButton href="https://app.kontenbase.com">
+                Get started
+              </AnchorButton>
             </Td>
             <Td>
-              <div>
-                <Heading as="h5">
-                  <PriceText>$1</PriceText> per month
-                </Heading>
-                <P>For professional personal projects.</P>
-                <AnchorButton href="https://app.kontenbase.com">
-                  Get started
-                </AnchorButton>
-              </div>
+              <Heading as="h5">
+                <PriceText>
+                  $1 <del>$5</del>
+                </PriceText>{' '}
+                per month
+              </Heading>
+              <P>For professional personal projects.</P>
+              <AnchorButton href="https://app.kontenbase.com">
+                Get started
+              </AnchorButton>
             </Td>
           </Tr>
 
           {body.map((row, index) => (
             <React.Fragment key={`row-${index}`}>
               <Tr>
-                {row.map((item, i) => {
-                  return <Td key={`item-${i}`}>{item.text}</Td>
+                {row.map((text, i) => {
+                  return <Td key={`text-${i}`}>{text}</Td>
                 })}
               </Tr>
             </React.Fragment>
