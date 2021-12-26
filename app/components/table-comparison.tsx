@@ -1,4 +1,5 @@
 import {
+  Anchor,
   Heading,
   Caption,
   Table,
@@ -43,13 +44,24 @@ export const TableComparisonBuilder: React.FunctionComponent<TableComparisonBuil
 
         <Thead>
           <Tr>
-            {head.map((headItem, index) => (
+            {head.map((item, index) => (
               <Th key={`head-${index}`} scope="col">
-                <Heading as="h4">{headItem.text}</Heading>
+                <Heading as="h4">{item.text}</Heading>
               </Th>
             ))}
           </Tr>
         </Thead>
+
+        <Tfoot>
+          <Tr>
+            {foot.map((item, index) => (
+              <Td key={`foot-${index}`} scope="row">
+                {item.url && <Anchor href={item.url}>{item.text}</Anchor>}
+                {!item.text && <span>{item.text}</span>}
+              </Td>
+            ))}
+          </Tr>
+        </Tfoot>
       </Table>
     )
   }
