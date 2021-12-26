@@ -1,139 +1,151 @@
+import {
+  Heading,
+  Caption,
+  Table,
+  Tbody,
+  Td,
+  Tfoot,
+  Th,
+  Thead,
+  Tr,
+} from '~/components'
+
 interface TableComparisonProps {}
 
 export const TableComparison: React.FunctionComponent<TableComparisonProps> =
   () => {
     return (
-      <table>
-        <caption>Pricing plan comparison</caption>
+      <Table>
+        <Caption>Pricing plan comparison</Caption>
 
-        <thead>
-          <tr>
-            <th scope="col">
-              <h4>Plans</h4>
-            </th>
-            <th scope="col">
-              <h4>Free</h4>
-            </th>
-            <th scope="col">
-              <h4>Pro</h4>
-            </th>
-          </tr>
-        </thead>
+        <Thead>
+          <Tr>
+            <Th scope="col">
+              <Heading as="h4">Plans</Heading>
+            </Th>
+            <Th scope="col">
+              <Heading as="h4">Free</Heading>
+            </Th>
+            <Th scope="col">
+              <Heading as="h4">Pro</Heading>
+            </Th>
+          </Tr>
+        </Thead>
 
-        <tbody>
-          <tr>
-            <th scope="row">Pricing</th>
-            <td>
+        <Tbody>
+          <Tr>
+            <Th scope="row">Pricing</Th>
+            <Td>
               <div>
-                <p>$0 /project /month</p>
+                <p>$0 /project /monTh</p>
                 <p>Perfect for hobby projects and experiments.</p>
                 <a href="https://app.supabase.io">Get started</a>
               </div>
-            </td>
-            <td>
+            </Td>
+            <Td>
               <div>
-                <p>$25 /project /month</p>
+                <p>$25 /project /monTh</p>
                 <p>Perfect for hobby projects and experiments.</p>
                 <a href="https://app.supabase.io">Get started</a>
               </div>
-            </td>
-          </tr>
+            </Td>
+          </Tr>
 
-          <tr>
-            <th scope="colgroup">
+          <Tr>
+            <Th scope="colgroup">
               <div>
                 <div>🔵</div>
                 <h4>Database</h4>
               </div>
-            </th>
-            <td></td>
-            <td></td>
-          </tr>
+            </Th>
+            <Td></Td>
+            <Td></Td>
+          </Tr>
 
-          <tr>
-            <th scope="row">
+          <Tr>
+            <Th scope="row">
               <span>Unlimited API requests </span>
-            </th>
-            <td>
+            </Th>
+            <Td>
               ✅<span>Included in </span>
-            </td>
-            <td>
+            </Td>
+            <Td>
               ✅<span>Included in </span>
-            </td>
-          </tr>
+            </Td>
+          </Tr>
 
-          <tr>
-            <th scope="row">
+          <Tr>
+            <Th scope="row">
               <span>Realtime functionality</span>
-            </th>
-            <td>
+            </Th>
+            <Td>
               ✅<span>Included in </span>
-            </td>
-            <td>
+            </Td>
+            <Td>
               ✅<span>Included in </span>
-            </td>
-          </tr>
+            </Td>
+          </Tr>
 
-          <tr>
-            <th scope="row">
+          <Tr>
+            <Th scope="row">
               <span>Optimized database instances </span>
               <span data-tip="Why? Unique workload requirements, heavy reads and writes, compliance">
                 ❓
               </span>
-            </th>
-            <td>
+            </Th>
+            <Td>
               〰️
               <span>Not included in </span>
-            </td>
-            <td>
+            </Td>
+            <Td>
               〰️
               <span>Not included in </span>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">
+            </Td>
+          </Tr>
+          <Tr>
+            <Th scope="row">
               <span>Database space </span>
-            </th>
-            <td>
+            </Th>
+            <Td>
               <span>Up to 500 MB</span>
-            </td>
-            <td>
+            </Td>
+            <Td>
               <span>Up to 8 GB</span>
-            </td>
-          </tr>
+            </Td>
+          </Tr>
 
-          <tr>
-            <th scope="row">
+          <Tr>
+            <Th scope="row">
               <span>Pausing </span>
-              <span data-tip="Unused projects that have no activity or API requests will be shut down. They can be reactivated by logging into the dashboard">
+              <span data-tip="Unused projects That have no activity or API requests will be shut down. They can be reactivated by logging into The dashboard">
                 ❓
               </span>
-            </th>
-            <td>
+            </Th>
+            <Td>
               <span>Paused after 1 week inactivity</span>
-            </td>
-            <td>
+            </Td>
+            <Td>
               <span>Never</span>
-            </td>
-          </tr>
+            </Td>
+          </Tr>
 
-          <tr>
-            <th scope="row">
+          <Tr>
+            <Th scope="row">
               <span>Transfer limits </span>
-              <span data-tip="Good news, only download operations are counted towards the limit">
+              <span data-tip="Good news, only download operations are counted towards The limit">
                 ❓
               </span>
-            </th>
-            <td>
+            </Th>
+            <Td>
               <span>Up to 2GB</span>
-            </td>
-            <td>
+            </Td>
+            <Td>
               <span>Up to 50GB</span>
-            </td>
-          </tr>
+            </Td>
+          </Tr>
 
-          <tr>
-            <th
+          <Tr>
+            <Th
               className="pricing-table__product-row bg-gray-50 dark:bg-gray-700 py-3 pl-6 text-sm font-medium text-gray-900 dark:text-white text-left"
               scope="colgroup"
             >
@@ -141,203 +153,203 @@ export const TableComparison: React.FunctionComponent<TableComparisonProps> =
                 <div className="inline-flex items-center justify-center rounded-md bg-gray-800 dark:bg-white text-white h-8 w-8">
                   🔵
                 </div>
-                <h4 className="sbui-typography-title m-0">Auth</h4>
+                <h4 className="sbui-typography-title m-0">AuTh</h4>
               </div>
-            </th>
-            <td className="pricing-table__product-row bg-gray-50 dark:bg-dark-700 py-5 px-6"></td>
-            <td className="pricing-table__product-row bg-gray-50 dark:bg-dark-700 py-5 px-6"></td>
-            <td className="pricing-table__product-row bg-gray-50 dark:bg-dark-700 py-5 px-6"></td>
-          </tr>
+            </Th>
+            <Td className="pricing-table__product-row bg-gray-50 dark:bg-dark-700 py-5 px-6"></Td>
+            <Td className="pricing-table__product-row bg-gray-50 dark:bg-dark-700 py-5 px-6"></Td>
+            <Td className="pricing-table__product-row bg-gray-50 dark:bg-dark-700 py-5 px-6"></Td>
+          </Tr>
 
-          <tr>
-            <th scope="row">
+          <Tr>
+            <Th scope="row">
               <span>Users </span>
-            </th>
-            <td>
+            </Th>
+            <Td>
               <span>10,000 Users</span>
-            </td>
-            <td>
+            </Td>
+            <Td>
               <span>100,000 Users</span>
-            </td>
-          </tr>
+            </Td>
+          </Tr>
 
-          <tr>
-            <th scope="row">
+          <Tr>
+            <Th scope="row">
               <span>Remove Kontenbase branding from response </span>
-            </th>
-            <td>
+            </Th>
+            <Td>
               〰️
               <span>Not included in </span>
-            </td>
-            <td>
+            </Td>
+            <Td>
               ✅<span>Included in </span>
-            </td>
-          </tr>
+            </Td>
+          </Tr>
 
-          <tr>
-            <th scope="row">
-              <span>Audit trails </span>
-            </th>
-            <td>
+          <Tr>
+            <Th scope="row">
+              <span>Audit Trails </span>
+            </Th>
+            <Td>
               <span>1 hour</span>
-            </td>
-            <td>
+            </Td>
+            <Td>
               <span>7 days</span>
-            </td>
-          </tr>
+            </Td>
+          </Tr>
 
-          <tr>
-            <th scope="colgroup">
+          <Tr>
+            <Th scope="colgroup">
               <div className="sbui-space-row sbui-space-x-4">
                 <div className="inline-flex items-center justify-center rounded-md bg-gray-800 dark:bg-white text-white h-8 w-8">
                   🔵
                 </div>
                 <h4 className="sbui-typography-title m-0">Object storage</h4>
               </div>
-            </th>
-            <td className="pricing-table__product-row bg-gray-50 dark:bg-dark-700 py-5 px-6"></td>
-            <td className="pricing-table__product-row bg-gray-50 dark:bg-dark-700 py-5 px-6"></td>
-          </tr>
+            </Th>
+            <Td className="pricing-table__product-row bg-gray-50 dark:bg-dark-700 py-5 px-6"></Td>
+            <Td className="pricing-table__product-row bg-gray-50 dark:bg-dark-700 py-5 px-6"></Td>
+          </Tr>
 
-          <tr>
-            <th scope="row">
+          <Tr>
+            <Th scope="row">
               <span>Storage total </span>
-            </th>
-            <td>
+            </Th>
+            <Td>
               <span>Up to 1 GB</span>
-            </td>
-            <td>
+            </Td>
+            <Td>
               <span>Up to 100 GB</span>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">
+            </Td>
+          </Tr>
+          <Tr>
+            <Th scope="row">
               <span>Transfer limits </span>
-              <span data-tip="Good news, only download operations are counted towards the limit">
+              <span data-tip="Good news, only download operations are counted towards The limit">
                 ❓
               </span>
-            </th>
-            <td>
+            </Th>
+            <Td>
               <span>Up to 2 GB</span>
-            </td>
-            <td>
+            </Td>
+            <Td>
               <span>Up to 200 GB</span>
-            </td>
-          </tr>
+            </Td>
+          </Tr>
 
-          <tr>
-            <th scope="colgroup">
+          <Tr>
+            <Th scope="colgroup">
               <div className="sbui-space-row sbui-space-x-4">
                 <h4 className="sbui-typography-title m-0">Dashboard</h4>
               </div>
-            </th>
-            <td className="pricing-table__product-row bg-gray-50 dark:bg-dark-700 py-5 px-6"></td>
-            <td className="pricing-table__product-row bg-gray-50 dark:bg-dark-700 py-5 px-6"></td>
-            <td className="pricing-table__product-row bg-gray-50 dark:bg-dark-700 py-5 px-6"></td>
-          </tr>
+            </Th>
+            <Td className="pricing-table__product-row bg-gray-50 dark:bg-dark-700 py-5 px-6"></Td>
+            <Td className="pricing-table__product-row bg-gray-50 dark:bg-dark-700 py-5 px-6"></Td>
+            <Td className="pricing-table__product-row bg-gray-50 dark:bg-dark-700 py-5 px-6"></Td>
+          </Tr>
 
-          <tr>
-            <th scope="row">
+          <Tr>
+            <Th scope="row">
               <span>Team members </span>
-            </th>
-            <td>
+            </Th>
+            <Td>
               <span>Unlimited</span>
-            </td>
-            <td>
+            </Td>
+            <Td>
               <span>Unlimited</span>
-            </td>
-          </tr>
+            </Td>
+          </Tr>
 
-          <tr>
-            <th scope="row">
-              <span>Access controls </span>
-            </th>
-            <td>
+          <Tr>
+            <Th scope="row">
+              <span>Access conTrols </span>
+            </Th>
+            <Td>
               〰️
               <span>Not included in </span>
-            </td>
-            <td>
+            </Td>
+            <Td>
               <span>Coming soon</span>
-            </td>
-          </tr>
+            </Td>
+          </Tr>
 
-          <tr>
-            <th scope="row">
-              <span>Audit trails </span>
-            </th>
-            <td>
+          <Tr>
+            <Th scope="row">
+              <span>Audit Trails </span>
+            </Th>
+            <Td>
               〰️
               <span>Not included in </span>
-            </td>
-            <td>
+            </Td>
+            <Td>
               〰️
               <span>Not included in </span>
-            </td>
-          </tr>
+            </Td>
+          </Tr>
 
-          <tr>
-            <th scope="colgroup">
+          <Tr>
+            <Th scope="colgroup">
               <div className="sbui-space-row sbui-space-x-4">
                 <h4 className="sbui-typography-title m-0">
                   Support and Compliance
                 </h4>
               </div>
-            </th>
-            <td className="pricing-table__product-row bg-gray-50 dark:bg-dark-700 py-5 px-6"></td>
-            <td className="pricing-table__product-row bg-gray-50 dark:bg-dark-700 py-5 px-6"></td>
-          </tr>
+            </Th>
+            <Td className="pricing-table__product-row bg-gray-50 dark:bg-dark-700 py-5 px-6"></Td>
+            <Td className="pricing-table__product-row bg-gray-50 dark:bg-dark-700 py-5 px-6"></Td>
+          </Tr>
 
-          <tr>
-            <th scope="row">
+          <Tr>
+            <Th scope="row">
               <span>Community support </span>
-            </th>
-            <td>
+            </Th>
+            <Td>
               ✅<span>Included in </span>
-            </td>
-            <td>
+            </Td>
+            <Td>
               ✅<span>Included in </span>
-            </td>
-          </tr>
+            </Td>
+          </Tr>
 
-          <tr>
-            <th scope="row">
+          <Tr>
+            <Th scope="row">
               <span>Email support </span>
-            </th>
-            <td>
+            </Th>
+            <Td>
               〰️
               <span>Not included in </span>
-            </td>
-            <td>
+            </Td>
+            <Td>
               ✅<span>Included in </span>
-            </td>
-          </tr>
+            </Td>
+          </Tr>
 
-          <tr>
-            <th scope="row">
+          <Tr>
+            <Th scope="row">
               <span>Designated support </span>
-            </th>
-            <td>
+            </Th>
+            <Td>
               〰️
               <span>Not included in </span>
-            </td>
-            <td>
+            </Td>
+            <Td>
               〰️
               <span>Not included in </span>
-            </td>
-          </tr>
-        </tbody>
+            </Td>
+          </Tr>
+        </Tbody>
 
-        <tfoot>
-          <tr>
-            <th scope="row">Choose your plan</th>
-            <td>
+        <Tfoot>
+          <Tr>
+            <Th scope="row">Choose your plan</Th>
+            <Td>
               <a href="https://app.supabase.io">Get Started</a>
-            </td>
-            <td>
+            </Td>
+            <Td>
               <a href="https://app.supabase.io">Get Started</a>
-            </td>
-          </tr>
-        </tfoot>
-      </table>
+            </Td>
+          </Tr>
+        </Tfoot>
+      </Table>
     )
   }
