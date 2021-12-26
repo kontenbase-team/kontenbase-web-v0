@@ -11,13 +11,24 @@ import {
   VisuallyHidden,
 } from '~/components'
 
+export interface Head {
+  text: string
+}
+
+export interface Foot {
+  text: string
+  url?: string
+}
+
+export interface TableData {
+  caption: string
+  head: Head[]
+  body: any[]
+  foot: Foot[]
+}
+
 interface TableComparisonBuilderProps {
-  data: {
-    caption: string
-    head: object
-    body: object
-    foot: object
-  }
+  data: TableData
 }
 
 export const TableComparisonBuilder: React.FunctionComponent<TableComparisonBuilderProps> =
@@ -29,6 +40,16 @@ export const TableComparisonBuilder: React.FunctionComponent<TableComparisonBuil
         <VisuallyHidden.Root>
           <Caption>{caption}</Caption>
         </VisuallyHidden.Root>
+
+        <Thead>
+          <Tr>
+            {head.map((headItem, index) => (
+              <Th key={`head-${index}`} scope="col">
+                <Heading as="h4">{headItem.text}</Heading>
+              </Th>
+            ))}
+          </Tr>
+        </Thead>
       </Table>
     )
   }

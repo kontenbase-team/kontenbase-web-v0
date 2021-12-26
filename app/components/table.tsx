@@ -92,6 +92,7 @@ export const Table = styled('table', {
   width: '100%',
   tableLayout: 'fixed',
   borderSpacing: 0,
+  mb: '$52',
   variants: {
     striped: {
       true: {
