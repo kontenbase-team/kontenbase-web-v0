@@ -5,6 +5,7 @@ import { getDayName, getYear } from '~/utils'
 
 const FooterContainer = styled('footer', {
   padding: '2rem 0',
+  mt: '$28',
 })
 
 const CopyrightSocial = styled('div', {
