@@ -1,0 +1,25 @@
+[
+  {
+    "name": "Free",
+    "slug": "free",
+    "price": {
+      "cost": 0,
+      "info": "forever",
+      "description": "For somebody"
+    },
+    "button": {
+      "href": "/login",
+      "text": "Get Started"
+    },
+    "segments": [
+      {
+        "name": "Database",
+        "benefits": ["Check", "Check", "Check"]
+      },
+      {
+        "name": "Auth",
+        "benefits": ["Check", "Check", "Check"]
+      }
+    ]
+  }
+]
