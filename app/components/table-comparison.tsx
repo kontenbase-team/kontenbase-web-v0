@@ -1,5 +1,6 @@
+import React from 'react'
 import {
-  Anchor,
+  AnchorButton,
   Heading,
   Caption,
   Table,
@@ -9,6 +10,7 @@ import {
   Th,
   Thead,
   Tr,
+  P,
   VisuallyHidden,
 } from '~/components'
 
@@ -24,7 +26,7 @@ export interface Foot {
 export interface TableData {
   caption: string
   head: Head[]
-  body: any[]
+  body: any[][]
   foot: Foot[]
 }
 
@@ -38,9 +40,9 @@ export const TableComparisonBuilder: React.FunctionComponent<TableComparisonBuil
 
     return (
       <Table>
-        <VisuallyHidden.Root>
-          <Caption>{caption}</Caption>
-        </VisuallyHidden.Root>
+        <Caption>
+          <VisuallyHidden.Root>{caption}</VisuallyHidden.Root>
+        </Caption>
 
         <Thead>
           <Tr>
@@ -52,11 +54,47 @@ export const TableComparisonBuilder: React.FunctionComponent<TableComparisonBuil
           </Tr>
         </Thead>
 
+        <Tbody>
+          <Tr>
+            <Td>Pricing</Td>
+            <Td>
+              <div>
+                <P>$0 forever</P>
+                <P>For personal hobby projects and experiments.</P>
+                <AnchorButton href="https://app.kontenbase.com">
+                  Get started
+                </AnchorButton>
+              </div>
+            </Td>
+            <Td>
+              <div>
+                <P>$1 / month</P>
+                <P>For professional personal projects.</P>
+                <AnchorButton href="https://app.kontenbase.com">
+                  Get started
+                </AnchorButton>
+              </div>
+            </Td>
+          </Tr>
+
+          {body.map((row, index) => (
+            <React.Fragment key={`row-${index}`}>
+              <Tr>
+                {row.map((item, i) => {
+                  return <Td key={`item-${i}`}>{item.text}</Td>
+                })}
+              </Tr>
+            </React.Fragment>
+          ))}
+        </Tbody>
+
         <Tfoot>
           <Tr>
             {foot.map((item, index) => (
               <Td key={`foot-${index}`} scope="row">
-                {item.url && <Anchor href={item.url}>{item.text}</Anchor>}
+                {item.url && (
+                  <AnchorButton href={item.url}>{item.text}</AnchorButton>
+                )}
                 {!item.text && <span>{item.text}</span>}
               </Td>
             ))}
@@ -92,16 +130,16 @@ export const TableComparison: React.FunctionComponent = () => {
           <Th scope="row">Pricing</Th>
           <Td>
             <div>
-              <p>$0 /project /monTh</p>
-              <p>Perfect for hobby projects and experiments.</p>
-              <a href="https://app.supabase.io">Get started</a>
+              <P>$0 /project /month</P>
+              <P>Perfect for hobby projects and experiments.</P>
+              <a href="https://app.kontenbase.com">Get started</a>
             </div>
           </Td>
           <Td>
             <div>
-              <p>$25 /project /monTh</p>
-              <p>Perfect for hobby projects and experiments.</p>
-              <a href="https://app.supabase.io">Get started</a>
+              <P>$25 /project /month</P>
+              <P>Perfect for hobby projects and experiments.</P>
+              <a href="https://app.kontenbase.com">Get started</a>
             </div>
           </Td>
         </Tr>
@@ -398,10 +436,10 @@ export const TableComparison: React.FunctionComponent = () => {
         <Tr>
           <Th scope="row">Choose your plan</Th>
           <Td>
-            <a href="https://app.supabase.io">Get Started</a>
+            <a href="https://app.kontenbase.com">Get Started</a>
           </Td>
           <Td>
-            <a href="https://app.supabase.io">Get Started</a>
+            <a href="https://app.kontenbase.com">Get Started</a>
           </Td>
         </Tr>
       </Tfoot>

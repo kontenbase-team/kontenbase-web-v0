@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react'
 
 import { styled } from '~/stitches'
-import { Paragraph, AspectRatio, VideoYouTube } from '~/components'
+import { P, AspectRatio, VideoYouTube } from '~/components'
 
 export type Explainer = {
   slug: string
@@ -67,7 +67,7 @@ const StepTitle = styled('h4', {
   '@desktop': { fontSize: '$10' },
 })
 
-const StepDescription = styled(Paragraph, {
+const StepDescription = styled(P, {
   fontSize: '$5',
 })
 

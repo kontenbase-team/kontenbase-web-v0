@@ -16,8 +16,8 @@ export const Tr = styled('tr', {})
 export const Th = styled('th', {
   fontWeight: 'unset',
   textAlign: 'start',
-  fontSize: '$2',
-  py: '$2',
+  fontSize: '$5',
+  py: '$5',
   borderBottom: '1px solid $gray4',
   variants: {
     align: {
@@ -47,9 +47,9 @@ export const Th = styled('th', {
 })
 
 export const Td = styled('td', {
-  py: '$2',
+  py: '$5',
   borderBottom: '1px solid $gray4',
-  fontSize: '$2',
+  fontSize: '$3',
   variants: {
     align: {
       start: {
@@ -79,11 +79,11 @@ export const Td = styled('td', {
 
 export const Thead = styled('thead', {
   [`& ${Th}`]: {
-    fontSize: '$1',
+    fontSize: '$5',
     color: '$gray11',
   },
   [`& ${Td}`]: {
-    fontSize: '$1',
+    fontSize: '$3',
     color: '$gray11',
   },
 })
@@ -92,6 +92,7 @@ export const Table = styled('table', {
   width: '100%',
   tableLayout: 'fixed',
   borderSpacing: 0,
+  fontSize: '$5',
   mb: '$52',
   variants: {
     striped: {

@@ -11,7 +11,10 @@
       "text": "Pro"
     }
   ],
-  "body": [],
+  "body": [
+    [{ "text": "Name" }, { "text": "Name" }, { "text": "Name" }],
+    [{ "text": "Name" }, { "text": "Name" }, { "text": "Name" }]
+  ],
   "foot": [
     {
       "text": "Choose your plan"
