@@ -107,6 +107,10 @@ export const Navigation = () => {
         </NavigationItem>
 
         <NavigationItem>
+          <NavigationLink to="/pricing">Pricing</NavigationLink>
+        </NavigationItem>
+
+        <NavigationItem>
           <NavigationAnchor href="https://a.kontenbase.com/jobs">
             Jobs
           </NavigationAnchor>

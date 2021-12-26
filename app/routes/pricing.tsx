@@ -1,7 +1,7 @@
 import type { MetaFunction, LoaderFunction } from 'remix'
 import { useLoaderData, useActionData, json } from 'remix'
 
-import { HomeHero } from '~/contents'
+import { PricingHero } from '~/contents'
 import { ReactGA } from '~/utils'
 
 /**
@@ -36,7 +36,7 @@ export default function Pricing() {
 
   return (
     <>
-      <h1>Pricing</h1>
+      <PricingHero />
     </>
   )
 }
