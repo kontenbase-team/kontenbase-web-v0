@@ -52,21 +52,6 @@ export const TableComparison: React.FunctionComponent<TableComparisonProps> =
 
           <tr>
             <th scope="row">
-              <span>Dedicated Postgres Database </span>
-              <span data-tip="A Postgres database with no restrictions? You get it. No pseudo limited users, you are the postgres root user.  No caveats.">
-                ❓
-              </span>
-            </th>
-            <td>
-              ✅<span>Included in </span>
-            </td>
-            <td>
-              ✅<span>Included in </span>
-            </td>
-          </tr>
-
-          <tr>
-            <th scope="row">
               <span>Unlimited API requests </span>
             </th>
             <td>
@@ -116,21 +101,7 @@ export const TableComparison: React.FunctionComponent<TableComparisonProps> =
               <span>Up to 8 GB</span>
             </td>
           </tr>
-          <tr>
-            <th scope="row">
-              <span>Automatic backups </span>
-              <span data-tip="Backups are entire copies of your database that can be restored in the future.">
-                ❓
-              </span>
-            </th>
-            <td>
-              〰️
-              <span>Not included in </span>
-            </td>
-            <td>
-              <span>7 days of backup</span>
-            </td>
-          </tr>
+
           <tr>
             <th scope="row">
               <span>Pausing </span>
@@ -145,6 +116,7 @@ export const TableComparison: React.FunctionComponent<TableComparisonProps> =
               <span>Never</span>
             </td>
           </tr>
+
           <tr>
             <th scope="row">
               <span>Transfer limits </span>
@@ -159,14 +131,6 @@ export const TableComparison: React.FunctionComponent<TableComparisonProps> =
               <span>Up to 50GB</span>
             </td>
           </tr>
-
-          <div
-            className="__react_component_tooltip tbb294467-bacc-44be-a30d-071270d7cb1c place-top type-dark"
-            id="tbb294467-bacc-44be-a30d-071270d7cb1c"
-            data-id="tooltip"
-          >
-            Tooltip
-          </div>
 
           <tr>
             <th
@@ -194,18 +158,6 @@ export const TableComparison: React.FunctionComponent<TableComparisonProps> =
             </td>
             <td>
               <span>100,000 Users</span>
-            </td>
-          </tr>
-
-          <tr>
-            <th scope="row">
-              <span>Social OAuth providers </span>
-            </th>
-            <td>
-              ✅<span>Included in </span>
-            </td>
-            <td>
-              ✅<span>Included in </span>
             </td>
           </tr>
 
