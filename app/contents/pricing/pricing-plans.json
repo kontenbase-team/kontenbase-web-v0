@@ -19,12 +19,12 @@
     ["Database space", "50 MB", "100 MB"],
     ["Sleep / Pause after inactivity", "1 day", "7 days"],
     ["Bandwidth / Transfer limits", "100 MB", "1 GB"],
-    ["Remove Kontenbase branding in API response", "-", "✅"],
+    ["Remove Kontenbase branding in API response", "—", "✅"],
     ["👥 Users and Auth", "", ""],
     ["Registered users", "100", "1,000"],
     ["📦 Object Storage", "", ""],
     ["Object Storage up to", "1 GB", "2 GB"],
-    ["Workspace team members", "-", "-"],
+    ["Workspace team members", "—", "Coming Soon"],
     ["💬 Support and Help", "", ""],
     ["Support", "Community", "Email"]
   ],
@@ -33,11 +33,11 @@
       "text": "Choose your plan"
     },
     {
-      "text": "Get Started",
+      "text": "Start Free",
       "url": "https://app.kontenbase.com"
     },
     {
-      "text": "Get Started",
+      "text": "Start Pro",
       "url": "https://app.kontenbase.com"
     }
   ]

@@ -11,7 +11,21 @@ export const Tbody = styled('tbody', {
 
 export const Tfoot = styled('tfoot', {})
 
-export const Tr = styled('tr', {})
+export const Tr = styled('tr', {
+  px: '$1',
+  fontSize: '$1',
+  '@tablet': {
+    px: '$2',
+    fontSize: '$2',
+  },
+  '@desktop': {
+    px: '$3',
+    fontSize: '$3',
+  },
+  '&>:not([hidden])~:not([hidden])': {
+    borderLeft: '1px solid $gray4',
+  },
+})
 
 export const Th = styled('th', {
   fontWeight: 'unset',
@@ -47,10 +61,16 @@ export const Th = styled('th', {
 })
 
 export const Td = styled('td', {
+  px: '$3',
   py: '$5',
   borderBottom: '1px solid $gray4',
-  fontSize: '$3',
+  verticalAlign: 'top',
   variants: {
+    variant: {
+      group: {
+        bc: '$brand3',
+      },
+    },
     align: {
       start: {
         textAlign: 'start',
@@ -77,22 +97,12 @@ export const Td = styled('td', {
   },
 })
 
-export const Thead = styled('thead', {
-  [`& ${Th}`]: {
-    fontSize: '$5',
-    color: '$gray11',
-  },
-  [`& ${Td}`]: {
-    fontSize: '$3',
-    color: '$gray11',
-  },
-})
+export const Thead = styled('thead', {})
 
 export const Table = styled('table', {
   width: '100%',
   tableLayout: 'fixed',
   borderSpacing: 0,
-  fontSize: '$5',
   mb: '$52',
   variants: {
     striped: {
