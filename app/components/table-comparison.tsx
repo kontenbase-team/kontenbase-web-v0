@@ -1,4 +1,5 @@
 import React from 'react'
+import { styled } from '~/stitches'
 import {
   AnchorButton,
   Heading,
@@ -34,6 +35,10 @@ interface TableComparisonBuilderProps {
   data: TableData
 }
 
+const PriceText = styled('span', {
+  fontSize: '$8',
+})
+
 export const TableComparisonBuilder: React.FunctionComponent<TableComparisonBuilderProps> =
   ({ data }) => {
     const { caption, head, body, foot } = data
@@ -56,10 +61,14 @@ export const TableComparisonBuilder: React.FunctionComponent<TableComparisonBuil
 
         <Tbody>
           <Tr>
-            <Td>Pricing</Td>
+            <Td>
+              <Heading as="h5">Pricing</Heading>
+            </Td>
             <Td>
               <div>
-                <P>$0 forever</P>
+                <Heading as="h5">
+                  <PriceText>$0</PriceText> forever
+                </Heading>
                 <P>For personal hobby projects and experiments.</P>
                 <AnchorButton href="https://app.kontenbase.com">
                   Get started
@@ -68,7 +77,9 @@ export const TableComparisonBuilder: React.FunctionComponent<TableComparisonBuil
             </Td>
             <Td>
               <div>
-                <P>$1 / month</P>
+                <Heading as="h5">
+                  <PriceText>$1</PriceText> per month
+                </Heading>
                 <P>For professional personal projects.</P>
                 <AnchorButton href="https://app.kontenbase.com">
                   Get started

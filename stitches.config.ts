@@ -51,9 +51,9 @@ const colorTokens = {
   heading1: '$brand11',
   heading2: '$brand11',
   heading3: '$brand11',
-  heading4: '$gray11',
-  heading5: '$gray11',
-  heading6: '$gray11',
+  heading4: '$gray12',
+  heading5: '$gray12',
+  heading6: '$gray12',
 
   text1: '$gray12',
 
