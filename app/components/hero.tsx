@@ -14,7 +14,7 @@ const HeroContainer = styled('div', {
 
 export const Hero = (props: HeroProps) => {
   return (
-    <HeroContainer>
+    <HeroContainer id="hero">
       <Content>{props.children}</Content>
     </HeroContainer>
   )

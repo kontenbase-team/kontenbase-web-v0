@@ -7,38 +7,26 @@ interface PricingHeroProps {
 
 const PricingHeroContainer = styled('div', {
   display: 'flex',
-  gap: '2rem',
-  justifyContent: 'space-between',
+  justifyContent: 'center',
   alignItems: 'center',
-  flexDirection: 'column',
   textAlign: 'center',
-  '@tablet': {
-    flexDirection: 'column',
-  },
-  '@tv': {
-    textAlign: 'left',
-    flexDirection: 'row',
-  },
 })
 
-const PricingHeroMain = styled('main', {
+const PricingHeroContent = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  maxWidth: '600px',
   width: '100%',
-  h1: { maxWidth: '23ch' },
-  p: { maxWidth: '50ch' },
 })
 
 export const PricingHero = (props: PricingHeroProps) => {
   return (
     <Hero>
-      <PricingHeroContainer>
-        <PricingHeroMain>
-          <Heading as="h1">Pricing Plan</Heading>
+      <PricingHeroContainer id="pricing-hero">
+        <PricingHeroContent id="pricing-hero-content">
+          <Heading as="h1">Simple Pricing Plan</Heading>
           <Paragraph>Choose what's best for you or your team.</Paragraph>
-        </PricingHeroMain>
+        </PricingHeroContent>
       </PricingHeroContainer>
     </Hero>
   )

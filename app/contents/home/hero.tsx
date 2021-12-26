@@ -22,7 +22,7 @@ const HomeHeroContainer = styled('div', {
   },
 })
 
-const HomeHeroMain = styled('main', {
+const HomeHeroContent = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
@@ -41,13 +41,13 @@ export const HomeHero = (props: HomeHeroProps) => {
   return (
     <Hero>
       <HomeHeroContainer>
-        <HomeHeroMain>
+        <HomeHeroContent>
           <Heading as="h1">No Code Backend API, Fast and Easy!</Heading>
           <Paragraph>
             Kontenbase allows you to easily create backend API, auth, and
             storage in less than 1 minute without coding.
           </Paragraph>
-        </HomeHeroMain>
+        </HomeHeroContent>
 
         <HomeHeroAside>
           <HomeCarousel />

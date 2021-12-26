@@ -31,6 +31,8 @@ const ContentContainer = styled('div', {
 
 export const Content = (props: ContentProps) => {
   return (
-    <ContentContainer layout={props.layout}>{props.children}</ContentContainer>
+    <ContentContainer className="content" layout={props.layout}>
+      {props.children}
+    </ContentContainer>
   )
 }
