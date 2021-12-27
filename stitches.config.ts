@@ -176,6 +176,7 @@ const fontsTokens = {
 }
 
 const fontSizesTokens = {
+  '0': '10px',
   1: '12px',
   2: '14px',
   3: '16px',

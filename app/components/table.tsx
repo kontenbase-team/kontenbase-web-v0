@@ -28,10 +28,11 @@ export const Tr = styled('tr', {
 })
 
 export const Th = styled('th', {
+  px: '$3',
+  py: '$5',
   fontWeight: 'unset',
   textAlign: 'start',
   fontSize: '$5',
-  py: '$5',
   borderBottom: '1px solid $gray4',
   variants: {
     align: {

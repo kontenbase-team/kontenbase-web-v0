@@ -36,11 +36,15 @@ interface TableComparisonBuilderProps {
 }
 
 const PriceText = styled('span', {
-  fontSize: '$8',
+  fontSize: '$5',
+  '@tablet': { fontSize: '$7' },
+  '@desktop': { fontSize: '$9' },
+  del: { color: '$gray8' },
 })
 
 export const TableComparisonBuilder: React.FunctionComponent<TableComparisonBuilderProps> =
   ({ data }) => {
+    const appUrl = 'https://app.kontenbase.com'
     const { caption, head, body, foot } = data
 
     return (
@@ -68,8 +72,10 @@ export const TableComparisonBuilder: React.FunctionComponent<TableComparisonBuil
               <Heading as="h5">
                 <PriceText>$0</PriceText> forever
               </Heading>
-              <P>For personal hobby projects and experiments.</P>
-              <AnchorButton href="https://app.kontenbase.com">
+              <P size="adaptive">
+                For personal hobby projects and experiments.
+              </P>
+              <AnchorButton size="adaptive" href={appUrl}>
                 Get started
               </AnchorButton>
             </Td>
@@ -80,8 +86,8 @@ export const TableComparisonBuilder: React.FunctionComponent<TableComparisonBuil
                 </PriceText>
                 <span>/month</span>
               </Heading>
-              <P>For professional personal projects.</P>
-              <AnchorButton href="https://app.kontenbase.com">
+              <P size="adaptive">For professional personal projects.</P>
+              <AnchorButton size="adaptive" href={appUrl}>
                 Get started
               </AnchorButton>
             </Td>
@@ -107,7 +113,9 @@ export const TableComparisonBuilder: React.FunctionComponent<TableComparisonBuil
             {foot.map((item, index) => (
               <Td key={`foot-${index}`} scope="row">
                 {item.url && (
-                  <AnchorButton href={item.url}>{item.text}</AnchorButton>
+                  <AnchorButton size="adaptive" href={item.url}>
+                    {item.text}
+                  </AnchorButton>
                 )}
                 {!item.text && <span>{item.text}</span>}
               </Td>
