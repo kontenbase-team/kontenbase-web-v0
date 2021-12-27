@@ -59,6 +59,27 @@ export const buttonStyles = {
         fontSize: '$4',
         lineHeight: '$sizes$7',
       },
+      adaptive: {
+        borderRadius: '$1',
+        height: '$5',
+        fontSize: '$1',
+        px: '$2',
+        lineHeight: '$sizes$5',
+        '@tablet': {
+          borderRadius: '$2',
+          height: '$6',
+          px: '$3',
+          fontSize: '$3',
+          lineHeight: '$sizes$6',
+        },
+        '@desktop': {
+          borderRadius: '$2',
+          height: '$7',
+          px: '$4',
+          fontSize: '$4',
+          lineHeight: '$sizes$7',
+        },
+      },
     },
     variant: {
       brand: {

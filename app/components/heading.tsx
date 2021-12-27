@@ -3,20 +3,58 @@ import { styled } from '~/stitches'
 interface HeadingProps {
   as?: string
   css?: any
+  color?: 'brand' | 'solid' | undefined
   children: React.ReactNode
 }
 
 const H1 = styled('h1', {
   color: '$heading1',
-  fontSize: '2.2rem',
+  fontSize: '2.25rem',
   '@tablet': { fontSize: '2.5rem' },
   '@desktop': { fontSize: '3rem' },
 })
-const H2 = styled('h2', { color: '$heading2', fontSize: '2rem' })
-const H3 = styled('h3', { color: '$heading3', fontSize: '1.75rem' })
-const H4 = styled('h4', { color: '$heading4', fontSize: '1.5rem' })
-const H5 = styled('h5', { color: '$heading5', fontSize: '1.25rem' })
-const H6 = styled('h6', { color: '$heading6', fontSize: '1rem' })
+
+const H2 = styled('h2', {
+  fontSize: '1.5rem',
+  '@tablet': { fontSize: '1.75rem' },
+  '@desktop': { fontSize: '2rem' },
+  variants: {
+    color: {
+      brand: { color: '$heading2' },
+      solid: { color: '$text1' },
+    },
+  },
+  defaultVariants: {
+    color: 'brand',
+  },
+})
+
+const H3 = styled('h3', {
+  color: '$heading3',
+  fontSize: '1.75rem',
+  '@tablet': { fontSize: '1.75rem' },
+  '@desktop': { fontSize: '1.75rem' },
+})
+
+const H4 = styled('h4', {
+  color: '$heading4',
+  mt: '0',
+  mb: '$2',
+  fontSize: '1.5rem',
+})
+
+const H5 = styled('h5', {
+  color: '$heading5',
+  mt: '0',
+  mb: '$2',
+  fontSize: '1.25rem',
+})
+
+const H6 = styled('h6', {
+  color: '$heading6',
+  my: '0',
+  fontSize: '1rem',
+})
 
 export const Heading = (props: HeadingProps) => {
   switch (props.as) {

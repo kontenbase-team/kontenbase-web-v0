@@ -2,6 +2,7 @@ import { styled } from '~/stitches'
 
 interface ContentProps {
   layout?: 'center-horizontal' | 'center-vertical' | undefined
+  size?: 'adaptive' | undefined
   children: React.ReactNode
 }
 
@@ -10,10 +11,21 @@ const ContentContainer = styled('div', {
   marginRight: 'auto',
   marginLeft: 'auto',
   maxWidth: 'calc(100% - 1rem * 2)',
-  '@tablet': {
+  '@desktop': {
     maxWidth: 'calc(100% - 2rem * 2)',
   },
   variants: {
+    size: {
+      adaptive: {
+        maxWidth: '100%',
+        '@tablet': {
+          maxWidth: 'calc(100% - 1rem * 2)',
+        },
+        '@desktop': {
+          maxWidth: 'calc(100% - 2rem * 2)',
+        },
+      },
+    },
     layout: {
       'center-horizontal': {
         display: 'flex',
@@ -31,6 +43,8 @@ const ContentContainer = styled('div', {
 
 export const Content = (props: ContentProps) => {
   return (
-    <ContentContainer layout={props.layout}>{props.children}</ContentContainer>
+    <ContentContainer className="content" {...props}>
+      {props.children}
+    </ContentContainer>
   )
 }

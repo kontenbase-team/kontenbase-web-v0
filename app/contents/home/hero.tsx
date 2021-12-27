@@ -1,5 +1,5 @@
 import { styled } from '~/stitches'
-import { Hero, Heading, Paragraph } from '~/components'
+import { Hero, Heading, P } from '~/components'
 import { HomeCarousel } from '~/contents'
 
 interface HomeHeroProps {
@@ -22,14 +22,17 @@ const HomeHeroContainer = styled('div', {
   },
 })
 
-const HomeHeroMain = styled('main', {
+const HomeHeroContent = styled('div', {
   display: 'flex',
   flexDirection: 'column',
-  alignItems: 'center',
   maxWidth: '600px',
   width: '100%',
   h1: { maxWidth: '23ch' },
   p: { maxWidth: '50ch' },
+  alignItems: 'center',
+  '@tablet': {
+    alignItems: 'flex-start',
+  },
 })
 
 const HomeHeroAside = styled('aside', {
@@ -41,13 +44,13 @@ export const HomeHero = (props: HomeHeroProps) => {
   return (
     <Hero>
       <HomeHeroContainer>
-        <HomeHeroMain>
+        <HomeHeroContent>
           <Heading as="h1">No Code Backend API, Fast and Easy!</Heading>
-          <Paragraph>
+          <P>
             Kontenbase allows you to easily create backend API, auth, and
             storage in less than 1 minute without coding.
-          </Paragraph>
-        </HomeHeroMain>
+          </P>
+        </HomeHeroContent>
 
         <HomeHeroAside>
           <HomeCarousel />

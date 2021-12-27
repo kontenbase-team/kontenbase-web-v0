@@ -1,0 +1,37 @@
+{
+  "caption": "Pricing plan comparison",
+  "head": [{ "text": "Plans" }, { "text": "Free" }, { "text": "Pro" }],
+  "body": [
+    ["☁ API and Database", "", ""],
+    ["API Requests", "Unlimited", "Unlimited"],
+    ["Realtime API", "✅", "✅"],
+    ["Customizable fields", "✅", "✅"],
+    ["Database space", "50 MB", "1 GB"],
+    ["Sleep / Pause after inactivity", "1 day", "7 days"],
+    ["Bandwidth / Transfer limits", "100 MB", "10 GB"],
+    ["Remove Kontenbase branding in API response", "—", "✅"],
+
+    ["👥 Users and Auth", "", ""],
+    ["Registered users", "100", "5,000"],
+
+    ["📦 Object Storage", "", ""],
+    ["Object Storage up to", "1 GB", "10 GB"],
+    ["Workspace team members", "—", "Coming Soon"],
+
+    ["💬 Support and Help", "", ""],
+    ["Support", "Community", "Email"]
+  ],
+  "foot": [
+    {
+      "text": "Choose your plan"
+    },
+    {
+      "text": "Start Free",
+      "url": "https://app.kontenbase.com"
+    },
+    {
+      "text": "Start Pro",
+      "url": "https://app.kontenbase.com"
+    }
+  ]
+}

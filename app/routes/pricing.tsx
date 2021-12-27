@@ -1,17 +1,17 @@
 import type { MetaFunction, LoaderFunction } from 'remix'
 import { useLoaderData, useActionData, json } from 'remix'
 
-import { HomeHero } from '~/contents'
-import { ReactGA } from '~/utils'
+import { PricingHero, PricingTable } from '~/contents'
+import { createMeta, ReactGA } from '~/utils'
 
 /**
  * Meta
  */
 export const meta: MetaFunction = () => {
-  return {
+  return createMeta({
     title: 'Kontenbase - Pricing',
     description: 'Pricing plans of Kontenbase.',
-  }
+  })
 }
 
 /**
@@ -36,7 +36,8 @@ export default function Pricing() {
 
   return (
     <>
-      <h1>Pricing</h1>
+      <PricingHero />
+      <PricingTable />
     </>
   )
 }

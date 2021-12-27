@@ -9,7 +9,7 @@ const LayoutContainer = styled('div', {
   // minHeight: 'calc(100vh - env(safe-area-inset-bottom))',
 })
 
-const LayoutContent = styled('div', {
+const LayoutContent = styled('main', {
   paddingTop: '2rem',
   flex: 1,
 })
@@ -22,9 +22,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
     <LayoutContainer>
       <Header />
 
-      <LayoutContent>
-        <div>{children}</div>
-      </LayoutContent>
+      <LayoutContent>{children}</LayoutContent>
 
       <Footer />
     </LayoutContainer>
