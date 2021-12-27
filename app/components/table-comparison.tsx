@@ -75,9 +75,9 @@ export const TableComparisonBuilder: React.FunctionComponent<TableComparisonBuil
               <P size="adaptive">
                 For personal hobby projects and experiments.
               </P>
-              <AnchorButton size="adaptive" href={appUrl}>
+              {/* <AnchorButton size="adaptive" href={appUrl}>
                 Get started
-              </AnchorButton>
+              </AnchorButton> */}
             </Td>
             <Td>
               <Heading as="h5">
@@ -87,9 +87,9 @@ export const TableComparisonBuilder: React.FunctionComponent<TableComparisonBuil
                 <span>/month</span>
               </Heading>
               <P size="adaptive">For professional personal projects.</P>
-              <AnchorButton size="adaptive" href={appUrl}>
+              {/* <AnchorButton size="adaptive" href={appUrl}>
                 Get started
-              </AnchorButton>
+              </AnchorButton> */}
             </Td>
           </Tr>
 
@@ -108,7 +108,7 @@ export const TableComparisonBuilder: React.FunctionComponent<TableComparisonBuil
           ))}
         </Tbody>
 
-        <Tfoot>
+        {/* <Tfoot>
           <Tr>
             {foot.map((item, index) => (
               <Td key={`foot-${index}`} scope="row">
@@ -121,7 +121,7 @@ export const TableComparisonBuilder: React.FunctionComponent<TableComparisonBuil
               </Td>
             ))}
           </Tr>
-        </Tfoot>
+        </Tfoot> */}
       </Table>
     )
   }
