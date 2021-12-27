@@ -59,9 +59,10 @@ export const meta: MetaFunction = () => {
   const title = 'Kontenbase'
   const description =
     'No code backend API, fast and easy! Easily create backend API, auth, and storage in less than 1 minute without coding.'
-  const ogImageUrl = '/images/kontenbase-og.png?v=1'
+  const url = 'https://kontenbase.com/'
+  const ogImageUrl = url + 'images/kontenbase-og.png?v=1'
   const ogImageAlt = 'Kontenbase is a No Code Backend as a Service'
-  const twiterImageUrl = '/images/kontenbase-twitter.png?v=1'
+  const twiterImageUrl = url + '/images/kontenbase-twitter.png?v=1'
 
   return {
     title: title,
@@ -70,7 +71,7 @@ export const meta: MetaFunction = () => {
     'og:site_name': name,
     'og:title': title,
     'og:description': description,
-    'og:url': 'https://kontenbase.com/',
+    'og:url': url,
     'og:locale': 'en_US',
     'og:image': ogImageUrl,
     'og:image:alt': ogImageAlt,

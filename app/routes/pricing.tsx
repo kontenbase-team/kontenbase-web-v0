@@ -11,6 +11,7 @@ export const meta: MetaFunction = () => {
   return createMeta({
     title: 'Kontenbase - Pricing',
     description: 'Pricing plans of Kontenbase.',
+    route: 'pricing',
   })
 }
 
