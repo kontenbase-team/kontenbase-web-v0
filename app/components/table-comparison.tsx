@@ -35,6 +35,10 @@ interface TableComparisonBuilderProps {
   data: TableData
 }
 
+const ProText = styled('span', {
+  color: '$heading1',
+})
+
 const PriceText = styled('span', {
   fontSize: '$5',
   '@tablet': { fontSize: '$7' },
@@ -61,7 +65,7 @@ export const TableComparisonBuilder: React.FunctionComponent<TableComparisonBuil
             </Th>
             <Th scope="col">
               <Heading as="h4">Pro</Heading>
-              <span>Alpha Pricing Special</span>
+              <ProText>Alpha Pricing Special</ProText>
             </Th>
           </Tr>
         </Thead>
