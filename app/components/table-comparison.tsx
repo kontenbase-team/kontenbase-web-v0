@@ -44,8 +44,8 @@ const PriceText = styled('span', {
 
 export const TableComparisonBuilder: React.FunctionComponent<TableComparisonBuilderProps> =
   ({ data }) => {
-    const appUrl = 'https://app.kontenbase.com'
-    const { caption, head, body, foot } = data
+    // const appUrl = 'https://app.kontenbase.com'
+    const { caption, body, head, foot } = data
 
     return (
       <Table>
@@ -55,11 +55,14 @@ export const TableComparisonBuilder: React.FunctionComponent<TableComparisonBuil
 
         <Thead>
           <Tr>
-            {head.map((item, index) => (
-              <Th key={`head-${index}`} scope="col">
-                <Heading as="h4">{item.text}</Heading>
-              </Th>
-            ))}
+            <Th scope="col"></Th>
+            <Th scope="col">
+              <Heading as="h4">Free</Heading>
+            </Th>
+            <Th scope="col">
+              <Heading as="h4">Pro</Heading>
+              <span>Alpha Pricing Special</span>
+            </Th>
           </Tr>
         </Thead>
 
@@ -82,7 +85,8 @@ export const TableComparisonBuilder: React.FunctionComponent<TableComparisonBuil
             <Td>
               <Heading as="h5">
                 <PriceText>
-                  $1 <del>$5</del>{' '}
+                  <del>$5</del>
+                  <span> $1 </span>
                 </PriceText>
                 <span>/month</span>
               </Heading>

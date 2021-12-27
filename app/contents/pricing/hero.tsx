@@ -24,7 +24,9 @@ export const PricingHero = (props: PricingHeroProps) => {
     <Hero>
       <PricingHeroContainer id="pricing-hero">
         <PricingHeroContent id="pricing-hero-content">
-          <Heading as="h1">Simple Pricing Plan</Heading>
+          <Heading as="h1" css={{ mb: 0 }}>
+            Simple Pricing
+          </Heading>
           <Heading as="h2" color="solid">
             Choose what's best.
           </Heading>
