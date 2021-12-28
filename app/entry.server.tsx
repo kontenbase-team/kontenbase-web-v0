@@ -1,25 +1,27 @@
-import { renderToString } from 'react-dom/server'
+import ReactDOMServer from 'react-dom/server'
 import { RemixServer } from 'remix'
 import type { EntryContext } from 'remix'
 
 import { getEnv } from '~/utils'
+import { getCssText } from '~/stitches'
 
 global.ENV = getEnv()
 
-export default function handleRequest(
+export default async function handleRequest(
   request: Request,
   responseStatusCode: number,
   responseHeaders: Headers,
   remixContext: EntryContext
 ) {
-  let markup = renderToString(
+  const markup = ReactDOMServer.renderToString(
     <RemixServer context={remixContext} url={request.url} />
-  )
-
-  responseHeaders.set('Content-Type', 'text/html')
+  ).replace(/<\/head>/, `<style id="stitches">${getCssText()}</style></head>`)
 
   return new Response('<!DOCTYPE html>' + markup, {
     status: responseStatusCode,
-    headers: responseHeaders,
+    headers: {
+      ...Object.fromEntries(responseHeaders),
+      'Content-Type': 'text/html',
+    },
   })
 }
