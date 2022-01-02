@@ -3,6 +3,7 @@ import { styled } from '~/stitches'
 const InputStyled = styled('input', {
   border: 'none',
   padding: '0.75rem',
+
   fontSize: '$input1',
   '@tablet': {
     padding: '0.9rem',
@@ -21,6 +22,7 @@ const InputStyled = styled('input', {
         minWidth: '120px',
         '@tablet': {
           minWidth: '150px',
+          maxWidth: '200px',
         },
       },
     },
@@ -40,10 +42,11 @@ const InputStyled = styled('input', {
         borderStyle: 'solid',
         borderWidth: '1px 0 1px 1px',
       },
-      primary: {
+      submit: {
         cursor: 'pointer',
         color: '$white',
         backgroundColor: '$brand9',
+        textAlign: 'center',
         '&:hover': {
           backgroundColor: '$brand10',
         },
@@ -66,7 +69,7 @@ interface InputProps {
   disabled?: boolean
 
   size?: 'wide' | 'fixed' | undefined
-  variant?: 'primary' | 'text' | undefined
+  variant?: 'text' | 'submit' | undefined
   border?: 'radius-left' | 'radius-right' | undefined
 }
 

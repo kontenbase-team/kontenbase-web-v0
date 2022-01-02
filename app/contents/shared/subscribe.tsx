@@ -24,7 +24,7 @@ const SubscribeBox = styled('div', {
   justifyContent: 'center',
   alignItems: 'center',
   gap: '1rem',
-  maxWidth: '600px',
+  maxWidth: '720px',
   width: '100%',
   '*': { margin: 0 },
 })
@@ -85,19 +85,26 @@ const SubscribeForm = styled(Form, {
 
 export const SubscribeBoxForm = (props: { transition: any }) => {
   return (
-    <SubscribeForm method="post" action="/?index">
+    <SubscribeForm method="post" action="/action/subscribe">
+      <Input
+        name="name"
+        type="text"
+        size="wide"
+        variant="text"
+        border="radius-left"
+        placeholder="Your Full Name"
+      />
       <Input
         name="email"
         type="email"
         size="wide"
         variant="text"
-        border="radius-left"
         placeholder="name@email.com"
       />
       <Input
         type="submit"
         size="fixed"
-        variant="primary"
+        variant="submit"
         border="radius-right"
         disabled={props.transition?.state !== 'idle'}
         value={
