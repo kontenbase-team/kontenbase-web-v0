@@ -3,8 +3,8 @@ import { styled } from '~/stitches'
 const InputStyled = styled('input', {
   border: 'none',
   padding: '0.75rem',
-
   fontSize: '$input1',
+
   '@tablet': {
     padding: '0.9rem',
     fontSize: '$input2',
@@ -13,6 +13,11 @@ const InputStyled = styled('input', {
     padding: '1rem',
     fontSize: '$input3',
   },
+
+  borderStyle: 'solid',
+  borderWidth: '1px 1px 1px 1px',
+  borderRadius: '0.5rem',
+
   variants: {
     size: {
       wide: {
@@ -27,11 +32,14 @@ const InputStyled = styled('input', {
       },
     },
     border: {
+      'radius-mobile': {
+        '@tablet': { borderRadius: '0' },
+      },
       'radius-left': {
-        borderRadius: '0.5rem 0 0 0.5rem',
+        '@tablet': { borderRadius: '0.5rem 0 0 0.5rem' },
       },
       'radius-right': {
-        borderRadius: '0 0.5rem 0.5rem 0',
+        '@tablet': { borderRadius: '0 0.5rem 0.5rem 0' },
       },
     },
     variant: {
@@ -39,23 +47,19 @@ const InputStyled = styled('input', {
         color: '$brand12',
         backgroundColor: '$brand1',
         borderColor: '$brand6',
-        borderStyle: 'solid',
-        borderWidth: '1px 0 1px 1px',
+        '@tablet': {
+          borderWidth: '1px 0 1px 1px',
+        },
       },
       submit: {
         cursor: 'pointer',
         color: '$white',
         backgroundColor: '$brand9',
         textAlign: 'center',
-        '&:hover': {
-          backgroundColor: '$brand10',
-        },
-        '&:focus': {
-          backgroundColor: '$brand11',
-        },
-        '&:disabled': {
-          backgroundColor: '$brand6',
-        },
+        border: '1px',
+        '&:hover': { backgroundColor: '$brand10' },
+        '&:focus': { backgroundColor: '$brand11' },
+        '&:disabled': { backgroundColor: '$brand6' },
       },
     },
   },
@@ -70,7 +74,8 @@ interface InputProps {
 
   size?: 'wide' | 'fixed' | undefined
   variant?: 'text' | 'submit' | undefined
-  border?: 'radius-left' | 'radius-right' | undefined
+  border?: 'radius-mobile' | 'radius-left' | 'radius-right' | undefined
+  required?: boolean
 }
 
 export const Input = (props: InputProps) => {

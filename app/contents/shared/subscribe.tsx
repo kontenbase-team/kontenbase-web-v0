@@ -50,9 +50,9 @@ const RocketImage = styled('img', {
 })
 
 interface SubscribeSectionProps {
-  transition: any
-  loaderData: any
-  actionData: any
+  transition?: any
+  loaderData?: any
+  actionData?: any
 }
 
 export const SubscribeSection = (props: SubscribeSectionProps) => {
@@ -79,8 +79,14 @@ export const SubscribeSection = (props: SubscribeSectionProps) => {
 }
 
 const SubscribeForm = styled(Form, {
-  display: 'flex',
   width: '100%',
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '$2',
+  '@tablet': {
+    flexDirection: 'row',
+    gap: '$0',
+  },
 })
 
 export const SubscribeBoxForm = (props: { transition: any }) => {
@@ -93,13 +99,16 @@ export const SubscribeBoxForm = (props: { transition: any }) => {
         variant="text"
         border="radius-left"
         placeholder="Your Full Name"
+        required
       />
       <Input
         name="email"
         type="email"
         size="wide"
         variant="text"
+        border="radius-mobile"
         placeholder="name@email.com"
+        required
       />
       <Input
         type="submit"
