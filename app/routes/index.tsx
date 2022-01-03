@@ -1,13 +1,14 @@
-import type { MetaFunction, LoaderFunction, ActionFunction } from 'remix'
-import { useLoaderData, useActionData, useTransition, json } from 'remix'
-import axios from 'axios'
+import type { MetaFunction, ActionFunction } from 'remix'
+import { useActionData, useTransition } from 'remix'
 
-import { HomeHero, SubscribeSection, ExplainerSteps } from '~/contents'
+import {
+  HomeHero,
+  SubscribeSection,
+  ExplainerSteps,
+  subscribeAction,
+} from '~/contents'
 import { ReactGA } from '~/utils'
 
-/**
- * Meta
- */
 export const meta: MetaFunction = () => {
   return {
     title: 'Kontenbase - No Code Backend API, Fast and Easy!',
@@ -16,59 +17,7 @@ export const meta: MetaFunction = () => {
   }
 }
 
-/**
- * Loader
- */
-
-type IndexData = {}
-
-export const loader: LoaderFunction = () => {
-  const data: IndexData = {}
-
-  return json(data)
-}
-
-/**
- * Action
- */
-export const action: ActionFunction = async ({ request }) => {
-  // Action external API request
-  const subscribeEmail = async (email: string) => {
-    try {
-      const response = await axios.post(
-        'https://api.buttondown.email/v1/subscribers',
-        { email: email, notes: 'early' },
-        { headers: { Authorization: `Token ${ENV.BUTTONDOWN_API_KEY}` } }
-      )
-      console.log(response.data)
-      return response.data
-    } catch (error: any) {
-      console.error(error.response.status, error.response.data)
-      return error.response.data[0]
-    }
-  }
-
-  // Action internal handler
-  try {
-    const formData = await request.formData()
-    const email = String(formData.get('email'))
-    if (email) {
-      const data = await subscribeEmail(email)
-      if (data?.email) {
-        return json({
-          message: `${data.email} is subscribed! Check the inbox to confirm`,
-          subscriber: data,
-        })
-      } else {
-        return json({ error: true, message: data })
-      }
-    } else {
-      return json({ error: true, message: 'Sorry, please provide an email' })
-    }
-  } catch (error) {
-    return json({ error: true, message: 'Sorry, failed for unknown reason' })
-  }
-}
+export const action: ActionFunction = subscribeAction
 
 /**
  * Home Page
@@ -77,23 +26,14 @@ export default function Index() {
   ReactGA.send({ hitType: 'pageview', page: '/' })
 
   const transition = useTransition()
-  const loaderData = useLoaderData<IndexData>()
   const actionData = useActionData()
 
   return (
     <>
       <HomeHero />
-      <SubscribeSection
-        transition={transition}
-        loaderData={loaderData}
-        actionData={actionData}
-      />
+      <SubscribeSection transition={transition} actionData={actionData} />
       <ExplainerSteps />
-      <SubscribeSection
-        transition={transition}
-        loaderData={loaderData}
-        actionData={actionData}
-      />
+      <SubscribeSection transition={transition} actionData={actionData} />
     </>
   )
 }

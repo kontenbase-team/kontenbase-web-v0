@@ -9,12 +9,7 @@ import {
   ScrollRestoration,
   useCatch,
 } from 'remix'
-import type {
-  MetaFunction,
-  LinksFunction,
-  LoaderFunction,
-  ActionFunction,
-} from 'remix'
+import type { MetaFunction, LinksFunction, LoaderFunction } from 'remix'
 
 import {
   useTheme,

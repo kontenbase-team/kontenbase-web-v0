@@ -1,4 +1,7 @@
 import { Form } from 'remix'
+import { json, redirect } from 'remix'
+import type { ActionFunction } from 'remix'
+import axios from 'axios'
 
 import { styled } from '~/stitches'
 import { Content, Heading, P, Input, Alert } from '~/components'
@@ -49,9 +52,19 @@ const RocketImage = styled('img', {
   },
 })
 
+const SubscribeForm = styled(Form, {
+  width: '100%',
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '$2',
+  '@tablet': {
+    flexDirection: 'row',
+    gap: '$0',
+  },
+})
+
 interface SubscribeSectionProps {
   transition?: any
-  loaderData?: any
   actionData?: any
 }
 
@@ -63,7 +76,9 @@ export const SubscribeSection = (props: SubscribeSectionProps) => {
           <SubscribeBox>
             <Heading as="h2">We are launching soon!</Heading>
             <P>Join our early adopter program as alpha tester</P>
+
             <SubscribeBoxForm transition={props.transition} />
+
             {props.actionData?.error && (
               <Alert variant="error">{props.actionData?.message}</Alert>
             )}
@@ -78,20 +93,9 @@ export const SubscribeSection = (props: SubscribeSectionProps) => {
   )
 }
 
-const SubscribeForm = styled(Form, {
-  width: '100%',
-  display: 'flex',
-  flexDirection: 'column',
-  gap: '$2',
-  '@tablet': {
-    flexDirection: 'row',
-    gap: '$0',
-  },
-})
-
 export const SubscribeBoxForm = (props: { transition: any }) => {
   return (
-    <SubscribeForm method="post" action="/action/subscribe">
+    <SubscribeForm method="post">
       <Input
         name="name"
         type="text"
@@ -122,4 +126,60 @@ export const SubscribeBoxForm = (props: { transition: any }) => {
       />
     </SubscribeForm>
   )
+}
+
+export const subscribeNew = async ({
+  email,
+  name,
+}: {
+  email: string
+  name: string
+}) => {
+  try {
+    const payload = {
+      email,
+      metadata: { name },
+      notes: 'early',
+      tags: ['early'],
+    }
+
+    const response = await axios.post(
+      'https://api.buttondown.email/v1/subscribers',
+      payload,
+      { headers: { Authorization: `Token ${ENV.BUTTONDOWN_API_KEY}` } }
+    )
+
+    return response.data
+  } catch (error: any) {
+    console.error(error.response.status, error.response.data)
+    return error.response.data[0]
+  }
+}
+
+export const subscribeAction: ActionFunction = async ({ request }) => {
+  try {
+    const form = await request.formData()
+    const email = form.get('email')?.toString()
+    const name = form.get('name')?.toString()
+
+    if (email && name) {
+      const data = await subscribeNew({ email, name })
+
+      if (data?.email) {
+        return json({
+          message: `${data?.email} is subscribed! Check the inbox to confirm`,
+          subscriber: data,
+        })
+      } else {
+        return json({ error: true, message: data })
+      }
+    } else {
+      return json({
+        error: true,
+        message: 'Sorry, please provide name and email',
+      })
+    }
+  } catch (error) {
+    return json({ error: true, message: 'Sorry, failed for unknown reason' })
+  }
 }

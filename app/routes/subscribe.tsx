@@ -1,8 +1,7 @@
-import type { MetaFunction, LoaderFunction, ActionFunction } from 'remix'
-import { useLoaderData, useActionData, useTransition, json } from 'remix'
-import axios from 'axios'
+import { useActionData, useTransition } from 'remix'
+import type { MetaFunction, ActionFunction } from 'remix'
 
-import { SubscribeSection } from '~/contents'
+import { subscribeAction, SubscribeSection } from '~/contents'
 import { ReactGA } from '~/utils'
 
 export const meta: MetaFunction = () => {
@@ -11,6 +10,8 @@ export const meta: MetaFunction = () => {
     description: 'Subscribe to Kontenbase Newsletter.',
   }
 }
+
+export const action: ActionFunction = subscribeAction
 
 /**
  * Subscribe Page
