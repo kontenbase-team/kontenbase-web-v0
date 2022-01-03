@@ -9,12 +9,7 @@ import {
   ScrollRestoration,
   useCatch,
 } from 'remix'
-import type {
-  MetaFunction,
-  LinksFunction,
-  LoaderFunction,
-  ActionFunction,
-} from 'remix'
+import type { MetaFunction, LinksFunction, LoaderFunction } from 'remix'
 
 import {
   useTheme,
@@ -30,7 +25,7 @@ import globalStylesUrl from '~/styles/global.css'
 import darkStylesUrl from '~/styles/dark.css'
 import carouselUrl from '~/styles/carousel.css'
 
-import { lightTheme, darkTheme, getCssText } from '~/stitches'
+import { lightTheme, darkTheme } from '~/stitches'
 import { Layout } from '~/components'
 
 /**
@@ -62,7 +57,7 @@ export const meta: MetaFunction = () => {
   const url = 'https://kontenbase.com/'
   const ogImageUrl = url + 'images/kontenbase-og.png?v=1'
   const ogImageAlt = 'Kontenbase is a No Code Backend as a Service'
-  const twiterImageUrl = url + '/images/kontenbase-twitter.png?v=1'
+  const twiterImageUrl = url + 'images/kontenbase-twitter.png?v=1'
 
   return {
     title: title,
@@ -158,16 +153,12 @@ export function ErrorBoundary({ error }: { error: Error }) {
   console.error(error)
 
   return (
-    <Document title="Error!">
-      <Layout>
-        <div>
-          <h1>There was an error</h1>
-          <p>{error.message}</p>
-          <hr />
-          <p>Sorry, there is an error. Please try again or refresh the page.</p>
-        </div>
-      </Layout>
-    </Document>
+    <div>
+      <h1>There was an error</h1>
+      <p>{error.message}</p>
+      <hr />
+      <p>Sorry, there is an error. Please try again or refresh the page.</p>
+    </div>
   )
 }
 
@@ -200,14 +191,12 @@ export function CatchBoundary() {
   }
 
   return (
-    <Document title={`${caught.status} ${caught.statusText}`}>
-      <Layout>
-        <h1>
-          {caught.status}: {caught.statusText}
-        </h1>
-        {message}
-      </Layout>
-    </Document>
+    <div>
+      <h1>
+        {caught.status}: {caught.statusText}
+      </h1>
+      <p>{message}</p>
+    </div>
   )
 }
 
@@ -233,10 +222,6 @@ function Document({
           {title ? <title>{title}</title> : null}
           <Meta />
           <Links />
-          <style
-            id="stitches"
-            dangerouslySetInnerHTML={{ __html: getCssText() }}
-          />
           <NonFlashOfWrongThemeEls ssrTheme={Boolean(data.theme)} />
         </head>
 
