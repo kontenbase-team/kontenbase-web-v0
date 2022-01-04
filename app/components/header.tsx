@@ -1,26 +1,18 @@
 import { Link } from 'remix'
 
 import { styled } from '~/stitches'
-import {
-  Anchor,
-  AnchorButton,
-  ButtonToggleTheme,
-  Content,
-  Logo,
-} from '~/components'
+import { Anchor, ButtonToggleTheme, Content, Logo } from '~/components'
 
 const HeaderContainer = styled('header', {
+  zIndex: '$sticky',
   position: 'fixed',
   backgroundColor: '$background1',
   borderBottom: '1px solid $background6',
   top: '0',
   left: '0',
   width: '100%',
-  zIndex: '9999',
   padding: '0.5rem 0',
-  '@tablet': {
-    padding: '1rem 0',
-  },
+  '@tablet': { padding: '1rem 0' },
 })
 
 const LogoNavigation = styled('div', {

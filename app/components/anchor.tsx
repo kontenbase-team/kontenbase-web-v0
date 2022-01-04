@@ -1,5 +1,5 @@
 import { styled } from '~/stitches'
-import { buttonStyles } from '~/components'
+import { buttonStyles } from '~/styles'
 
 /**
  * Anchor
@@ -42,4 +42,12 @@ export const AnchorIcon = styled(Anchor, {
   svg: { height: '100%' },
   color: '$gray11',
   '&:hover': { color: '$gray12' },
+})
+
+/**
+ * Anchor Button
+ */
+
+export const AnchorButton = styled(Anchor, {
+  ...buttonStyles,
 })

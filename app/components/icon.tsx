@@ -2,6 +2,7 @@ import {
   // General
   FaCircle as CircleIcon,
   FaGlobe as WebsiteIcon,
+  FaCommentDots as FeedbackIcon,
   // Theme
   FaSun as DarkIcon,
   FaMoon as LightIcon,
@@ -27,6 +28,8 @@ export function Icon(props: IconProps) {
       return <CircleIcon />
     case 'website':
       return <WebsiteIcon />
+    case 'feedback':
+      return <FeedbackIcon />
     /**
      * Theme
      */
