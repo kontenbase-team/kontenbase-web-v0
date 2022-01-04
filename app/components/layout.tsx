@@ -1,6 +1,7 @@
 import { styled } from '~/stitches'
 
-import { Header, Footer, Anchor, Logo } from '~/components'
+import { Header, Footer } from '~/components'
+import { Feedback } from '~/contents'
 
 const LayoutContainer = styled('div', {
   display: 'flex',
@@ -22,6 +23,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
     <LayoutContainer>
       <Header />
 
+      <Feedback />
       <LayoutContent>{children}</LayoutContent>
 
       <Footer />
