@@ -1,6 +1,21 @@
 import { FunctionComponent } from 'react'
 
-import { AnchorButton, Button, Icon, Span } from '~/components'
+import {
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogRoot,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+  Anchor,
+  AnchorButton,
+  Button,
+  Flex,
+  Icon,
+  P,
+  Span,
+} from '~/components'
 import { styled } from '~/stitches'
 
 interface FeedbackProps {}
@@ -8,7 +23,7 @@ interface FeedbackProps {}
 interface FeedbackDialogProps {}
 
 const FeedbackContainer = styled('div', {
-  zIndex: '$modal',
+  zIndex: '$sticky',
   width: '35px',
   top: '50%',
   position: 'fixed',
@@ -49,11 +64,46 @@ export const FeedbackDialog: FunctionComponent<FeedbackDialogProps> = (
   props
 ) => (
   <FeedbackContainer mode="right">
-    <FeedbackButton mode="right">
-      <Span css={{ fontSize: '$3' }}>
-        <Icon name="feedback" />
-      </Span>
-      <Span css={{ pl: '$2' }}>Feedback</Span>
-    </FeedbackButton>
+    <AlertDialogRoot>
+      <AlertDialogTrigger asChild>
+        <FeedbackButton mode="right">
+          <Span css={{ fontSize: '$3' }}>
+            <Icon name="feedback" />
+          </Span>
+          <Span css={{ pl: '$2' }}>Feedback</Span>
+        </FeedbackButton>
+      </AlertDialogTrigger>
+
+      <AlertDialogContent>
+        <AlertDialogTitle>Submit feedback</AlertDialogTitle>
+        <AlertDialogDescription>
+          <P>
+            You will be redirected to GitHub Issues in order to submit your
+            feedback. There you can either check existing feedback/issue or{' '}
+            <Anchor href="https://github.com/kontenbase/feedback/issues/new">
+              create a new one.
+            </Anchor>
+          </P>
+          <P>
+            <Anchor href="https://github.com/kontenbase/feedback/issues">
+              https://github.com/kontenbase/feedback/issues
+            </Anchor>
+          </P>
+        </AlertDialogDescription>
+
+        <Flex css={{ justifyContent: 'flex-end' }}>
+          <AlertDialogCancel asChild>
+            <Button variant="cancel" css={{ marginRight: '$3' }}>
+              Cancel
+            </Button>
+          </AlertDialogCancel>
+          <AlertDialogAction asChild>
+            <AnchorButton href="https://github.com/kontenbase/feedback/issues">
+              OK
+            </AnchorButton>
+          </AlertDialogAction>
+        </Flex>
+      </AlertDialogContent>
+    </AlertDialogRoot>
   </FeedbackContainer>
 )

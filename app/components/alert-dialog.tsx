@@ -15,6 +15,7 @@ const contentShow = keyframes({
 })
 
 const StyledOverlay = styled(AlertDialogPrimitive.Overlay, {
+  zIndex: '$overlay',
   backgroundColor: blackA.blackA9,
   position: 'fixed',
   inset: 0,
@@ -24,6 +25,7 @@ const StyledOverlay = styled(AlertDialogPrimitive.Overlay, {
 })
 
 const StyledContent = styled(AlertDialogPrimitive.Content, {
+  zIndex: '$modal',
   backgroundColor: 'white',
   borderRadius: 6,
   boxShadow:
@@ -77,7 +79,7 @@ export const AlertDialogCancel = AlertDialogPrimitive.Cancel
 
 export const Flex = styled('div', { display: 'flex' })
 
-export const AlertDialog = () => (
+export const AlertDialogDemo = () => (
   <AlertDialogRoot>
     <AlertDialogTrigger asChild>
       <Button>Feedback</Button>
@@ -91,14 +93,14 @@ export const AlertDialog = () => (
       </AlertDialogDescription>
       <Flex css={{ justifyContent: 'flex-end' }}>
         <AlertDialogCancel asChild>
-          <Button css={{ marginRight: 25 }}>OK</Button>
+          <Button css={{ marginRight: 25 }}>Cancel</Button>
         </AlertDialogCancel>
         <AlertDialogAction asChild>
-          <Button>Cancel</Button>
+          <Button>OK</Button>
         </AlertDialogAction>
       </Flex>
     </AlertDialogContent>
   </AlertDialogRoot>
 )
 
-export default AlertDialog
+export default AlertDialogDemo

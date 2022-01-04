@@ -84,17 +84,20 @@ export const buttonStyles = {
         color: '$white',
         backgroundColor: '$brand9',
         '@hover': {
-          '&:hover': {
-            color: '$white',
-            backgroundColor: '$brand10',
-          },
+          '&:hover': { color: '$white', backgroundColor: '$brand10' },
         },
-        '&:active': {
-          backgroundColor: '$brand11',
+        '&:active': { backgroundColor: '$brand11' },
+        '&:focus': { backgroundColor: '$brand11' },
+      },
+      cancel: {
+        color: '$red9',
+        border: '1px solid $red7',
+        borderColor: '$red7',
+        '@hover': {
+          '&:hover': { color: '$red9', borderColor: '$red8' },
         },
-        '&:focus': {
-          backgroundColor: '$brand11',
-        },
+        '&:active': { borderColor: '$red8' },
+        '&:focus': { borderColor: '$red8' },
       },
     },
     state: {
@@ -132,12 +135,6 @@ export const buttonStyles = {
         '&:focus': {
           boxShadow: 'inset 0 0 0 1px $colors$gray8',
         },
-      },
-    },
-    ghost: {
-      true: {
-        backgroundColor: 'transparent',
-        boxShadow: 'none',
       },
     },
     mode: {
