@@ -141,9 +141,8 @@ export const buttonStyles = {
       },
     },
     mode: {
-      right: {
-        borderRadius: '$2 $2 0 0',
-      },
+      left: { borderRadius: '0 0 $2 $2' },
+      right: { borderRadius: '$2 $2 0 0' },
     },
   },
 

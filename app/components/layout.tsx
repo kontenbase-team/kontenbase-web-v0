@@ -23,7 +23,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
     <LayoutContainer>
       <Header />
 
-      {/* <Feedback /> */}
+      <Feedback />
       <FeedbackDialog />
 
       <LayoutContent>{children}</LayoutContent>

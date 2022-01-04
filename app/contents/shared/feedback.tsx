@@ -9,11 +9,16 @@ interface FeedbackDialogProps {}
 
 const FeedbackContainer = styled('div', {
   zIndex: '$modal',
+  width: '35px',
   top: '50%',
-  right: 0,
   position: 'fixed',
   transform: 'rotate(-90deg)',
-  width: '35px',
+  variants: {
+    mode: {
+      left: { left: 0 },
+      right: { right: 0 },
+    },
+  },
 })
 
 const FeedbackAnchorButton = styled(AnchorButton, {
@@ -27,9 +32,9 @@ const FeedbackButton = styled(Button, {
 })
 
 export const Feedback: FunctionComponent<FeedbackProps> = (props) => (
-  <FeedbackContainer>
+  <FeedbackContainer mode="left">
     <FeedbackAnchorButton
-      mode="right"
+      mode="left"
       href="https://github.com/kontenbase/feedback/issues"
     >
       <Span css={{ fontSize: '$3' }}>
@@ -43,7 +48,7 @@ export const Feedback: FunctionComponent<FeedbackProps> = (props) => (
 export const FeedbackDialog: FunctionComponent<FeedbackDialogProps> = (
   props
 ) => (
-  <FeedbackContainer>
+  <FeedbackContainer mode="right">
     <FeedbackButton mode="right">
       <Span css={{ fontSize: '$3' }}>
         <Icon name="feedback" />
