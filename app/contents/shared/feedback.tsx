@@ -23,7 +23,7 @@ export const Feedback: FunctionComponent<FeedbackProps> = (props) => (
   <FeedbackContainer>
     <FeedbackAnchorButton
       mode="right"
-      href="https://github.com/kontenbase/feedback"
+      href="https://github.com/kontenbase/feedback/issues"
     >
       <Span css={{ fontSize: '$3' }}>
         <Icon name="feedback" />
