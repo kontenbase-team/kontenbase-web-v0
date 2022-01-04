@@ -14,7 +14,7 @@ const contentShow = keyframes({
   '100%': { opacity: 1, transform: 'translate(-50%, -50%) scale(1)' },
 })
 
-const StyledOverlay = styled(AlertDialogPrimitive.Overlay, {
+const AlertDialogOverlayStyled = styled(AlertDialogPrimitive.Overlay, {
   zIndex: '$overlay',
   backgroundColor: blackA.blackA9,
   position: 'fixed',
@@ -24,10 +24,10 @@ const StyledOverlay = styled(AlertDialogPrimitive.Overlay, {
   },
 })
 
-const StyledContent = styled(AlertDialogPrimitive.Content, {
+const AlertDialogContentStyled = styled(AlertDialogPrimitive.Content, {
   zIndex: '$modal',
   backgroundColor: '$background1',
-  borderRadius: 6,
+  borderRadius: '$2',
   boxShadow:
     'hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px',
   position: 'fixed',
@@ -37,22 +37,12 @@ const StyledContent = styled(AlertDialogPrimitive.Content, {
   width: '90vw',
   maxWidth: '500px',
   maxHeight: '85vh',
-  padding: 25,
+  padding: '$5',
   '@media (prefers-reduced-motion: no-preference)': {
     animation: `${contentShow} 150ms cubic-bezier(0.16, 1, 0.3, 1)`,
   },
   '&:focus': { outline: 'none' },
 })
-
-// @ts-ignore
-function AlertDialogContentContainer({ children, ...props }) {
-  return (
-    <AlertDialogPrimitive.Portal>
-      <StyledOverlay />
-      <StyledContent {...props}>{children}</StyledContent>
-    </AlertDialogPrimitive.Portal>
-  )
-}
 
 const AlertDialogTitleStyled = styled(AlertDialogPrimitive.Title, {
   margin: 0,
@@ -68,6 +58,16 @@ const AlertDialogDescriptionStyled = styled(AlertDialogPrimitive.Description, {
   lineHeight: 1.5,
 })
 
+// @ts-ignore
+function AlertDialogContentContainer({ children, ...props }) {
+  return (
+    <AlertDialogPrimitive.Portal>
+      <AlertDialogOverlayStyled />
+      <AlertDialogContentStyled {...props}>{children}</AlertDialogContentStyled>
+    </AlertDialogPrimitive.Portal>
+  )
+}
+
 // Exports
 export const AlertDialogRoot = AlertDialogPrimitive.Root
 export const AlertDialogTrigger = AlertDialogPrimitive.Trigger
@@ -76,9 +76,12 @@ export const AlertDialogTitle = AlertDialogTitleStyled
 export const AlertDialogDescription = AlertDialogDescriptionStyled
 export const AlertDialogAction = AlertDialogPrimitive.Action
 export const AlertDialogCancel = AlertDialogPrimitive.Cancel
-
 export const Flex = styled('div', { display: 'flex' })
 
+/**
+ * This one just a demo, not intended for real use.
+ * To actually use Alert Dialog, fow now compose with the exports above.
+ */
 export const AlertDialogDemo = () => (
   <AlertDialogRoot>
     <AlertDialogTrigger asChild>
@@ -102,5 +105,3 @@ export const AlertDialogDemo = () => (
     </AlertDialogContent>
   </AlertDialogRoot>
 )
-
-export default AlertDialogDemo

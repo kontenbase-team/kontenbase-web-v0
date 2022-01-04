@@ -23,8 +23,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
     <LayoutContainer>
       <Header />
 
-      <Feedback />
-      <FeedbackDialog />
+      <FeedbackDialog mode="left" />
 
       <LayoutContent>{children}</LayoutContent>
 
