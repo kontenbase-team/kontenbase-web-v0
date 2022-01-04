@@ -1,9 +1,11 @@
 import { FunctionComponent } from 'react'
 
-import { AnchorButton, Icon, Span } from '~/components'
+import { AnchorButton, Button, Icon, Span } from '~/components'
 import { styled } from '~/stitches'
 
 interface FeedbackProps {}
+
+interface FeedbackDialogProps {}
 
 const FeedbackContainer = styled('div', {
   zIndex: '$modal',
@@ -15,6 +17,11 @@ const FeedbackContainer = styled('div', {
 })
 
 const FeedbackAnchorButton = styled(AnchorButton, {
+  boxShadow: '0px 0 20px 5px $colors$redA6',
+  width: '120px',
+})
+
+const FeedbackButton = styled(Button, {
   boxShadow: '0px 0 20px 5px $colors$redA6',
   width: '120px',
 })
@@ -33,4 +40,15 @@ export const Feedback: FunctionComponent<FeedbackProps> = (props) => (
   </FeedbackContainer>
 )
 
-export default Feedback
+export const FeedbackDialog: FunctionComponent<FeedbackDialogProps> = (
+  props
+) => (
+  <FeedbackContainer>
+    <FeedbackButton mode="right">
+      <Span css={{ fontSize: '$3' }}>
+        <Icon name="feedback" />
+      </Span>
+      <Span css={{ pl: '$2' }}>Feedback</Span>
+    </FeedbackButton>
+  </FeedbackContainer>
+)
