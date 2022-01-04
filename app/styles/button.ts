@@ -140,9 +140,8 @@ export const buttonStyles = {
         boxShadow: 'none',
       },
     },
-    rotate: {
+    mode: {
       right: {
-        transform: 'rotate(-90deg)',
         borderRadius: '$2 $2 0 0',
       },
     },
