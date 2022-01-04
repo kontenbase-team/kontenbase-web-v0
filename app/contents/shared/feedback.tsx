@@ -18,14 +18,18 @@ import {
 } from '~/components'
 import { styled } from '~/stitches'
 
-interface FeedbackProps {}
+interface FeedbackProps {
+  mode: 'left' | 'right'
+}
 
-interface FeedbackDialogProps {}
+interface FeedbackDialogProps {
+  mode: 'left' | 'right'
+}
 
 const FeedbackContainer = styled('div', {
   zIndex: '$sticky',
   width: '35px',
-  top: '50%',
+  top: '80%',
   position: 'fixed',
   transform: 'rotate(-90deg)',
   variants: {
@@ -46,10 +50,10 @@ const FeedbackButton = styled(Button, {
   width: '120px',
 })
 
-export const Feedback: FunctionComponent<FeedbackProps> = (props) => (
-  <FeedbackContainer mode="left">
+export const Feedback: FunctionComponent<FeedbackProps> = ({ mode }) => (
+  <FeedbackContainer mode={mode}>
     <FeedbackAnchorButton
-      mode="left"
+      mode={mode}
       href="https://github.com/kontenbase/feedback/issues"
     >
       <Span css={{ fontSize: '$3' }}>
@@ -60,13 +64,13 @@ export const Feedback: FunctionComponent<FeedbackProps> = (props) => (
   </FeedbackContainer>
 )
 
-export const FeedbackDialog: FunctionComponent<FeedbackDialogProps> = (
-  props
-) => (
-  <FeedbackContainer mode="right">
+export const FeedbackDialog: FunctionComponent<FeedbackDialogProps> = ({
+  mode,
+}) => (
+  <FeedbackContainer mode={mode}>
     <AlertDialogRoot>
       <AlertDialogTrigger asChild>
-        <FeedbackButton mode="right">
+        <FeedbackButton mode={mode}>
           <Span css={{ fontSize: '$3' }}>
             <Icon name="feedback" />
           </Span>
@@ -79,14 +83,13 @@ export const FeedbackDialog: FunctionComponent<FeedbackDialogProps> = (
         <AlertDialogDescription>
           <P>
             You will be redirected to GitHub Issues in order to submit your
-            feedback. There you can either check existing feedback/issue or{' '}
+            feedback. There you can either check{' '}
+            <Anchor href="https://github.com/kontenbase/feedback/issues">
+              existing feedback/issue
+            </Anchor>{' '}
+            or{' '}
             <Anchor href="https://github.com/kontenbase/feedback/issues/new">
               create a new one.
-            </Anchor>
-          </P>
-          <P>
-            <Anchor href="https://github.com/kontenbase/feedback/issues">
-              https://github.com/kontenbase/feedback/issues
             </Anchor>
           </P>
         </AlertDialogDescription>
