@@ -1,3 +1,4 @@
+export * from './alert-dialog'
 export * from './alert'
 export * from './anchor'
 export * from './aspect-ratio'
