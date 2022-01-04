@@ -90,14 +90,11 @@ export const buttonStyles = {
         '&:focus': { backgroundColor: '$brand11' },
       },
       cancel: {
-        color: '$red9',
-        border: '1px solid $red7',
-        borderColor: '$red7',
-        '@hover': {
-          '&:hover': { color: '$red9', borderColor: '$red8' },
-        },
-        '&:active': { borderColor: '$red8' },
-        '&:focus': { borderColor: '$red8' },
+        color: '$brand9',
+        border: '1px solid $brand9',
+        '&:hover': { backgroundColor: '$brand2', borderColor: '$brand10' },
+        '&:active': { backgroundColor: '$brand3', borderColor: '$brand11' },
+        '&:focus': { backgroundColor: '$brand3', borderColor: '$brand11' },
       },
     },
     state: {
