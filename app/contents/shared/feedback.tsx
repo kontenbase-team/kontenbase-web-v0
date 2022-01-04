@@ -15,7 +15,9 @@ const FeedbackContainer = styled('div', {
   width: '4.2rem',
 })
 
-const FeedbackAnchorButton = styled(AnchorButton, {})
+const FeedbackAnchorButton = styled(AnchorButton, {
+  boxShadow: '0px 0 20px 5px $colors$redA6',
+})
 
 export const Feedback: FunctionComponent<FeedbackProps> = (props) => (
   <FeedbackContainer>
