@@ -12,9 +12,7 @@ const HeaderContainer = styled('header', {
   left: '0',
   width: '100%',
   padding: '0.5rem 0',
-  '@tablet': {
-    padding: '1rem 0',
-  },
+  '@tablet': { padding: '1rem 0' },
 })
 
 const LogoNavigation = styled('div', {
