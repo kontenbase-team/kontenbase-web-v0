@@ -46,77 +46,76 @@ const PriceText = styled('span', {
   del: { color: '$gray8' },
 })
 
-export const TableComparisonBuilder: React.FunctionComponent<TableComparisonBuilderProps> =
-  ({ data }) => {
-    // const appUrl = 'https://app.kontenbase.com'
-    const { caption, body, head, foot } = data
+export const TableComparisonBuilder: React.FunctionComponent<
+  TableComparisonBuilderProps
+> = ({ data }) => {
+  // const appUrl = 'https://app.kontenbase.com'
+  const { caption, body, head, foot } = data
 
-    return (
-      <Table>
-        <Caption>
-          <VisuallyHidden.Root>{caption}</VisuallyHidden.Root>
-        </Caption>
+  return (
+    <Table>
+      <Caption>
+        <VisuallyHidden.Root>{caption}</VisuallyHidden.Root>
+      </Caption>
 
-        <Thead>
-          <Tr>
-            <Th scope="col"></Th>
-            <Th scope="col">
-              <Heading as="h4">Free</Heading>
-            </Th>
-            <Th scope="col">
-              <Heading as="h4">Pro</Heading>
-              <ProText>Alpha Pricing Special</ProText>
-            </Th>
-          </Tr>
-        </Thead>
+      <Thead>
+        <Tr>
+          <Th scope="col"></Th>
+          <Th scope="col">
+            <Heading as="h4">Free</Heading>
+          </Th>
+          <Th scope="col">
+            <Heading as="h4">Pro</Heading>
+            <ProText>Alpha Pricing Special</ProText>
+          </Th>
+        </Tr>
+      </Thead>
 
-        <Tbody>
-          <Tr>
-            <Td>
-              <Heading as="h5">Pricing</Heading>
-            </Td>
-            <Td>
-              <Heading as="h5">
-                <PriceText>$0</PriceText> forever
-              </Heading>
-              <P size="adaptive">
-                For personal hobby projects and experiments.
-              </P>
-              {/* <AnchorButton size="adaptive" href={appUrl}>
+      <Tbody>
+        <Tr>
+          <Td>
+            <Heading as="h5">Pricing</Heading>
+          </Td>
+          <Td>
+            <Heading as="h5">
+              <PriceText>$0</PriceText> forever
+            </Heading>
+            <P size="adaptive">For personal hobby projects and experiments.</P>
+            {/* <AnchorButton size="adaptive" href={appUrl}>
                 Get started
               </AnchorButton> */}
-            </Td>
-            <Td>
-              <Heading as="h5">
-                <PriceText>
-                  <del>$5</del>
-                  <span> $1 </span>
-                </PriceText>
-                <span>/month</span>
-              </Heading>
-              <P size="adaptive">For professional personal projects.</P>
-              {/* <AnchorButton size="adaptive" href={appUrl}>
+          </Td>
+          <Td>
+            <Heading as="h5">
+              <PriceText>
+                <del>$5</del>
+                <span> $1 </span>
+              </PriceText>
+              <span>/project/month</span>
+            </Heading>
+            <P size="adaptive">For professional personal projects.</P>
+            {/* <AnchorButton size="adaptive" href={appUrl}>
                 Get started
               </AnchorButton> */}
-            </Td>
-          </Tr>
+          </Td>
+        </Tr>
 
-          {body.map((row, index) => (
-            <React.Fragment key={`row-${index}`}>
-              <Tr>
-                {row[1]
-                  ? row.map((text, i) => <Td key={`text-${i}`}>{text}</Td>)
-                  : row.map((group, i) => (
-                      <Td key={`group-${i}`} variant="group">
-                        <Heading as="h6">{group}</Heading>
-                      </Td>
-                    ))}
-              </Tr>
-            </React.Fragment>
-          ))}
-        </Tbody>
+        {body.map((row, index) => (
+          <React.Fragment key={`row-${index}`}>
+            <Tr>
+              {row[1]
+                ? row.map((text, i) => <Td key={`text-${i}`}>{text}</Td>)
+                : row.map((group, i) => (
+                    <Td key={`group-${i}`} variant="group">
+                      <Heading as="h6">{group}</Heading>
+                    </Td>
+                  ))}
+            </Tr>
+          </React.Fragment>
+        ))}
+      </Tbody>
 
-        {/* <Tfoot>
+      {/* <Tfoot>
           <Tr>
             {foot.map((item, index) => (
               <Td key={`foot-${index}`} scope="row">
@@ -130,6 +129,6 @@ export const TableComparisonBuilder: React.FunctionComponent<TableComparisonBuil
             ))}
           </Tr>
         </Tfoot> */}
-      </Table>
-    )
-  }
+    </Table>
+  )
+}
