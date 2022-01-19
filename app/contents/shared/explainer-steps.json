@@ -33,7 +33,7 @@
     "step": 4,
     "slug": "consume-api-without-frontend-barrier",
     "title": "Consume API without Frontend Barrier",
-    "description": "Whether React, Vue, Angular, or others. Up to you!",
+    "description": "Whether React, Next.js, Remix, Vue, Nuxt.js, Angular, Svelte, SolidJS, or others. Up to you!",
     "direction": "left",
     "imageUrl": "/screenshots/kontenbase-frontend.png",
     "videoUrl": "https://youtu.be/_wgANT3qX7c",
