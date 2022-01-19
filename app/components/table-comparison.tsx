@@ -6,6 +6,7 @@ import {
   Caption,
   Table,
   Tbody,
+  Flex,
   Td,
   Tfoot,
   Th,
@@ -46,6 +47,12 @@ const PriceText = styled('span', {
   del: { color: '$gray8' },
 })
 
+const PriceNote = styled(Flex, {
+  fontSize: '$1',
+  '@tablet': { fontSize: '$3' },
+  '@desktop': { fontSize: '$4' },
+})
+
 export const TableComparisonBuilder: React.FunctionComponent<
   TableComparisonBuilderProps
 > = ({ data }) => {
@@ -78,7 +85,8 @@ export const TableComparisonBuilder: React.FunctionComponent<
           </Td>
           <Td>
             <Heading as="h5">
-              <PriceText>$0</PriceText> forever
+              <PriceText>$0</PriceText>
+              <PriceNote> forever</PriceNote>
             </Heading>
             <P size="adaptive">For personal hobby projects and experiments.</P>
             {/* <AnchorButton size="adaptive" href={appUrl}>
@@ -91,7 +99,10 @@ export const TableComparisonBuilder: React.FunctionComponent<
                 <del>$5</del>
                 <span> $1 </span>
               </PriceText>
-              <span>/project/month</span>
+              <PriceNote>
+                <span>/project</span>
+                <span>/month</span>
+              </PriceNote>
             </Heading>
             <P size="adaptive">For professional personal projects.</P>
             {/* <AnchorButton size="adaptive" href={appUrl}>

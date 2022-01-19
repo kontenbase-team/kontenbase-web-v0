@@ -2,7 +2,7 @@ import { styled, keyframes } from '~/stitches'
 import { violet, blackA, red, mauve } from '@radix-ui/colors'
 import * as AlertDialogPrimitive from '@radix-ui/react-alert-dialog'
 
-import { Button } from '~/components'
+import { Flex, Button } from '~/components'
 
 const overlayShow = keyframes({
   '0%': { opacity: 0 },
@@ -76,7 +76,6 @@ export const AlertDialogTitle = AlertDialogTitleStyled
 export const AlertDialogDescription = AlertDialogDescriptionStyled
 export const AlertDialogAction = AlertDialogPrimitive.Action
 export const AlertDialogCancel = AlertDialogPrimitive.Cancel
-export const Flex = styled('div', { display: 'flex' })
 
 /**
  * This one just a demo, not intended for real use.
