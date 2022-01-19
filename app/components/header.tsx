@@ -49,18 +49,20 @@ const NavigationList = styled('ul', {
   margin: '0',
   fontWeight: 'bold',
   fontSize: '$3',
-  gap: '0.5rem',
-  '@tablet': { gap: '0.75rem' },
-  '@desktop': { gap: '1rem' },
+  gap: '0.1rem',
+  '@tablet': { gap: '0.5rem' },
+  '@desktop': { gap: '0.75rem' },
 })
 
 const NavigationItem = styled('li', {
+  display: 'flex',
+  alignItems: 'center',
   variants: {
     visible: {
       tablet: {
         display: 'none',
         '@tablet': {
-          display: 'block',
+          display: 'flex',
         },
       },
     },
@@ -71,8 +73,10 @@ const navigationItemChildStyles = {
   padding: '0.5rem',
   borderRadius: '$2',
   color: '$brand9',
-  py: '$2',
-  px: '$3',
+  px: '$2',
+  py: '$1',
+  '@tablet': { px: '$2', py: '$1' },
+  '@desktop': { px: '$3', py: '$2' },
   '&:hover': {
     backgroundColor: '$brand3',
   },
