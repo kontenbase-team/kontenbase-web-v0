@@ -18,20 +18,18 @@ import {
 } from '~/components'
 import { styled } from '~/stitches'
 
-interface FeedbackProps {
-  mode: 'left' | 'right'
-}
-
 interface FeedbackDialogProps {
   mode: 'left' | 'right'
 }
 
 const FeedbackContainer = styled('div', {
   zIndex: '$sticky',
-  width: '35px',
-  top: '80%',
+  bottom: '10%',
   position: 'fixed',
   transform: 'rotate(-90deg)',
+  width: '25px',
+  '@tablet': { width: '30px' },
+  '@desktop': { width: '35px' },
   variants: {
     mode: {
       left: { left: 0 },
@@ -40,29 +38,20 @@ const FeedbackContainer = styled('div', {
   },
 })
 
-const FeedbackAnchorButton = styled(AnchorButton, {
-  boxShadow: '0px 0 20px 5px $colors$redA6',
-  width: '120px',
-})
-
 const FeedbackButton = styled(Button, {
   boxShadow: '0px 0 20px 5px $colors$redA6',
-  width: '120px',
+  width: '100px',
+  '@tablet': { width: '110px' },
+  '@desktop': { width: '120px' },
 })
 
-export const Feedback: FunctionComponent<FeedbackProps> = ({ mode }) => (
-  <FeedbackContainer mode={mode}>
-    <FeedbackAnchorButton
-      mode={mode}
-      href="https://github.com/kontenbase/feedback/issues"
-    >
-      <Span css={{ fontSize: '$3' }}>
-        <Icon name="feedback" />
-      </Span>
-      <Span css={{ pl: '$2' }}>Feedback</Span>
-    </FeedbackAnchorButton>
-  </FeedbackContainer>
-)
+const FeedbackText = styled('div', {
+  display: 'inline-flex',
+  alignItems: 'center',
+  fontSize: '$1',
+  '@tablet': { fontSize: '$2' },
+  '@desktop': { fontSize: '$3' },
+})
 
 export const FeedbackDialog: FunctionComponent<FeedbackDialogProps> = ({
   mode,
@@ -71,10 +60,12 @@ export const FeedbackDialog: FunctionComponent<FeedbackDialogProps> = ({
     <AlertDialogRoot>
       <AlertDialogTrigger asChild>
         <FeedbackButton mode={mode}>
-          <Span css={{ fontSize: '$3' }}>
-            <Icon name="feedback" />
-          </Span>
-          <Span css={{ pl: '$2' }}>Feedback</Span>
+          <FeedbackText>
+            <span>
+              <Icon name="feedback" />
+            </span>
+            <Span css={{ pl: '$2' }}>Feedback</Span>
+          </FeedbackText>
         </FeedbackButton>
       </AlertDialogTrigger>
 
