@@ -20,7 +20,7 @@ export const ButtonToggleThemeContainer = styled('button', {
   backgroundColor: '$yellow3',
   '&:hover': { backgroundColor: '$yellow4' },
   '&:active': { backgroundColor: '$yellow5' },
-  '&:focus': { outline: '$blue9 dotted 2px', outlineOffset: '1px' },
+  '&:focus': { outline: '$blue9 solid 2px', outlineOffset: '1px' },
 })
 
 export const ButtonToggleTheme: FunctionComponent = () => {

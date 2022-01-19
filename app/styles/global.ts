@@ -53,11 +53,15 @@ export const globalStyles = globalCss({
   },
 
   ':-moz-focusring': {
-    outline: 'auto',
+    '@tablet': {
+      outline: 'auto',
+    },
   },
 
   ':focus': {
-    outline: '$blue9 dotted 2px',
-    outlineOffset: '1px',
+    '@tablet': {
+      outline: '$blue9 solid 2px',
+      outlineOffset: '1px',
+    },
   },
 })
