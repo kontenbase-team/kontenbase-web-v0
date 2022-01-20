@@ -1,4 +1,9 @@
+import { LoaderFunction, redirect } from 'remix'
+
 import { Heading } from '~/components'
+
+export const loader: LoaderFunction = async () =>
+  redirect('https://blog.kontenbase.com')
 
 export default function Posts() {
   return (

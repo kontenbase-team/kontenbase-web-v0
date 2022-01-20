@@ -1,7 +1,7 @@
 import { Link } from 'remix'
 
-import { styled } from '~/stitches'
 import { Anchor, ButtonToggleTheme, Content, Logo } from '~/components'
+import { styled } from '~/stitches'
 
 const HeaderContainer = styled('header', {
   zIndex: '$sticky',
@@ -24,20 +24,18 @@ const LogoNavigation = styled('div', {
 /**
  * Header
  */
-export const Header = () => {
-  return (
-    <HeaderContainer>
-      <Content>
-        <LogoNavigation>
-          <Link to="/" title="Kontenbase">
-            <Logo />
-          </Link>
-          <Navigation />
-        </LogoNavigation>
-      </Content>
-    </HeaderContainer>
-  )
-}
+export const Header = () => (
+  <HeaderContainer>
+    <Content>
+      <LogoNavigation>
+        <Link to="/" title="Kontenbase">
+          <Logo />
+        </Link>
+        <Navigation />
+      </LogoNavigation>
+    </Content>
+  </HeaderContainer>
+)
 
 const NavigationContainer = styled('nav', {})
 
@@ -90,40 +88,36 @@ const NavigationAnchor = styled(Anchor, {
   ...navigationItemChildStyles,
 })
 
-export const Navigation = () => {
-  return (
-    <NavigationContainer aria-label="Main navigation">
-      <NavigationList>
-        <NavigationItem>
-          <ButtonToggleTheme />
-        </NavigationItem>
-
-        <NavigationItem visible="tablet">
-          <NavigationLink to="/">Home</NavigationLink>
-        </NavigationItem>
-
-        <NavigationItem>
-          <NavigationLink to="/pricing">Pricing</NavigationLink>
-        </NavigationItem>
-
-        <NavigationItem>
-          <NavigationAnchor href="https://a.kontenbase.com/docs">
-            Docs
-          </NavigationAnchor>
-        </NavigationItem>
-
-        <NavigationItem>
-          <NavigationAnchor href="https://a.kontenbase.com/jobs">
-            Jobs
-          </NavigationAnchor>
-        </NavigationItem>
-
-        {/* <NavigationItem>
+export const Navigation = () => (
+  <NavigationContainer aria-label="Main navigation">
+    <NavigationList>
+      <NavigationItem>
+        <ButtonToggleTheme />
+      </NavigationItem>
+      <NavigationItem visible="tablet">
+        <NavigationLink to="/">Home</NavigationLink>
+      </NavigationItem>
+      <NavigationItem>
+        <NavigationLink to="/pricing">Pricing</NavigationLink>
+      </NavigationItem>
+      <NavigationItem visible="tablet">
+        <NavigationLink to="/blog">Blog</NavigationLink>
+      </NavigationItem>
+      <NavigationItem>
+        <NavigationAnchor href="https://a.kontenbase.com/docs">
+          Docs
+        </NavigationAnchor>
+      </NavigationItem>
+      <NavigationItem>
+        <NavigationAnchor href="https://a.kontenbase.com/jobs">
+          Jobs
+        </NavigationAnchor>
+      </NavigationItem>
+      {/* <NavigationItem>
           <AnchorButton variant="brand" href="https://app.kontenbase.com/login">
             Login
           </AnchorButton>
         </NavigationItem> */}
-      </NavigationList>
-    </NavigationContainer>
-  )
-}
+    </NavigationList>
+  </NavigationContainer>
+)

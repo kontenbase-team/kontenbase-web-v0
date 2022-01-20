@@ -22,7 +22,10 @@ export const ButtonToggleThemeContainer = styled('button', {
   '@desktop': { fontSize: '$6', size: '35px' },
   '&:hover': { backgroundColor: '$yellow4' },
   '&:active': { backgroundColor: '$yellow5' },
-  '&:focus': { outline: '$blue9 solid 2px', outlineOffset: '1px' },
+  '&:focus': {
+    outline: 'none',
+    '@tablet': { outline: '$blue9 solid 2px', outlineOffset: '1px' },
+  },
 })
 
 export const ButtonToggleTheme: FunctionComponent = () => {
