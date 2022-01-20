@@ -13,23 +13,23 @@ export const loader: LoaderFunction = async ({ params }) => ({
 })
 
 export default function PostSlug() {
-  const post = useLoaderData()
+  const article = useLoaderData()
 
   return (
     <div>
       <Breadcrumb>
-        <Link to="/posts">
-          <span>&laquo; All blog posts</span>
+        <Link to="/blog">
+          <span>&laquo; All blog articles</span>
         </Link>
       </Breadcrumb>
 
       <article>
         <header>
-          <Heading as="h1">{post.title}</Heading>
+          <Heading as="h1">{article.title}</Heading>
         </header>
 
         <section>
-          <div>{parse(post.html)}</div>
+          <div>{parse(article.html)}</div>
         </section>
       </article>
     </div>
