@@ -1,18 +1,16 @@
-import { Link, useLoaderData } from 'remix'
-import type { LoaderFunction } from 'remix'
-import invariant from 'tiny-invariant'
 import parse from 'html-react-parser'
+import { Link, useLoaderData } from 'remix'
 
-import { styled } from '~/stitches'
+import type { LoaderFunction } from 'remix'
 import { Heading } from '~/components'
-import { getPost } from '~/post'
+import { styled } from '~/stitches'
 
 const Breadcrumb = styled('div', { padding: '1rem 0' })
 
-export const loader: LoaderFunction = async ({ params }) => {
-  invariant(params.slug, 'expected params.slug')
-  return getPost(params.slug)
-}
+export const loader: LoaderFunction = async ({ params }) => ({
+  title: 'Title',
+  params,
+})
 
 export default function PostSlug() {
   const post = useLoaderData()

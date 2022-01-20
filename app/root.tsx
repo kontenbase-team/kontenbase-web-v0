@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable react/no-danger */
 import {
   Links,
   LiveReload,
@@ -9,8 +11,12 @@ import {
   ScrollRestoration,
   useCatch,
 } from 'remix'
-import type { MetaFunction, LinksFunction, LoaderFunction } from 'remix'
 
+import type { MetaFunction, LinksFunction, LoaderFunction } from 'remix'
+import { Layout } from '~/components'
+import { lightTheme, darkTheme } from '~/stitches'
+import { globalStyles } from '~/styles'
+import { getEnv } from '~/utils/env.server'
 import {
   useTheme,
   ThemeProvider,
@@ -18,15 +24,10 @@ import {
   NonFlashOfWrongThemeEls,
 } from '~/utils/theme'
 import { getThemeSession } from '~/utils/theme.server'
-import { getEnv } from '~/utils/env.server'
 
-import { globalStyles } from '~/styles'
-import globalStylesUrl from '~/styles/global.css'
-import darkStylesUrl from '~/styles/dark.css'
 import carouselUrl from '~/styles/carousel.css'
-
-import { lightTheme, darkTheme } from '~/stitches'
-import { Layout } from '~/components'
+import darkStylesUrl from '~/styles/dark.css'
+import globalStylesUrl from '~/styles/global.css'
 
 /**
  * Loader
@@ -55,13 +56,13 @@ export const meta: MetaFunction = () => {
   const description =
     'No code backend API, fast and easy! Easily create backend API, auth, and storage in less than 1 minute without coding.'
   const url = 'https://kontenbase.com/'
-  const ogImageUrl = url + 'images/kontenbase-og.png?v=1'
+  const ogImageUrl = `${url}images/kontenbase-og.png?v=1`
   const ogImageAlt = 'Kontenbase is a No Code Backend as a Service'
-  const twiterImageUrl = url + 'images/kontenbase-twitter.png?v=1'
+  const twiterImageUrl = `${url}images/kontenbase-twitter.png?v=1`
 
   return {
-    title: title,
-    description: description,
+    title,
+    description,
 
     'og:site_name': name,
     'og:title': title,
@@ -85,47 +86,45 @@ export const meta: MetaFunction = () => {
  * Links
  * https://remix.run/api/app#links
  */
-export let links: LinksFunction = () => {
-  return [
-    {
-      rel: 'stylesheet',
-      href: globalStylesUrl,
-    },
-    {
-      rel: 'stylesheet',
-      href: darkStylesUrl,
-      media: '(prefers-color-scheme: dark)',
-    },
-    {
-      rel: 'stylesheet',
-      href: carouselUrl,
-    },
-    {
-      rel: 'apple-touch-icon',
-      sizes: '180x180',
-      href: '/icons/apple-touch-icon.png?v=1',
-    },
-    {
-      rel: 'icon',
-      type: 'image/png',
-      sizes: '32x32',
-      href: '/icons/favicon-32x32.png?v=1',
-    },
-    {
-      rel: 'icon',
-      type: 'image/png',
-      sizes: '16x16',
-      href: '/icons/favicon-16x16.png?v=1',
-    },
-    {
-      rel: 'mask-icon',
-      href: '/icons/safari-pinned-tab.svg?v=1',
-      color: '#05a2c2',
-    },
-    { rel: 'shortcut icon', href: '/icons/favicon.ico?v=1' },
-    { rel: 'manifest', href: '/icons/site.webmanifest?v=1' },
-  ]
-}
+export const links: LinksFunction = () => [
+  {
+    rel: 'stylesheet',
+    href: globalStylesUrl,
+  },
+  {
+    rel: 'stylesheet',
+    href: darkStylesUrl,
+    media: '(prefers-color-scheme: dark)',
+  },
+  {
+    rel: 'stylesheet',
+    href: carouselUrl,
+  },
+  {
+    rel: 'apple-touch-icon',
+    sizes: '180x180',
+    href: '/icons/apple-touch-icon.png?v=1',
+  },
+  {
+    rel: 'icon',
+    type: 'image/png',
+    sizes: '32x32',
+    href: '/icons/favicon-32x32.png?v=1',
+  },
+  {
+    rel: 'icon',
+    type: 'image/png',
+    sizes: '16x16',
+    href: '/icons/favicon-16x16.png?v=1',
+  },
+  {
+    rel: 'mask-icon',
+    href: '/icons/safari-pinned-tab.svg?v=1',
+    color: '#05a2c2',
+  },
+  { rel: 'shortcut icon', href: '/icons/favicon.ico?v=1' },
+  { rel: 'manifest', href: '/icons/site.webmanifest?v=1' },
+]
 
 /**
  * App
@@ -168,7 +167,7 @@ export function ErrorBoundary({ error }: { error: Error }) {
  * https://remix.run/docs/en/v1/api/conventions#catchboundary
  */
 export function CatchBoundary() {
-  let caught = useCatch()
+  const caught = useCatch()
   let message
 
   switch (caught.status) {

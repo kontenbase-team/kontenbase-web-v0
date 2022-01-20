@@ -1,6 +1,6 @@
-import type { MetaFunction, ActionFunction } from 'remix'
 import { useActionData, useTransition } from 'remix'
 
+import type { MetaFunction, ActionFunction } from 'remix'
 import {
   HomeHero,
   SubscribeSection,
@@ -9,13 +9,11 @@ import {
 } from '~/contents'
 import { ReactGA } from '~/utils'
 
-export const meta: MetaFunction = () => {
-  return {
-    title: 'Kontenbase - No Code Backend API, Fast and Easy!',
-    description:
-      'Kontenbase allows you to easily create backend API, auth, and storage in less than 1 minute without coding.',
-  }
-}
+export const meta: MetaFunction = () => ({
+  title: 'Kontenbase - No Code Backend API, Fast and Easy!',
+  description:
+    'Kontenbase allows you to easily create backend API, auth, and storage in less than 1 minute without coding.',
+})
 
 export const action: ActionFunction = subscribeAction
 
