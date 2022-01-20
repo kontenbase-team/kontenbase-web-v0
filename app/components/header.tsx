@@ -104,20 +104,16 @@ export const Navigation = () => (
         <NavigationLink to="/blog">Blog</NavigationLink>
       </NavigationItem>
       <NavigationItem>
-        <NavigationAnchor href="https://a.kontenbase.com/docs">
-          Docs
-        </NavigationAnchor>
+        <NavigationLink to="/docs">Docs</NavigationLink>
       </NavigationItem>
       <NavigationItem>
-        <NavigationAnchor href="https://a.kontenbase.com/jobs">
-          Jobs
-        </NavigationAnchor>
+        <NavigationLink to="/jobs">Jobs</NavigationLink>
       </NavigationItem>
       {/* <NavigationItem>
-          <AnchorButton variant="brand" href="https://app.kontenbase.com/login">
-            Login
-          </AnchorButton>
-        </NavigationItem> */}
+        <AnchorButton variant="brand" href="https://app.kontenbase.com">
+          Login
+        </AnchorButton>
+      </NavigationItem> */}
     </NavigationList>
   </NavigationContainer>
 )
