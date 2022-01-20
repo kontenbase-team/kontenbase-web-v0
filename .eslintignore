@@ -1,4 +1,9 @@
-**/node_modules/*
+.cache
+.vscode
 **/build/*
+**/node_modules/*
 **/public/*
 **/public/*.js
+api/_build/
+node_modules/
+public/
