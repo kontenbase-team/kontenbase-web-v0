@@ -7,17 +7,23 @@ import { getDate } from '~/utils'
 const ArticlesContainer = styled('div', {})
 
 const ArticleContainer = styled('div', {
-  mt: '$5',
   display: 'flex',
   flexWrap: 'wrap',
   justifyContent: 'center',
+  mb: '$20',
+  '@desktop': { mb: '$10' },
 })
 
 const ArticleItem = styled('article', {
-  maxWidth: '820px',
   display: 'flex',
   alignItems: 'flex-start',
   gap: '$5',
+  maxWidth: '520px',
+  flexDirection: 'column',
+  '@desktop': {
+    maxWidth: '820px',
+    flexDirection: 'row',
+  },
 })
 
 const ArticleItemGroup = styled('div', {
@@ -25,8 +31,11 @@ const ArticleItemGroup = styled('div', {
 })
 
 const ArticleCoverImage = styled('img', {
-  maxWidth: '300px',
+  width: '100%',
   borderRadius: '$2',
+  '@desktop': {
+    maxWidth: '360px',
+  },
 })
 
 export const BlogArticles = ({ articles }: { articles: any }) => (
@@ -35,6 +44,7 @@ export const BlogArticles = ({ articles }: { articles: any }) => (
       <ArticleContainer key={article.cuid}>
         <Link to={article.slug} prefetch="intent">
           <ArticleItem>
+            <ArticleCoverImage src={article.coverImage} alt={article.title} />
             <ArticleItemGroup>
               <Heading as="h3">{article.title}</Heading>
               <time dateTime={article.dateAdded}>
@@ -42,7 +52,6 @@ export const BlogArticles = ({ articles }: { articles: any }) => (
               </time>
               <p>{article.brief}</p>
             </ArticleItemGroup>
-            <ArticleCoverImage src={article.coverImage} alt={article.title} />
           </ArticleItem>
         </Link>
       </ArticleContainer>
