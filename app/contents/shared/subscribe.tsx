@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable no-undef */
 /* eslint-disable no-console */
 import axios from 'axios'
@@ -92,38 +93,41 @@ export const SubscribeSection = (props: SubscribeSectionProps) => (
   </SubscribeSectionContainer>
 )
 
-export const SubscribeBoxForm = (props: { transition: any }) => (
-  <SubscribeForm method="post">
-    <Input
-      name="name"
-      type="text"
-      size="wide"
-      variant="text"
-      border="radius-left"
-      placeholder="Your Full Name"
-      required
-    />
-    <Input
-      name="email"
-      type="email"
-      size="wide"
-      variant="text"
-      border="radius-mobile"
-      placeholder="name@email.com"
-      required
-    />
-    <Input
-      type="submit"
-      size="fixed"
-      variant="submit"
-      border="radius-right"
-      disabled={props.transition?.state !== 'idle'}
-      value={
-        props.transition?.state !== 'idle' ? 'Subscribing...' : 'Subscribe'
-      }
-    />
-  </SubscribeForm>
-)
+export const SubscribeBoxForm = ({ transition }: { transition: any }) => {
+  const subscribeText =
+    transition.state === 'submitting' ? 'Subscribing...' : 'Subscribe'
+
+  return (
+    <SubscribeForm method="post">
+      <Input
+        name="name"
+        type="text"
+        size="wide"
+        variant="text"
+        border="radius-left"
+        placeholder="Your Full Name"
+        required
+      />
+      <Input
+        name="email"
+        type="email"
+        size="wide"
+        variant="text"
+        border="radius-mobile"
+        placeholder="name@email.com"
+        required
+      />
+      <Input
+        type="submit"
+        size="fixed"
+        variant="submit"
+        border="radius-right"
+        disabled={transition.state === 'submitting'}
+        value={subscribeText}
+      />
+    </SubscribeForm>
+  )
+}
 
 export const subscribeNew = async ({
   email,
