@@ -2,9 +2,10 @@ import { gql } from '@urql/core'
 import { json, useLoaderData } from 'remix'
 
 import type { MetaFunction, LoaderFunction } from 'remix'
+import { Content } from '~/components'
 import { BlogArticles, BlogHero } from '~/contents'
 import { hashnodeClient, createMeta, ReactGA } from '~/utils'
-import { Content } from '~/components'
+import { BlogArticle } from '~/types'
 
 /**
  * Meta
@@ -37,10 +38,9 @@ export const loader: LoaderFunction = async () => {
     }
   `
   const response = await hashnodeClient.query(BlogPostsQuery).toPromise()
+  const articles: BlogArticle[] = response.data.user.publication.posts
 
-  return json({
-    articles: response.data.user.publication.posts,
-  })
+  return json(articles)
 }
 
 /**
@@ -49,13 +49,13 @@ export const loader: LoaderFunction = async () => {
 export default function Blog() {
   ReactGA.send({ hitType: 'pageview', page: '/blog' })
 
-  const data = useLoaderData()
+  const articles = useLoaderData<BlogArticle[]>()
 
   return (
     <>
       <BlogHero />
       <Content>
-        <BlogArticles articles={data.articles} />
+        <BlogArticles articles={articles} />
       </Content>
     </>
   )

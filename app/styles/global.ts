@@ -19,11 +19,10 @@ export const globalStyles = globalCss({
   },
 
   a: {
-    color: '$brand9',
     textDecoration: 'none',
-    '&:hover': {
-      color: '$brand10',
-    },
+    color: '$text',
+    // color: '$brand9',
+    // '&:hover': { color: '$brand10' },
   },
 
   hr: {
