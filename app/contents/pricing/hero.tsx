@@ -1,5 +1,5 @@
+import { Hero, Heading } from '~/components'
 import { styled } from '~/stitches'
-import { Hero, Heading, P } from '~/components'
 
 interface PricingHeroProps {
   children?: React.ReactNode
@@ -19,8 +19,7 @@ const PricingHeroContent = styled('div', {
   width: '100%',
 })
 
-export const PricingHero = (props: PricingHeroProps) => {
-  return (
+export const PricingHero = (props: PricingHeroProps) => (
     <Hero>
       <PricingHeroContainer id="pricing-hero">
         <PricingHeroContent id="pricing-hero-content">
@@ -34,4 +33,3 @@ export const PricingHero = (props: PricingHeroProps) => {
       </PricingHeroContainer>
     </Hero>
   )
-}

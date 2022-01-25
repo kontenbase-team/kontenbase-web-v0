@@ -19,8 +19,7 @@ const IFrameContainer = styled('iframe', {
 
 export const VideoYouTube: FunctionComponent<VideoYouTubeProps> = ({
   data,
-}) => {
-  return (
+}) => (
     <div>
       <IFrameContainer
         title={data.title}
@@ -33,4 +32,3 @@ export const VideoYouTube: FunctionComponent<VideoYouTubeProps> = ({
       />
     </div>
   )
-}

@@ -1,9 +1,8 @@
 import { FunctionComponent } from 'react'
-
-import { styled } from '~/stitches'
 import ReactMultiCarousel from 'react-multi-carousel'
 
 import { AspectRatio } from '~/components'
+import { styled } from '~/stitches'
 
 const responsive = {
   superLargeDesktop: {
@@ -65,8 +64,7 @@ export interface CarouselProps {
   items: CarouselItem[]
 }
 
-export const Carousel: FunctionComponent<CarouselProps> = ({ items }) => {
-  return (
+export const Carousel: FunctionComponent<CarouselProps> = ({ items }) => (
     <CarouselContainer>
       <ReactMultiCarousel
         responsive={responsive}
@@ -76,8 +74,7 @@ export const Carousel: FunctionComponent<CarouselProps> = ({ items }) => {
         swipeable
         ssr
       >
-        {items.map((item, index) => {
-          return (
+        {items.map((item, index) => (
             <CarouselItemContainer key={`carousel-item-${index}`}>
               <AspectRatio.Root ratio={16 / 10}>
                 <CarouselImage alt={`${item.caption}`} src={item.imageUrl} />
@@ -86,9 +83,7 @@ export const Carousel: FunctionComponent<CarouselProps> = ({ items }) => {
                 <span>{item.caption}</span>
               </CarouselCaption>
             </CarouselItemContainer>
-          )
-        })}
+          ))}
       </ReactMultiCarousel>
     </CarouselContainer>
   )
-}

@@ -19,10 +19,8 @@ const AlertContainer = styled('div', {
   },
 })
 
-export const Alert = (props: AlertProps) => {
-  return (
+export const Alert = (props: AlertProps) => (
     <AlertContainer variant={props.variant}>
       <p>{props.children}</p>
     </AlertContainer>
   )
-}

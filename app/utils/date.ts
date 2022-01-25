@@ -1,4 +1,5 @@
 import dayjs from 'dayjs'
+
 const date = new Date()
 
 export const getDayName = () => {

@@ -1,6 +1,6 @@
-import { styled } from '~/stitches'
 import { Hero, Heading, P } from '~/components'
 import { HomeCarousel } from '~/contents'
+import { styled } from '~/stitches'
 
 interface HomeHeroProps {
   children?: React.ReactNode
@@ -40,8 +40,7 @@ const HomeHeroAside = styled('aside', {
   width: '100%',
 })
 
-export const HomeHero = (props: HomeHeroProps) => {
-  return (
+export const HomeHero = (props: HomeHeroProps) => (
     <Hero>
       <HomeHeroContainer>
         <HomeHeroContent>
@@ -58,4 +57,3 @@ export const HomeHero = (props: HomeHeroProps) => {
       </HomeHeroContainer>
     </Hero>
   )
-}

@@ -21,8 +21,7 @@ const AnchorContainer = styled('a', {
   },
 })
 
-export const Anchor = (props: AnchorProps) => {
-  return (
+export const Anchor = (props: AnchorProps) => (
     <AnchorContainer
       display={props.display}
       target="_blank"
@@ -32,7 +31,6 @@ export const Anchor = (props: AnchorProps) => {
       {props.children}
     </AnchorContainer>
   )
-}
 
 /**
  * Anchor Icon

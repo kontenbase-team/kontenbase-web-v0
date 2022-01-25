@@ -1,10 +1,9 @@
-import { Form } from 'remix'
-import { json, redirect } from 'remix'
-import type { ActionFunction } from 'remix'
 import axios from 'axios'
+import { Form , json } from 'remix'
 
-import { styled } from '~/stitches'
+import type { ActionFunction } from 'remix'
 import { Content, Heading, P, Input, Alert } from '~/components'
+import { styled } from '~/stitches'
 
 const SubscribeSectionContainer = styled('section', {
   position: 'relative',
@@ -68,8 +67,7 @@ interface SubscribeSectionProps {
   actionData?: any
 }
 
-export const SubscribeSection = (props: SubscribeSectionProps) => {
-  return (
+export const SubscribeSection = (props: SubscribeSectionProps) => (
     <SubscribeSectionContainer>
       <Content layout="center-horizontal">
         <SubscribeAndImage>
@@ -91,10 +89,8 @@ export const SubscribeSection = (props: SubscribeSectionProps) => {
       <RocketImage src="/images/rocket.svg" alt="Rocket illustration" />
     </SubscribeSectionContainer>
   )
-}
 
-export const SubscribeBoxForm = (props: { transition: any }) => {
-  return (
+export const SubscribeBoxForm = (props: { transition: any }) => (
     <SubscribeForm method="post">
       <Input
         name="name"
@@ -126,7 +122,6 @@ export const SubscribeBoxForm = (props: { transition: any }) => {
       />
     </SubscribeForm>
   )
-}
 
 export const subscribeNew = async ({
   email,
@@ -170,15 +165,15 @@ export const subscribeAction: ActionFunction = async ({ request }) => {
           message: `${data?.email} is subscribed! Check the inbox to confirm`,
           subscriber: data,
         })
-      } else {
+      } 
         return json({ error: true, message: data })
-      }
-    } else {
+      
+    } 
       return json({
         error: true,
         message: 'Sorry, please provide name and email',
       })
-    }
+    
   } catch (error) {
     return json({ error: true, message: 'Sorry, failed for unknown reason' })
   }

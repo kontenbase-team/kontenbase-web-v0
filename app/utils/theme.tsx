@@ -36,7 +36,7 @@ function ThemeProvider({
     // value that clientThemeCode got so hydration is happy.
     if (specifiedTheme) {
       if (themes.includes(specifiedTheme)) return specifiedTheme
-      else return null
+      return null
     }
 
     // there's no way for us to know what the theme should be in this context
@@ -187,10 +187,10 @@ function Themed({
         {React.createElement('light-mode', null, light)}
       </>
     )
-  } else {
+  } 
     // eslint-disable-next-line react/jsx-no-useless-fragment
     return <>{themeToReference === 'light' ? light : dark}</>
-  }
+  
 }
 
 function isTheme(value: unknown): value is Theme {

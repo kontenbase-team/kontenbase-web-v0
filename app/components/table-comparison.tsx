@@ -1,20 +1,19 @@
 import React from 'react'
-import { styled, css } from '~/stitches'
+
 import {
-  AnchorButton,
   Heading,
   Caption,
   Table,
   Tbody,
   Flex,
   Td,
-  Tfoot,
   Th,
   Thead,
   Tr,
   P,
   VisuallyHidden,
 } from '~/components'
+import { styled } from '~/stitches'
 
 export interface Head {
   text: string
@@ -67,7 +66,7 @@ export const TableComparisonBuilder: React.FunctionComponent<
 
       <Thead>
         <Tr>
-          <Th scope="col"></Th>
+          <Th scope="col" />
           <Th scope="col">
             <Heading as="h4">Free</Heading>
           </Th>

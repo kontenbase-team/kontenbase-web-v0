@@ -1,8 +1,8 @@
 import { Link } from 'remix'
 
-import { styled } from '~/stitches'
 import { Heading } from '~/components'
 import type { Post } from '~/post'
+import { styled } from '~/stitches'
 
 interface PostsProps {
   posts: Post[]
@@ -29,8 +29,7 @@ const PostSection = styled('section', {
   },
 })
 
-export const PostsCollection = ({ posts }: PostsProps) => {
-  return (
+export const PostsCollection = ({ posts }: PostsProps) => (
     <PostsContainer>
       {posts.map((post) => (
         <Link key={post.slug} to={post.slug}>
@@ -41,4 +40,3 @@ export const PostsCollection = ({ posts }: PostsProps) => {
       ))}
     </PostsContainer>
   )
-}

@@ -1,7 +1,6 @@
 import { SVGProps } from 'react'
 
 import { styled, darkTheme } from '~/stitches'
-import { useTheme, Theme } from '~/utils/theme'
 
 const LogoContainer = styled('div', {
   svg: {
@@ -26,13 +25,11 @@ const LogoContainer = styled('div', {
   },
 })
 
-export const Logo = () => {
-  return (
+export const Logo = () => (
     <LogoContainer>
       <KontenbaseSVG />
     </LogoContainer>
   )
-}
 
 const KontenbaseSVG = (props: SVGProps<SVGSVGElement>) => (
   <svg
