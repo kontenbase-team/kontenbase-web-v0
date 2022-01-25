@@ -4,8 +4,8 @@ import { json, useLoaderData } from 'remix'
 import type { MetaFunction, LoaderFunction } from 'remix'
 import { Content } from '~/components'
 import { BlogArticles, BlogHero } from '~/contents'
-import { hashnodeClient, createMeta, ReactGA } from '~/utils'
 import { BlogArticle } from '~/types'
+import { hashnodeClient, createMeta, ReactGA } from '~/utils'
 
 /**
  * Meta

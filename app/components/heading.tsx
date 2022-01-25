@@ -31,6 +31,7 @@ const H2 = styled('h2', {
 
 const H3 = styled('h3', {
   color: '$heading3',
+  mt: '0',
   fontSize: '1.75rem',
   '@tablet': { fontSize: '1.75rem' },
   '@desktop': { fontSize: '1.75rem' },
