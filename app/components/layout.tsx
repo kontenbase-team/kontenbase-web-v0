@@ -1,4 +1,3 @@
-
 import { Header, Footer } from '~/components'
 import { FeedbackDialog } from '~/contents'
 import { styled } from '~/stitches'
@@ -11,7 +10,7 @@ const LayoutContainer = styled('div', {
 })
 
 const LayoutContent = styled('main', {
-  paddingTop: '2rem',
+  paddingTop: '3rem',
   flex: 1,
 })
 
@@ -19,13 +18,13 @@ const LayoutContent = styled('main', {
  * Layout
  */
 export const Layout = ({ children }: { children: React.ReactNode }) => (
-    <LayoutContainer>
-      <Header />
+  <LayoutContainer>
+    <Header />
 
-      <FeedbackDialog mode="left" />
+    <FeedbackDialog mode="left" />
 
-      <LayoutContent>{children}</LayoutContent>
+    <LayoutContent>{children}</LayoutContent>
 
-      <Footer />
-    </LayoutContainer>
-  )
+    <Footer />
+  </LayoutContainer>
+)

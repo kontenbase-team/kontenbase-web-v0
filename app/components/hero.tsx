@@ -13,7 +13,7 @@ const HeroContainer = styled('div', {
 })
 
 export const Hero = (props: HeroProps) => (
-    <HeroContainer id="hero">
-      <Content>{props.children}</Content>
-    </HeroContainer>
-  )
+  <HeroContainer id="hero">
+    <Content>{props.children}</Content>
+  </HeroContainer>
+)

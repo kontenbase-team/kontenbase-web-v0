@@ -1,13 +1,9 @@
 import dayjs from 'dayjs'
 
-const date = new Date()
+const today = new Date()
 
-export const getDayName = () => {
-  const dayName = dayjs(date).format('dddd')
-  return dayName
-}
+export const getDayName = () => dayjs(today).format('dddd')
 
-export const getYear = () => {
-  const year = dayjs(date).format('YYYY')
-  return year
-}
+export const getYear = () => dayjs(today).format('YYYY')
+
+export const getDate = (date: any) => dayjs(date).format('MMMM D, YYYY')

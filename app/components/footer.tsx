@@ -60,19 +60,19 @@ const Social = styled('div', {
  * Footer
  */
 export const Footer = () => (
-    <FooterContainer>
-      <Content>
-        <CopyrightSocial>
-          <CopyrightGreeting>
-            <p>Copyright &copy; {getYear()} Kontenbase.</p>
-            <p>Happy {getDayName()}!</p>
-          </CopyrightGreeting>
+  <FooterContainer>
+    <Content>
+      <CopyrightSocial>
+        <CopyrightGreeting>
+          <p>Copyright &copy; {getYear()} Kontenbase.</p>
+          <p>Happy {getDayName()}!</p>
+        </CopyrightGreeting>
 
-          <Social>
-            <span>Follow us on</span>
-            <SocialMediaLinks />
-          </Social>
-        </CopyrightSocial>
-      </Content>
-    </FooterContainer>
-  )
+        <Social>
+          <span>Follow us on</span>
+          <SocialMediaLinks />
+        </Social>
+      </CopyrightSocial>
+    </Content>
+  </FooterContainer>
+)
