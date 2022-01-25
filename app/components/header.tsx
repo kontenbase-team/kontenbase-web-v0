@@ -1,6 +1,6 @@
 import { Link } from 'remix'
 
-import { Anchor, ButtonToggleTheme, Content, Logo } from '~/components'
+import { ButtonToggleTheme, Content, Logo, NavigationMenu } from '~/components'
 import { styled } from '~/stitches'
 
 const HeaderContainer = styled('header', {
@@ -31,7 +31,8 @@ export const Header = () => (
         <Link to="/" title="Kontenbase">
           <Logo />
         </Link>
-        <Navigation />
+        {/* <Navigation /> */}
+        <NavigationMenu />
       </LogoNavigation>
     </Content>
   </HeaderContainer>
@@ -81,10 +82,6 @@ const navigationItemChildStyles = {
 }
 
 const NavigationLink = styled(Link, {
-  ...navigationItemChildStyles,
-})
-
-const NavigationAnchor = styled(Anchor, {
   ...navigationItemChildStyles,
 })
 
