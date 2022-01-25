@@ -1,7 +1,8 @@
+import { gql } from '@urql/core'
 import { json, useLoaderData } from 'remix'
 
 import type { MetaFunction, LoaderFunction } from 'remix'
-import { createMeta, ReactGA } from '~/utils'
+import { hashnodeClient, createMeta, ReactGA } from '~/utils'
 
 /**
  * Meta
@@ -16,10 +17,26 @@ export const meta: MetaFunction = () =>
 /**
  * Loader
  */
-export const loader: LoaderFunction = () => {
-  const data = {}
+export const loader: LoaderFunction = async () => {
+  const BlogPostsQuery = gql`
+    query {
+      user(username: "kontenbase") {
+        publication {
+          posts(page: 0) {
+            cuid
+            slug
+            title
+            brief
+          }
+        }
+      }
+    }
+  `
+  const response = await hashnodeClient.query(BlogPostsQuery).toPromise()
 
-  return json(data)
+  return json({
+    posts: response.data.user.publication.posts,
+  })
 }
 
 /**
