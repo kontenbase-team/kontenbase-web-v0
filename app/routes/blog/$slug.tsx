@@ -1,4 +1,5 @@
 import { gql } from '@urql/core'
+import parse from 'html-react-parser'
 import { json, useLoaderData } from 'remix'
 
 import type { LoaderFunction } from 'remix'
@@ -67,7 +68,7 @@ export default function BlogArticleSlug() {
           <ArticleCoverImage src={article.coverImage} alt={article.title} />
           <Heading as="h1">{article.title}</Heading>
           <time dateTime={article.dateAdded}>{getDate(article.dateAdded)}</time>
-          <ArticleContent>{article.content}</ArticleContent>
+          <ArticleContent>{parse(String(article?.content))}</ArticleContent>
         </Article>
       </ArticleContainer>
     </Content>
