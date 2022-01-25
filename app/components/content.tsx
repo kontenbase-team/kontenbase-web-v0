@@ -41,10 +41,8 @@ const ContentContainer = styled('div', {
   },
 })
 
-export const Content = (props: ContentProps) => {
-  return (
-    <ContentContainer className="content" {...props}>
-      {props.children}
-    </ContentContainer>
-  )
-}
+export const Content = (props: ContentProps) => (
+  <ContentContainer className="content" {...props}>
+    {props.children}
+  </ContentContainer>
+)
