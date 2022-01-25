@@ -1,6 +1,7 @@
 import { Link } from 'remix'
 
 import { styled } from '~/stitches'
+import { getDate } from '~/utils'
 
 const ArticlesContainer = styled('div', {})
 
@@ -23,7 +24,9 @@ export const BlogArticles = ({ articles }: { articles: any }) => (
         <Link to={article.slug}>
           <ArticleItem>
             <h1>{article.title}</h1>
-            <time dateTime={article.dateAdded}>{article.dateAdded}</time>
+            <time dateTime={article.dateAdded}>
+              {getDate(article.dateAdded)}
+            </time>
             <p>{article.brief}</p>
             <ArticleCoverImage src={article.coverImage} alt={article.title} />
           </ArticleItem>
