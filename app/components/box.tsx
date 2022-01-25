@@ -9,6 +9,4 @@ const BoxContainer = styled('div', {
   height: '300px',
 })
 
-export const Box = (props: BoxProps) => {
-  return <BoxContainer {...props}>{props.children}</BoxContainer>
-}
+export const Box = (props: BoxProps) => <BoxContainer {...props}>{props.children}</BoxContainer>

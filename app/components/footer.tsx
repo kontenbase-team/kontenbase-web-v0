@@ -1,6 +1,5 @@
-import { styled } from '~/stitches'
-
 import { Content, SocialMediaLinks } from '~/components'
+import { styled } from '~/stitches'
 import { getDayName, getYear } from '~/utils'
 
 const FooterContainer = styled('footer', {
@@ -60,8 +59,7 @@ const Social = styled('div', {
 /**
  * Footer
  */
-export const Footer = () => {
-  return (
+export const Footer = () => (
     <FooterContainer>
       <Content>
         <CopyrightSocial>
@@ -78,4 +76,3 @@ export const Footer = () => {
       </Content>
     </FooterContainer>
   )
-}

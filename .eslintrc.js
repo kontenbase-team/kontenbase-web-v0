@@ -66,6 +66,7 @@ module.exports = {
     'react/prop-types': 'off',
     'react/require-default-props': 'off',
     'react/function-component-definition': 'off',
+    'react/destructuring-assignment': 'off',
     'unused-imports/no-unused-imports': 'error',
     'unused-imports/no-unused-vars': [
       'warn',

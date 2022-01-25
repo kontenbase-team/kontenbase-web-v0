@@ -1,8 +1,8 @@
-import { styled, keyframes } from '~/stitches'
-import { violet, blackA, red, mauve } from '@radix-ui/colors'
+import { blackA } from '@radix-ui/colors'
 import * as AlertDialogPrimitive from '@radix-ui/react-alert-dialog'
 
 import { Flex, Button } from '~/components'
+import { styled, keyframes } from '~/stitches'
 
 const overlayShow = keyframes({
   '0%': { opacity: 0 },

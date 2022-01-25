@@ -1,12 +1,13 @@
 import { FunctionComponent } from 'react'
 
-import { styled } from '~/stitches'
+import explainerSteps from './explainer-steps.json'
+
 import { Content, Heading, ExplainerSection } from '~/components'
 import type { Explainer } from '~/components'
+import { styled } from '~/stitches'
+
 
 interface ExplainerStepsProps {}
-
-import explainerSteps from './explainer-steps.json'
 
 const ExplainerStepsContainer = styled('div', {
   py: '$10',
@@ -24,8 +25,7 @@ const ExplainerCollection = styled('div', {
   '@desktop': { gap: '$32' },
 })
 
-export const ExplainerSteps: FunctionComponent<ExplainerStepsProps> = () => {
-  return (
+export const ExplainerSteps: FunctionComponent<ExplainerStepsProps> = () => (
     <ExplainerStepsContainer>
       <Content layout="center-vertical">
         <Heading
@@ -39,20 +39,17 @@ export const ExplainerSteps: FunctionComponent<ExplainerStepsProps> = () => {
           How it works?
         </Heading>
         <ExplainerCollection>
-          {(explainerSteps as Explainer[]).map((explainer, index) => {
-            return (
+          {(explainerSteps as Explainer[]).map((explainer, index) => (
               // @ts-ignore
               <ExplainerSection
                 key={explainer.slug}
                 step={index + 1}
                 explainer={explainer}
               />
-            )
-          })}
+            ))}
         </ExplainerCollection>
       </Content>
     </ExplainerStepsContainer>
   )
-}
 
 export default ExplainerSteps

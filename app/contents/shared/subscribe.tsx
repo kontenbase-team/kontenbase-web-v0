@@ -1,10 +1,11 @@
-import { Form } from 'remix'
-import { json, redirect } from 'remix'
-import type { ActionFunction } from 'remix'
+/* eslint-disable no-undef */
+/* eslint-disable no-console */
 import axios from 'axios'
+import { Form, json } from 'remix'
 
-import { styled } from '~/stitches'
+import type { ActionFunction } from 'remix'
 import { Content, Heading, P, Input, Alert } from '~/components'
+import { styled } from '~/stitches'
 
 const SubscribeSectionContainer = styled('section', {
   position: 'relative',
@@ -68,65 +69,61 @@ interface SubscribeSectionProps {
   actionData?: any
 }
 
-export const SubscribeSection = (props: SubscribeSectionProps) => {
-  return (
-    <SubscribeSectionContainer>
-      <Content layout="center-horizontal">
-        <SubscribeAndImage>
-          <SubscribeBox>
-            <Heading as="h2">We are launching soon!</Heading>
-            <P>Join our early adopter program as alpha tester</P>
+export const SubscribeSection = (props: SubscribeSectionProps) => (
+  <SubscribeSectionContainer>
+    <Content layout="center-horizontal">
+      <SubscribeAndImage>
+        <SubscribeBox>
+          <Heading as="h2">We are launching soon!</Heading>
+          <P>Join our early adopter program as alpha tester</P>
 
-            <SubscribeBoxForm transition={props.transition} />
+          <SubscribeBoxForm transition={props.transition} />
 
-            {props.actionData?.error && (
-              <Alert variant="error">{props.actionData?.message}</Alert>
-            )}
-            {props.actionData?.subscriber?.email && (
-              <Alert variant="success">{props.actionData?.message}</Alert>
-            )}
-          </SubscribeBox>
-        </SubscribeAndImage>
-      </Content>
-      <RocketImage src="/images/rocket.svg" alt="Rocket illustration" />
-    </SubscribeSectionContainer>
-  )
-}
+          {props.actionData?.error && (
+            <Alert variant="error">{props.actionData?.message}</Alert>
+          )}
+          {props.actionData?.subscriber?.email && (
+            <Alert variant="success">{props.actionData?.message}</Alert>
+          )}
+        </SubscribeBox>
+      </SubscribeAndImage>
+    </Content>
+    <RocketImage src="/images/rocket.svg" alt="Rocket illustration" />
+  </SubscribeSectionContainer>
+)
 
-export const SubscribeBoxForm = (props: { transition: any }) => {
-  return (
-    <SubscribeForm method="post">
-      <Input
-        name="name"
-        type="text"
-        size="wide"
-        variant="text"
-        border="radius-left"
-        placeholder="Your Full Name"
-        required
-      />
-      <Input
-        name="email"
-        type="email"
-        size="wide"
-        variant="text"
-        border="radius-mobile"
-        placeholder="name@email.com"
-        required
-      />
-      <Input
-        type="submit"
-        size="fixed"
-        variant="submit"
-        border="radius-right"
-        disabled={props.transition?.state !== 'idle'}
-        value={
-          props.transition?.state !== 'idle' ? 'Subscribing...' : 'Subscribe'
-        }
-      />
-    </SubscribeForm>
-  )
-}
+export const SubscribeBoxForm = (props: { transition: any }) => (
+  <SubscribeForm method="post">
+    <Input
+      name="name"
+      type="text"
+      size="wide"
+      variant="text"
+      border="radius-left"
+      placeholder="Your Full Name"
+      required
+    />
+    <Input
+      name="email"
+      type="email"
+      size="wide"
+      variant="text"
+      border="radius-mobile"
+      placeholder="name@email.com"
+      required
+    />
+    <Input
+      type="submit"
+      size="fixed"
+      variant="submit"
+      border="radius-right"
+      disabled={props.transition?.state !== 'idle'}
+      value={
+        props.transition?.state !== 'idle' ? 'Subscribing...' : 'Subscribe'
+      }
+    />
+  </SubscribeForm>
+)
 
 export const subscribeNew = async ({
   email,
@@ -170,15 +167,13 @@ export const subscribeAction: ActionFunction = async ({ request }) => {
           message: `${data?.email} is subscribed! Check the inbox to confirm`,
           subscriber: data,
         })
-      } else {
-        return json({ error: true, message: data })
       }
-    } else {
-      return json({
-        error: true,
-        message: 'Sorry, please provide name and email',
-      })
+      return json({ error: true, message: data })
     }
+    return json({
+      error: true,
+      message: 'Sorry, please provide name and email',
+    })
   } catch (error) {
     return json({ error: true, message: 'Sorry, failed for unknown reason' })
   }

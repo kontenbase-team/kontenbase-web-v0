@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react'
 
-import { styled } from '~/stitches'
 import { P, AspectRatio, VideoYouTube } from '~/components'
+import { styled } from '~/stitches'
 
 export type Explainer = {
   slug: string
@@ -92,8 +92,7 @@ const ExplainerImage = styled('img', {
 export const ExplainerSection: FunctionComponent<ExplainerProps> = ({
   step,
   explainer,
-}) => {
-  return (
+}) => (
     <ExplainerSectionContainer>
       <ExplainerTextMedia direction={explainer.direction}>
         <ExplainerText>
@@ -114,7 +113,6 @@ export const ExplainerSection: FunctionComponent<ExplainerProps> = ({
       </ExplainerTextMedia>
     </ExplainerSectionContainer>
   )
-}
 
 interface ExplainerVideoProps {
   explainer: Explainer
@@ -122,7 +120,7 @@ interface ExplainerVideoProps {
 
 export const ExplainerVideo: FunctionComponent<ExplainerVideoProps> = ({
   explainer,
-}) => {
+}) => 
   // @ts-ignore
-  return <VideoYouTube data={explainer} />
-}
+   <VideoYouTube data={explainer} />
+

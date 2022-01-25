@@ -4,10 +4,9 @@ type CreateMeta = {
   route?: string
 }
 
-export const createMeta = ({ title, description, route = '' }: CreateMeta) => {
-  return {
-    title: title,
-    description: description,
+export const createMeta = ({ title, description, route = '' }: CreateMeta) => ({
+    title,
+    description,
 
     'og:title': title,
     'og:description': description,
@@ -15,5 +14,4 @@ export const createMeta = ({ title, description, route = '' }: CreateMeta) => {
 
     'twitter:title': title,
     'twitter:description': description,
-  }
-}
+  })

@@ -78,8 +78,7 @@ interface InputProps {
   required?: boolean
 }
 
-export const Input = (props: InputProps) => {
-  return (
+export const Input = (props: InputProps) => (
     <InputStyled
       variant={props.variant}
       size={props.size}
@@ -87,4 +86,3 @@ export const Input = (props: InputProps) => {
       {...props}
     />
   )
-}

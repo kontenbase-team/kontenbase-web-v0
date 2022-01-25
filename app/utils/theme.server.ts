@@ -1,6 +1,7 @@
 import { createCookieSessionStorage } from 'remix'
 
 import { Theme, isTheme } from './theme'
+
 import { getEnvServer } from '~/utils/env.server'
 
 const themeStorage = createCookieSessionStorage({

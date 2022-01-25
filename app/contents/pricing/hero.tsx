@@ -1,9 +1,5 @@
+import { Hero, Heading } from '~/components'
 import { styled } from '~/stitches'
-import { Hero, Heading, P } from '~/components'
-
-interface PricingHeroProps {
-  children?: React.ReactNode
-}
 
 const PricingHeroContainer = styled('div', {
   display: 'flex',
@@ -19,19 +15,17 @@ const PricingHeroContent = styled('div', {
   width: '100%',
 })
 
-export const PricingHero = (props: PricingHeroProps) => {
-  return (
-    <Hero>
-      <PricingHeroContainer id="pricing-hero">
-        <PricingHeroContent id="pricing-hero-content">
-          <Heading as="h1" css={{ mb: 0 }}>
-            Simple Pricing
-          </Heading>
-          <Heading as="h2" color="solid">
-            Choose what's best.
-          </Heading>
-        </PricingHeroContent>
-      </PricingHeroContainer>
-    </Hero>
-  )
-}
+export const PricingHero = () => (
+  <Hero>
+    <PricingHeroContainer id="pricing-hero">
+      <PricingHeroContent id="pricing-hero-content">
+        <Heading as="h1" css={{ mb: 0 }}>
+          Simple Pricing
+        </Heading>
+        <Heading as="h2" color="solid">
+          Choose what's best.
+        </Heading>
+      </PricingHeroContent>
+    </PricingHeroContainer>
+  </Hero>
+)

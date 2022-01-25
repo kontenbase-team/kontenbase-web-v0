@@ -1,10 +1,6 @@
-import { styled } from '~/stitches'
 import { Hero, Heading, P } from '~/components'
 import { HomeCarousel } from '~/contents'
-
-interface HomeHeroProps {
-  children?: React.ReactNode
-}
+import { styled } from '~/stitches'
 
 const HomeHeroContainer = styled('div', {
   display: 'flex',
@@ -40,22 +36,20 @@ const HomeHeroAside = styled('aside', {
   width: '100%',
 })
 
-export const HomeHero = (props: HomeHeroProps) => {
-  return (
-    <Hero>
-      <HomeHeroContainer>
-        <HomeHeroContent>
-          <Heading as="h1">No Code Backend API, Fast and Easy!</Heading>
-          <P>
-            Kontenbase allows you to easily create backend API, auth, and
-            storage in less than 1 minute without coding.
-          </P>
-        </HomeHeroContent>
+export const HomeHero = () => (
+  <Hero>
+    <HomeHeroContainer>
+      <HomeHeroContent>
+        <Heading as="h1">No Code Backend API, Fast and Easy!</Heading>
+        <P>
+          Kontenbase allows you to easily create backend API, auth, and storage
+          in less than 1 minute without coding.
+        </P>
+      </HomeHeroContent>
 
-        <HomeHeroAside>
-          <HomeCarousel />
-        </HomeHeroAside>
-      </HomeHeroContainer>
-    </Hero>
-  )
-}
+      <HomeHeroAside>
+        <HomeCarousel />
+      </HomeHeroAside>
+    </HomeHeroContainer>
+  </Hero>
+)

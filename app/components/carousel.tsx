@@ -1,9 +1,8 @@
 import { FunctionComponent } from 'react'
-
-import { styled } from '~/stitches'
 import ReactMultiCarousel from 'react-multi-carousel'
 
 import { AspectRatio } from '~/components'
+import { styled } from '~/stitches'
 
 const responsive = {
   superLargeDesktop: {
@@ -65,30 +64,26 @@ export interface CarouselProps {
   items: CarouselItem[]
 }
 
-export const Carousel: FunctionComponent<CarouselProps> = ({ items }) => {
-  return (
-    <CarouselContainer>
-      <ReactMultiCarousel
-        responsive={responsive}
-        draggable
-        infinite
-        showDots
-        swipeable
-        ssr
-      >
-        {items.map((item, index) => {
-          return (
-            <CarouselItemContainer key={`carousel-item-${index}`}>
-              <AspectRatio.Root ratio={16 / 10}>
-                <CarouselImage alt={`${item.caption}`} src={item.imageUrl} />
-              </AspectRatio.Root>
-              <CarouselCaption>
-                <span>{item.caption}</span>
-              </CarouselCaption>
-            </CarouselItemContainer>
-          )
-        })}
-      </ReactMultiCarousel>
-    </CarouselContainer>
-  )
-}
+export const Carousel: FunctionComponent<CarouselProps> = ({ items }) => (
+  <CarouselContainer>
+    <ReactMultiCarousel
+      responsive={responsive}
+      draggable
+      infinite
+      showDots
+      swipeable
+      ssr
+    >
+      {items.map((item) => (
+        <CarouselItemContainer key={`carousel-item-${item.caption}`}>
+          <AspectRatio.Root ratio={16 / 10}>
+            <CarouselImage alt={`${item.caption}`} src={item.imageUrl} />
+          </AspectRatio.Root>
+          <CarouselCaption>
+            <span>{item.caption}</span>
+          </CarouselCaption>
+        </CarouselItemContainer>
+      ))}
+    </ReactMultiCarousel>
+  </CarouselContainer>
+)
