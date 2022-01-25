@@ -5,4 +5,6 @@ export type BlogArticle = {
   dateAdded: string
   coverImage: string
   brief?: string
+  content?: string
+  contentMarkdown?: string
 }
