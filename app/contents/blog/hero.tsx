@@ -1,31 +1,31 @@
 import { Hero, Heading } from '~/components'
 import { styled } from '~/stitches'
 
-const PricingHeroContainer = styled('div', {
+const BlogHeroContainer = styled('div', {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
   textAlign: 'center',
 })
 
-const PricingHeroContent = styled('div', {
+const BlogHeroContent = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
   width: '100%',
 })
 
-export const PricingHero = () => (
+export const BlogHero = () => (
   <Hero>
-    <PricingHeroContainer id="pricing-hero">
-      <PricingHeroContent id="pricing-hero-content">
+    <BlogHeroContainer id="blog-hero">
+      <BlogHeroContent id="blog-hero-content">
         <Heading as="h1" css={{ mb: 0 }}>
-          Simple Pricing
+          Blog
         </Heading>
         <Heading as="h2" color="solid">
-          Choose what's best
+          Updates from the Kontenbase team
         </Heading>
-      </PricingHeroContent>
-    </PricingHeroContainer>
+      </BlogHeroContent>
+    </BlogHeroContainer>
   </Hero>
 )

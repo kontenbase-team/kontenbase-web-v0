@@ -3,6 +3,7 @@ import { json, useLoaderData } from 'remix'
 
 import type { MetaFunction, LoaderFunction } from 'remix'
 import { hashnodeClient, createMeta, ReactGA } from '~/utils'
+import { BlogHero } from '~/contents'
 
 /**
  * Meta
@@ -27,6 +28,8 @@ export const loader: LoaderFunction = async () => {
             slug
             title
             brief
+            coverImage
+            dateAdded
           }
         }
       }
@@ -49,7 +52,7 @@ export default function Pricing() {
 
   return (
     <>
-      <h1>Blog</h1>
+      <BlogHero />
       <pre>{JSON.stringify(data, null, 2)}</pre>
     </>
   )
