@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import React from 'react'
 
 import {
@@ -56,7 +57,7 @@ export const TableComparisonBuilder: React.FunctionComponent<
   TableComparisonBuilderProps
 > = ({ data }) => {
   // const appUrl = 'https://app.kontenbase.com'
-  const { caption, body, head, foot } = data
+  const { caption, body } = data
 
   return (
     <Table>

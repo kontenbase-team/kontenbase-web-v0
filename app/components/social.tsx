@@ -17,11 +17,11 @@ const SocialContainer = styled('div', {
 })
 
 export const SocialMediaLinks = () => (
-    <SocialContainer>
-      {socialMediaLinks.map((link, index) => (
-          <AnchorIcon key={link.name} href={link.url}>
-            <Icon name={link.name.toLowerCase()} />
-          </AnchorIcon>
-        ))}
-    </SocialContainer>
-  )
+  <SocialContainer>
+    {socialMediaLinks.map((link) => (
+      <AnchorIcon key={link.name} href={link.url}>
+        <Icon name={link.name.toLowerCase()} />
+      </AnchorIcon>
+    ))}
+  </SocialContainer>
+)

@@ -1,3 +1,6 @@
+/* eslint-disable no-shadow */
+/* eslint-disable react/jsx-no-constructed-context-values */
+/* eslint-disable react/no-danger */
 import * as React from 'react'
 import { useFetcher } from 'remix'
 
@@ -187,10 +190,9 @@ function Themed({
         {React.createElement('light-mode', null, light)}
       </>
     )
-  } 
-    // eslint-disable-next-line react/jsx-no-useless-fragment
-    return <>{themeToReference === 'light' ? light : dark}</>
-  
+  }
+  // eslint-disable-next-line react/jsx-no-useless-fragment
+  return <>{themeToReference === 'light' ? light : dark}</>
 }
 
 function isTheme(value: unknown): value is Theme {

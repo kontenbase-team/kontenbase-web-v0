@@ -65,25 +65,25 @@ export interface CarouselProps {
 }
 
 export const Carousel: FunctionComponent<CarouselProps> = ({ items }) => (
-    <CarouselContainer>
-      <ReactMultiCarousel
-        responsive={responsive}
-        draggable
-        infinite
-        showDots
-        swipeable
-        ssr
-      >
-        {items.map((item, index) => (
-            <CarouselItemContainer key={`carousel-item-${index}`}>
-              <AspectRatio.Root ratio={16 / 10}>
-                <CarouselImage alt={`${item.caption}`} src={item.imageUrl} />
-              </AspectRatio.Root>
-              <CarouselCaption>
-                <span>{item.caption}</span>
-              </CarouselCaption>
-            </CarouselItemContainer>
-          ))}
-      </ReactMultiCarousel>
-    </CarouselContainer>
-  )
+  <CarouselContainer>
+    <ReactMultiCarousel
+      responsive={responsive}
+      draggable
+      infinite
+      showDots
+      swipeable
+      ssr
+    >
+      {items.map((item) => (
+        <CarouselItemContainer key={`carousel-item-${item.caption}`}>
+          <AspectRatio.Root ratio={16 / 10}>
+            <CarouselImage alt={`${item.caption}`} src={item.imageUrl} />
+          </AspectRatio.Root>
+          <CarouselCaption>
+            <span>{item.caption}</span>
+          </CarouselCaption>
+        </CarouselItemContainer>
+      ))}
+    </ReactMultiCarousel>
+  </CarouselContainer>
+)
