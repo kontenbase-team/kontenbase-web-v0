@@ -33,7 +33,7 @@ export const BlogArticles = ({ articles }: { articles: any }) => (
   <ArticlesContainer>
     {articles.map((article: any) => (
       <ArticleContainer key={article.cuid}>
-        <Link to={article.slug}>
+        <Link to={article.slug} prefetch="intent">
           <ArticleItem>
             <ArticleItemGroup>
               <Heading as="h3">{article.title}</Heading>

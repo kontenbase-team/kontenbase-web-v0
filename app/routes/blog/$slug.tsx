@@ -3,11 +3,11 @@ import parse from 'html-react-parser'
 import { marked } from 'marked'
 import { json, useLoaderData } from 'remix'
 
-import type { LoaderFunction } from 'remix'
-import { Content, Heading } from '~/components'
+import type { MetaFunction, LoaderFunction } from 'remix'
+import { Content, Heading, Link } from '~/components'
 import { styled } from '~/stitches'
 import { BlogArticle } from '~/types'
-import { getDate, hashnodeClient } from '~/utils'
+import { createMeta, getDate, hashnodeClient } from '~/utils'
 
 const ArticleContainer = styled('div', {
   display: 'flex',
@@ -38,6 +38,27 @@ const ArticleContent = styled('div', {
   },
 })
 
+/**
+ * Meta
+ */
+export const meta: MetaFunction = ({ data: article, params }) => {
+  if (!article) {
+    return createMeta({
+      title: `No blog article found - Kontenbase Blog`,
+      description: `Sorry, article not found`,
+      route: `blog/${params.slug}`,
+    })
+  }
+  return createMeta({
+    title: `${article.title} - Kontenbase Blog`,
+    description: `${article.brief}`,
+    route: `blog/${article.slug}`,
+  })
+}
+
+/**
+ * Loader
+ */
 export const loader: LoaderFunction = async ({ params }) => {
   const BlogPostSlugQuery = gql`
     query BlogPostSlug($slug: String!) {
@@ -58,6 +79,7 @@ export const loader: LoaderFunction = async ({ params }) => {
 
   const article: BlogArticle = response.data.post
 
+  if (!article) return json(null)
   return json({
     ...article,
     html: marked.parse(String(article?.contentMarkdown)),
@@ -75,16 +97,25 @@ export default function BlogArticleSlug() {
 
   return (
     <Content>
-      <ArticleContainer>
-        <Article>
-          <ArticleCoverImage src={article.coverImage} alt={article.title} />
-          <Heading as="h1">{article.title}</Heading>
-          <ArticleDate dateTime={article.dateAdded}>
-            {getDate(article.dateAdded)}
-          </ArticleDate>
-          <ArticleContent>{parse(String(article?.html))}</ArticleContent>
-        </Article>
-      </ArticleContainer>
+      {article ? (
+        <ArticleContainer>
+          <Article>
+            <ArticleCoverImage src={article.coverImage} alt={article.title} />
+            <Heading as="h1">{article.title}</Heading>
+            <ArticleDate dateTime={article.dateAdded}>
+              {getDate(article.dateAdded)}
+            </ArticleDate>
+            <ArticleContent>{parse(String(article?.html))}</ArticleContent>
+          </Article>
+        </ArticleContainer>
+      ) : (
+        <ArticleContainer>
+          <Article>
+            <Heading as="h1">No blog article found</Heading>
+            <Link to="/blog">Go back to Blog page</Link>
+          </Article>
+        </ArticleContainer>
+      )}
     </Content>
   )
 }
