@@ -3,18 +3,53 @@ import { Link } from 'remix'
 
 import { ButtonToggleTheme, Logo } from '~/components'
 import { styled } from '~/stitches'
+import { buttonStyles } from '~/styles'
 
 const MenuContainer = styled('div', {})
 
 const MenuTop = styled('div', {
   display: 'flex',
+  width: '100%',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  '@desktop': { display: 'none' },
 })
 
-const MenuItems = styled('div', {})
+const MenuTopGroup = styled('div', {
+  display: 'flex',
+  alignItems: 'center',
+})
 
-const MenuItem = styled('div', {})
+const MenuButton = styled(Collapsible.Trigger, {
+  ...buttonStyles,
+  ml: '$3',
+})
 
-const MenuLink = styled(Link, {})
+const MenuBottom = styled(Collapsible.Content, {
+  '@desktop': { display: 'none' },
+})
+
+const MenuItems = styled('nav', {
+  pt: '$5',
+})
+
+const MenuItem = styled('div', {
+  // width: '100%',
+})
+
+const MenuLink = styled(Link, {
+  display: 'flex',
+  justifyContent: 'flex-end',
+  width: '100%',
+  padding: '0.5rem',
+  borderRadius: '$2',
+  color: '$brand9',
+  px: '$2',
+  py: '$1',
+  '@tablet': { px: '$2', py: '$1' },
+  '@desktop': { px: '$3', py: '$2' },
+  '&:hover': { backgroundColor: '$brand3' },
+})
 
 export const NavigationMenu = () => (
   <MenuContainer>
@@ -23,12 +58,13 @@ export const NavigationMenu = () => (
         <Link to="/" title="Kontenbase">
           <Logo />
         </Link>
-        <Collapsible.Trigger>
-          <span>Menu</span>
-        </Collapsible.Trigger>
+        <MenuTopGroup>
+          <ButtonToggleTheme />
+          <MenuButton size="adaptive">Menu</MenuButton>
+        </MenuTopGroup>
       </MenuTop>
 
-      <Collapsible.Content>
+      <MenuBottom>
         <MenuItems>
           <MenuItem>
             <MenuLink to="/">Home</MenuLink>
@@ -46,15 +82,16 @@ export const NavigationMenu = () => (
             <MenuLink to="/jobs">Jobs</MenuLink>
           </MenuItem>
         </MenuItems>
-      </Collapsible.Content>
+      </MenuBottom>
     </Collapsible.Root>
   </MenuContainer>
 )
 
 const NavigationContainer = styled('nav', {
-  display: 'flex',
   width: '100%',
   justifyContent: 'space-between',
+  display: 'none',
+  '@desktop': { display: 'flex' },
 })
 
 const NavigationList = styled('ul', {
@@ -77,15 +114,13 @@ const NavigationItem = styled('li', {
     visible: {
       tablet: {
         display: 'none',
-        '@tablet': {
-          display: 'flex',
-        },
+        '@tablet': { display: 'flex' },
       },
     },
   },
 })
 
-const navigationItemChildStyles = {
+const NavigationLink = styled(Link, {
   padding: '0.5rem',
   borderRadius: '$2',
   color: '$brand9',
@@ -93,13 +128,7 @@ const navigationItemChildStyles = {
   py: '$1',
   '@tablet': { px: '$2', py: '$1' },
   '@desktop': { px: '$3', py: '$2' },
-  '&:hover': {
-    backgroundColor: '$brand3',
-  },
-}
-
-const NavigationLink = styled(Link, {
-  ...navigationItemChildStyles,
+  '&:hover': { backgroundColor: '$brand3' },
 })
 
 export const Navigation = () => (
