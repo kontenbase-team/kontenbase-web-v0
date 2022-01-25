@@ -7,7 +7,7 @@ import type { MetaFunction, LoaderFunction } from 'remix'
 import { Content, Heading, Link } from '~/components'
 import { styled } from '~/stitches'
 import { BlogArticle } from '~/types'
-import { createMeta, getDate, hashnodeClient } from '~/utils'
+import { createMeta, getDate, hashnodeClient, ReactGA } from '~/utils'
 
 const ArticleContainer = styled('div', {
   display: 'flex',
@@ -91,9 +91,9 @@ export const loader: LoaderFunction = async ({ params }) => {
  */
 
 export default function BlogArticleSlug() {
-  // ReactGA.send({ hitType: 'pageview', page: '/blog' })
-
   const article = useLoaderData<BlogArticle>()
+
+  ReactGA.send({ hitType: 'pageview', page: `/blog/${article?.slug}` })
 
   return (
     <Content>
