@@ -7,4 +7,5 @@ export type BlogArticle = {
   brief?: string
   content?: string
   contentMarkdown?: string
+  html?: string
 }
