@@ -79,7 +79,7 @@ export const FeedbackDialog: FunctionComponent<FeedbackDialogProps> = ({
               existing feedback/issue
             </Anchor>{' '}
             or{' '}
-            <Anchor href="https://github.com/kontenbase/feedback/issues/new">
+            <Anchor href="https://github.com/kontenbase/feedback/issues/new/choose">
               create a new one.
             </Anchor>
           </P>
