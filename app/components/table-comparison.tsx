@@ -96,8 +96,8 @@ export const TableComparisonBuilder: React.FunctionComponent<
           <Td>
             <Heading as="h5">
               <PriceText>
-                <del>$5</del>
-                <span> $1 </span>
+                <del>$10</del>
+                <span> $5 </span>
               </PriceText>
               <PriceNote>
                 <span>/project</span>
