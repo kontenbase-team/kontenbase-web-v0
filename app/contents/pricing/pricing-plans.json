@@ -19,8 +19,7 @@
     ["Workspace team members", "—", "Coming Soon"],
 
     ["💬 Help and Others", "", ""],
-    ["Support", "Community", "Email"],
-    ["Remove Kontenbase branding in API response", "—", "✅"]
+    ["Support", "Community", "Email"]
   ],
   "foot": [
     {
