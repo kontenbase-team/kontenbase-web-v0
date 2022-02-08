@@ -18,8 +18,9 @@
     ["Object Storage up to", "1 GB", "10 GB"],
     ["Workspace team members", "—", "Coming Soon"],
 
-    ["💬 Support and Help", "", ""],
-    ["Support", "Community", "Email"]
+    ["💬 Help and Others", "", ""],
+    ["Support", "Community", "Email"],
+    ["Remove Kontenbase branding in API response", "—", "✅"]
   ],
   "foot": [
     {
