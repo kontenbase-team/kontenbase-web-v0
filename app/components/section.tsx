@@ -9,7 +9,7 @@ interface SectionProps {
 
 const SectionStyled = styled('div', {
   width: '100%',
-  maxWidth: '720px',
+  maxWidth: '960px',
 })
 
 export const Section: FunctionComponent<SectionProps> = ({ css, children }) => (

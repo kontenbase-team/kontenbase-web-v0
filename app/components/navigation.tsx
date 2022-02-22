@@ -95,7 +95,7 @@ const NavigationList = styled('ul', {
   fontWeight: 'bold',
   fontSize: '$3',
   flexWrap: 'wrap',
-  gap: '0.1rem',
+  gap: '0.2rem',
 })
 
 const NavigationItem = styled('li', {
