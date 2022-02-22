@@ -2,6 +2,7 @@ import * as Collapsible from '@radix-ui/react-collapsible'
 import { Link } from 'remix'
 
 import { ButtonToggleTheme, Logo } from '~/components'
+import { navigationLinks } from '~/data'
 import { styled } from '~/stitches'
 import { buttonStyles } from '~/styles'
 
@@ -66,21 +67,11 @@ export const NavigationMenu = () => (
 
       <MenuBottom>
         <MenuItems>
-          <MenuItem>
-            <MenuLink to="/">Home</MenuLink>
-          </MenuItem>
-          <MenuItem>
-            <MenuLink to="/pricing">Pricing</MenuLink>
-          </MenuItem>
-          <MenuItem>
-            <MenuLink to="/blog">Blog</MenuLink>
-          </MenuItem>
-          <MenuItem>
-            <MenuLink to="/docs">Docs</MenuLink>
-          </MenuItem>
-          <MenuItem>
-            <MenuLink to="/jobs">Jobs</MenuLink>
-          </MenuItem>
+          {navigationLinks.map((item) => (
+            <MenuItem key={item.to}>
+              <MenuLink to={item.to}>{item.text}</MenuLink>
+            </MenuItem>
+          ))}
         </MenuItems>
       </MenuBottom>
     </Collapsible.Root>
@@ -97,14 +88,14 @@ const NavigationContainer = styled('nav', {
 const NavigationList = styled('ul', {
   display: 'flex',
   listStyleType: 'none',
+  justifyContent: 'flex-end',
   alignItems: 'center',
   padding: '0',
   margin: '0',
   fontWeight: 'bold',
   fontSize: '$3',
+  flexWrap: 'wrap',
   gap: '0.1rem',
-  '@tablet': { gap: '0.5rem' },
-  '@desktop': { gap: '0.75rem' },
 })
 
 const NavigationItem = styled('li', {
@@ -132,26 +123,11 @@ export const Navigation = () => (
       <NavigationItem>
         <ButtonToggleTheme />
       </NavigationItem>
-      <NavigationItem>
-        <NavigationLink to="/">Home</NavigationLink>
-      </NavigationItem>
-      <NavigationItem>
-        <NavigationLink to="/pricing">Pricing</NavigationLink>
-      </NavigationItem>
-      <NavigationItem>
-        <NavigationLink to="/blog">Blog</NavigationLink>
-      </NavigationItem>
-      <NavigationItem>
-        <NavigationLink to="/docs">Docs</NavigationLink>
-      </NavigationItem>
-      <NavigationItem>
-        <NavigationLink to="/jobs">Jobs</NavigationLink>
-      </NavigationItem>
-      {/* <NavigationItem>
-        <AnchorButton variant="brand" href="https://app.kontenbase.com">
-          Login
-        </AnchorButton>
-      </NavigationItem> */}
+      {navigationLinks.map((item) => (
+        <NavigationItem key={item.to}>
+          <NavigationLink to={item.to}>{item.text}</NavigationLink>
+        </NavigationItem>
+      ))}
     </NavigationList>
   </NavigationContainer>
 )

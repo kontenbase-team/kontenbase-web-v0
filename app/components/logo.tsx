@@ -26,10 +26,10 @@ const LogoContainer = styled('div', {
 })
 
 export const Logo = () => (
-    <LogoContainer>
-      <KontenbaseSVG />
-    </LogoContainer>
-  )
+  <LogoContainer>
+    <KontenbaseSVG />
+  </LogoContainer>
+)
 
 const KontenbaseSVG = (props: SVGProps<SVGSVGElement>) => (
   <svg
