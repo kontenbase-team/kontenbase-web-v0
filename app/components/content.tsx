@@ -9,7 +9,7 @@ interface ContentProps {
   children: React.ReactNode
 }
 
-const ContentContainer = styled('div', {
+const ContentStyled = styled('div', {
   width: '1280px',
   marginRight: 'auto',
   marginLeft: 'auto',
@@ -50,7 +50,7 @@ export const Content: FunctionComponent<ContentProps> = ({
   size,
   children,
 }) => (
-  <ContentContainer className="content" css={css} layout={layout} size={size}>
+  <ContentStyled className="content" css={css} layout={layout} size={size}>
     {children}
-  </ContentContainer>
+  </ContentStyled>
 )
