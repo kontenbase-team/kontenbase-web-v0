@@ -110,14 +110,6 @@ const NavigationList = styled('ul', {
 const NavigationItem = styled('li', {
   display: 'flex',
   alignItems: 'center',
-  variants: {
-    visible: {
-      tablet: {
-        display: 'none',
-        '@tablet': { display: 'flex' },
-      },
-    },
-  },
 })
 
 const NavigationLink = styled(Link, {
@@ -140,13 +132,13 @@ export const Navigation = () => (
       <NavigationItem>
         <ButtonToggleTheme />
       </NavigationItem>
-      <NavigationItem visible="tablet">
+      <NavigationItem>
         <NavigationLink to="/">Home</NavigationLink>
       </NavigationItem>
       <NavigationItem>
         <NavigationLink to="/pricing">Pricing</NavigationLink>
       </NavigationItem>
-      <NavigationItem visible="tablet">
+      <NavigationItem>
         <NavigationLink to="/blog">Blog</NavigationLink>
       </NavigationItem>
       <NavigationItem>
