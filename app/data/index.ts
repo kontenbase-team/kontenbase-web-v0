@@ -1,1 +1,2 @@
-export * from './navigation-links'
+export * from './navigation'
+export * from './team'

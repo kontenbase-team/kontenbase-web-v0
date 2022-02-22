@@ -2,7 +2,7 @@ import * as Collapsible from '@radix-ui/react-collapsible'
 import { Link } from 'remix'
 
 import { ButtonToggleTheme, Logo } from '~/components'
-import { navigationLinks } from '~/data'
+import { navigationData } from '~/data'
 import { styled } from '~/stitches'
 import { buttonStyles } from '~/styles'
 
@@ -67,7 +67,7 @@ export const NavigationMenu = () => (
 
       <MenuBottom>
         <MenuItems>
-          {navigationLinks.map((item) => (
+          {navigationData.map((item) => (
             <MenuItem key={item.to}>
               <MenuLink to={item.to}>{item.text}</MenuLink>
             </MenuItem>
@@ -123,7 +123,7 @@ export const Navigation = () => (
       <NavigationItem>
         <ButtonToggleTheme />
       </NavigationItem>
-      {navigationLinks.map((item) => (
+      {navigationData.map((item) => (
         <NavigationItem key={item.to}>
           <NavigationLink to={item.to}>{item.text}</NavigationLink>
         </NavigationItem>

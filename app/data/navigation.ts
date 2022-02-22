@@ -1,4 +1,4 @@
-export const navigationLinks = [
+export const navigationData = [
   { to: '/', text: 'Home' },
   { to: '/pricing', text: 'Pricing' },
   { to: '/contact', text: 'Contact' },
