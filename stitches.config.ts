@@ -40,6 +40,12 @@ const colorTokens = {
   background4: '$mauve4',
   background5: '$mauve5',
   background6: '$mauve6',
+  background7: '$mauve7',
+  background8: '$mauve8',
+  background9: '$mauve9',
+  background10: '$mauve10',
+  background11: '$mauve11',
+  background12: '$mauve12',
 
   brand1: '$tomato1',
   brand2: '$tomato2',
