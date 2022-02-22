@@ -1,4 +1,4 @@
-import { Hero, Heading, P } from '~/components'
+import { Heading, P, HeroSpecial } from '~/components'
 import { HomeCarousel } from '~/contents'
 import { styled } from '~/stitches'
 
@@ -37,7 +37,7 @@ const HomeHeroAside = styled('aside', {
 })
 
 export const HomeHero = () => (
-  <Hero>
+  <HeroSpecial>
     <HomeHeroContainer>
       <HomeHeroContent>
         <Heading as="h1">No Code Backend API, Fast and Easy!</Heading>
@@ -51,5 +51,5 @@ export const HomeHero = () => (
         <HomeCarousel />
       </HomeHeroAside>
     </HomeHeroContainer>
-  </Hero>
+  </HeroSpecial>
 )

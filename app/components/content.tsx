@@ -1,6 +1,9 @@
+import { FunctionComponent } from 'react'
+
 import { styled } from '~/stitches'
 
 interface ContentProps {
+  css?: any
   layout?: 'center-horizontal' | 'center-vertical' | undefined
   size?: 'adaptive' | undefined
   children: React.ReactNode
@@ -41,8 +44,13 @@ const ContentContainer = styled('div', {
   },
 })
 
-export const Content = (props: ContentProps) => (
-  <ContentContainer className="content" {...props}>
-    {props.children}
+export const Content: FunctionComponent<ContentProps> = ({
+  css,
+  layout,
+  size,
+  children,
+}) => (
+  <ContentContainer className="content" css={css} layout={layout} size={size}>
+    {children}
   </ContentContainer>
 )

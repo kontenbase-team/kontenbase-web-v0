@@ -1,3 +1,5 @@
+import { FunctionComponent } from 'react'
+
 import { Content } from '~/components'
 import { styled } from '~/stitches'
 
@@ -12,8 +14,16 @@ const HeroContainer = styled('div', {
   '@tv': { padding: '4.5rem 0' },
 })
 
-export const Hero = (props: HeroProps) => (
+export const Hero: FunctionComponent<HeroProps> = ({ children }) => (
   <HeroContainer id="hero">
-    <Content>{props.children}</Content>
+    <Content css={{ display: 'flex', jc: 'center', ta: 'center' }}>
+      <div>{children}</div>
+    </Content>
+  </HeroContainer>
+)
+
+export const HeroSpecial: FunctionComponent<HeroProps> = ({ children }) => (
+  <HeroContainer id="hero">
+    <Content>{children}</Content>
   </HeroContainer>
 )

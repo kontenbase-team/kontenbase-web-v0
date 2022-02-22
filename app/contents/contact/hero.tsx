@@ -1,3 +1,12 @@
 import { FunctionComponent } from 'react'
 
-export const ContactHero: FunctionComponent = () => <div>Contact Hero</div>
+import { Heading, Hero } from '~/components'
+
+export const ContactHero: FunctionComponent = () => (
+  <Hero>
+    <Heading as="h1">Contact Us</Heading>
+    <Heading as="h2" color="solid">
+      Support links and team
+    </Heading>
+  </Hero>
+)

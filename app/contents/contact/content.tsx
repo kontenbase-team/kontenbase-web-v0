@@ -1,5 +1,7 @@
 import { FunctionComponent } from 'react'
 
+import { Content } from '~/components'
+
 export const ContactContent: FunctionComponent = () => (
-  <div>Contact Content</div>
+  <Content size="adaptive">Contact</Content>
 )
