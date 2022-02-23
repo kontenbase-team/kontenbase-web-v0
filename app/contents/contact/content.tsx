@@ -1,12 +1,22 @@
 import { FunctionComponent } from 'react'
 
-import { Avatar, Content, Heading, Link, P, Section } from '~/components'
+import {
+  Anchor,
+  AnchorButton,
+  Avatar,
+  ButtonGroup,
+  Content,
+  Heading,
+  Link,
+  P,
+  Section,
+} from '~/components'
 import { teamData } from '~/data'
 import { styled } from '~/stitches'
 
 const Team = styled('div', {
-  mt: '2rem',
   width: '100%',
+  mb: '2rem',
 })
 
 const Members = styled('div', {
@@ -26,19 +36,25 @@ const Member = styled('div', {
 })
 
 export const ContactContent: FunctionComponent = () => (
-  <Content layout="center-vertical">
+  <Content layout="center-vertical" css={{ gap: '3rem' }}>
     <Section>
       <Heading as="h3">Support</Heading>
       <P>
         Thank you for being interested in Kontenbase! If you have any feedback,
         issue, or problem on learning and using Kontenbase, you can reach to us
-        and the community through various channels:
+        and the community through our main support channels:
       </P>
-      <ul>
-        <li>GitHub</li>
-        <li>Discord</li>
-        <li>Twitter</li>
-      </ul>
+      <ButtonGroup>
+        <AnchorButton href="https://github.com/kontenbase/feedback">
+          GitHub
+        </AnchorButton>
+        <AnchorButton href="https://a.kontenbase.com/discord-invite">
+          Discord
+        </AnchorButton>
+        <AnchorButton href="https://twitter.com/kontenbase">
+          Twitter
+        </AnchorButton>
+      </ButtonGroup>
     </Section>
 
     <Section>
